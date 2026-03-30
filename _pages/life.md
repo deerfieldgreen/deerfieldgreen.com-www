@@ -1,0 +1,35 @@
+---
+layout: page
+title: "Life @DFG"
+permalink: /life/
+---
+
+# Life @DFG
+
+## Culture
+
+### _Introducing Deerfield Green: A Haven for Intellectual Exploration_
+
+![](https://deerfieldgreen.com/wp-content/uploads/2023/07/workforce-960x540.jpg-300x169.webp)Deerfield Green is a unique firm that fosters a culture of intellectual curiosity, embracing the geeky and nerdy passions of its diverse and vibrant team. At Deerfield Green, our people are perpetually hungry for new knowledge, techniques, and ideas, driven by an insatiable desire to learn and explore. We are a community of individuals who thrive on sharing knowledge, seeking out the experiences of others, and engaging in open and respectful discussions.
+
+The heartbeat of our firm is a shared love for intellectual pursuits. We celebrate the geeky and nerdy aspects of our team, recognizing that their unconventional interests and passions often lead to the most groundbreaking and innovative ideas. Our people are not only intellectually curious but also deeply passionate about their areas of expertise. They channel their passion into their work, inspiring others around them and infusing the entire organization with a sense of excitement and discovery.
+
+![](https://deerfieldgreen.com/wp-content/uploads/2023/07/team-work-300x200.jpg)At Deerfield Green, we understand that true intellectual growth comes from collaboration and a constant thirst for new perspectives. Our team actively seeks out the knowledge and experience of others, recognizing that each individual brings a unique set of insights to the table. We foster an environment where sharing knowledge is not only encouraged but celebrated, enabling our team to collectively expand their horizons and push the boundaries of what's possible.
+
+In this firm, individuals are not limited to a narrow focus on the immediate details in front of them. They possess a deep understanding of the bigger picture and how their work fits into the broader context. This holistic view allows them to see connections, identify patterns, and come up with new and creative ideas that challenge the status quo. Each day brings fresh perspectives, innovative approaches, and the excitement of discovering unexplored possibilities.
+
+![](https://deerfieldgreen.com/wp-content/uploads/2023/07/team-1-300x194.jpg)The culture at Deerfield Green is open and inclusive, where every individual's voice is respected and valued. We believe that diversity of thought and opinion is crucial for stimulating intellectual discourse and fostering a truly dynamic and innovative environment. We encourage our team members to express their ideas freely, knowing that their contributions are valued and will be met with open minds. This culture of openness creates a safe space for collaboration, where ideas can be refined, expanded upon, and transformed into meaningful outcomes.
+
+In summary, Deerfield Green is not just a firm, but a community of intellectually curious individuals who embrace their geeky and nerdy passions. With a thirst for knowledge, a drive for exploration, and a commitment to sharing ideas, our team propels us forward on a continuous journey of growth and innovation. Together, we create a haven for intellectual exploration, where creative ideas are born, and the possibilities are endless.
+
+## Our Locations
+
+Minato-ku Tokyo, Japan
+
+Milton, Georgia
+
+## For Researchers, For Quants, For Students
+
+## Open Positions
+
+Nothing available now
