@@ -1,14 +1,12 @@
 ---
-layout: page
+layout: single
 title: "Private Equity"
 permalink: /private-equity/
+header:
+  overlay_image: /assets/images/handshake.jpg
+  overlay_filter: 0.5
+excerpt: "Japan's healthcare revolution through patient capital"
 ---
-
-# Private Equity
-
-\[ez-toc\]
-
-# Japan's Private Equity Healthcare Revolution: The Buy-and-Hold Opportunity
 
 Japan's private equity healthcare market has emerged as one of the world's most compelling investment destinations, delivering **3x returns on invested capital**—the highest among major regions from 2010-2024. With healthcare PE investments growing at **20% CAGR since 2019** and annual deal values reaching **$12-15 billion**, the market presents exceptional opportunities for patient capital approaches. The convergence of demographic imperatives, digital transformation needs, and cultural shifts toward professional management creates an unprecedented environment for long-term value creation.
 

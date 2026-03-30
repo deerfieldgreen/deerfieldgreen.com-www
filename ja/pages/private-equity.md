@@ -1,8 +1,13 @@
 ---
-layout: page
+layout: single
 title: "プライベート・エクイティ"
 permalink: /ja/private-equity/
 lang: ja
+header:
+  overlay_image: /assets/images/handshake.jpg
+  overlay_filter: 0.5
+excerpt: "日本のヘルスケア市場におけるバイ・アンド・ホールド投資"
+sidebar_nav: main_ja
 ---
 
 # プライベート・エクイティ

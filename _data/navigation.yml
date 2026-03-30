@@ -1,0 +1,43 @@
+main:
+  - title: "Team"
+    url: /team/
+  - title: "Consulting"
+    url: /consulting/
+  - title: "Investment"
+    url: /investment/
+  - title: "Incubator"
+    url: /incubator/
+  - title: "Private Equity"
+    url: /private-equity/
+  - title: "Philanthropy"
+    url: /philanthropy/
+  - title: "Life @DFG"
+    url: /life/
+  - title: "Blog"
+    url: /blog/
+  - title: "Contact"
+    url: /contact/
+  - title: "JP"
+    url: /ja/
+
+main_ja:
+  - title: "チーム"
+    url: /ja/team/
+  - title: "コンサルティング"
+    url: /ja/consulting/
+  - title: "投資"
+    url: /ja/investment/
+  - title: "インキュベーター"
+    url: /ja/incubator/
+  - title: "プライベート・エクイティ"
+    url: /ja/private-equity/
+  - title: "慈善活動"
+    url: /ja/philanthropy/
+  - title: "DFGでの生活"
+    url: /ja/life/
+  - title: "ブログ"
+    url: /ja/blog/
+  - title: "お問い合わせ"
+    url: /ja/contact/
+  - title: "EN"
+    url: /

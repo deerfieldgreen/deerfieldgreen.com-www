@@ -1,7 +1,12 @@
 ---
-layout: page
+layout: single
 title: "The Team"
 permalink: /team/
+header:
+  overlay_image: /assets/images/team-1.jpg
+  overlay_filter: 0.5
+  caption: ""
+excerpt: "Blending Quantitative Investing with Purposeful Philanthropy"
 ---
 
 ### _Blending Quantitative Investing with Purposeful Philanthropy_
@@ -26,7 +31,7 @@ In summary, Deerfield Green is a private quantitative investment firm based in T
 
 Kevin Stoll, hailing from Alpharetta, Georgia, USA, brings over 20 years of expertise in advising Subscription Economy companies on growth strategies. A data enthusiast with a deep interest in financial markets and Japanese culture, he combines diverse perspectives to drive impactful results.
 
-[![](https://deerfieldgreen.com/wp-content/uploads/2023/07/linkedin.png)](https://www.linkedin.com/in/Kevinostoll)
+[![LinkedIn](/assets/images/linkedin.png)](https://www.linkedin.com/in/Kevinostoll)
 
 # Senior Researcher
 

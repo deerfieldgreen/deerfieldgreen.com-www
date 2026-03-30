@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: single
 title: "Philanthropy"
 permalink: /philanthropy/
+header:
+  overlay_image: /assets/images/arm-around-605300333.jpg
+  overlay_filter: 0.5
+excerpt: "Preserving Japanese culture and empowering communities"
 ---
-
-# Philanthropy
 
 ### Deerfield Green The Team Consulting Investment Philanthropy Life @DFG Blog Contact Us English Japanese Korean Chinese (Simplified)
 

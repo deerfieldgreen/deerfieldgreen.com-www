@@ -1,8 +1,13 @@
 ---
-layout: page
+layout: single
 title: "投資"
 permalink: /ja/investment/
 lang: ja
+header:
+  overlay_image: /assets/images/2250982679.jpg
+  overlay_filter: 0.5
+excerpt: "アルゴリズム、機械学習、AIを活用したブティック型ヘッジファンド"
+sidebar_nav: main_ja
 ---
 
 # 投資

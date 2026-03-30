@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: home
 title: "ブログ"
 permalink: /ja/blog/
 lang: ja

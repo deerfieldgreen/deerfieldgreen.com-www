@@ -1,14 +1,12 @@
 ---
-layout: page
+layout: single
 title: "Incubator"
 permalink: /incubator/
+header:
+  overlay_image: /assets/images/incubator.jpg
+  overlay_filter: 0.5
+excerpt: "Bridging Japanese innovation with global healthcare markets"
 ---
-
-# Incubator
-
-\[ez-toc\]
-
-# The Deerfield Green Incubator: Bridging Japanese Innovation with Global Healthcare Markets
 
 ## Engineering Tomorrow's Healthcare Innovation Through Cross-Pacific Partnership
 

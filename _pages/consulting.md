@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: single
 title: "Consulting"
 permalink: /consulting/
+header:
+  overlay_image: /assets/images/team-work.jpg
+  overlay_filter: 0.5
+excerpt: "Helping SaaS businesses grow their subscription revenue"
 ---
-
-# Consulting
 
 ### How Deerfield Green Can Help
 

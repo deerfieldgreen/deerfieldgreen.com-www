@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: single
 title: "Investment"
 permalink: /investment/
+header:
+  overlay_image: /assets/images/2250982679.jpg
+  overlay_filter: 0.5
+excerpt: "Algorithms, machine learning, and AI-driven strategic investment"
 ---
-
-# Investment
 
 Deerfield Green is a cutting-edge boutique hedge fund that leverages the power of algorithms, machine learning, and artificial intelligence to make strategic investments in the New York Stock Exchange (NYSE) and NASDAQ. With a primary focus on managing risk and generating alpha through non-correlated returns, Deerfield Green stands out as a truly unique player in the market.
 
