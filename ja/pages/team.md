@@ -1,8 +1,13 @@
 ---
-layout: page
+layout: single
 title: "チーム"
 permalink: /ja/team/
 lang: ja
+header:
+  overlay_image: /assets/images/team-1.jpg
+  overlay_filter: 0.5
+excerpt: "クオンツ投資と目的を持った慈善活動の融合"
+sidebar_nav: main_ja
 ---
 
 ### _クオンツ投資と目的を持った慈善活動の融合_

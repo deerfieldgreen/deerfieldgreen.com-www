@@ -1,8 +1,13 @@
 ---
-layout: page
+layout: single
 title: "コンサルティング"
 permalink: /ja/consulting/
 lang: ja
+header:
+  overlay_image: /assets/images/team-work.jpg
+  overlay_filter: 0.5
+excerpt: "SaaSビジネスのサブスクリプション収益の成長を支援"
+sidebar_nav: main_ja
 ---
 
 # コンサルティング

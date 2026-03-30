@@ -1,8 +1,13 @@
 ---
-layout: page
+layout: single
 title: "慈善活動"
 permalink: /ja/philanthropy/
 lang: ja
+header:
+  overlay_image: /assets/images/arm-around-605300333.jpg
+  overlay_filter: 0.5
+excerpt: "日本文化の保護とコミュニティの支援"
+sidebar_nav: main_ja
 ---
 
 # 慈善活動

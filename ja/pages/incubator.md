@@ -1,8 +1,13 @@
 ---
-layout: page
+layout: single
 title: "インキュベーター"
 permalink: /ja/incubator/
 lang: ja
+header:
+  overlay_image: /assets/images/incubator.jpg
+  overlay_filter: 0.5
+excerpt: "日本のイノベーションと世界のヘルスケア市場の架け橋"
+sidebar_nav: main_ja
 ---
 
 # インキュベーター
