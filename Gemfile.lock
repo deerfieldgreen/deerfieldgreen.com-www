@@ -308,6 +308,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-include-cache
   webrick
 
 BUNDLED WITH
