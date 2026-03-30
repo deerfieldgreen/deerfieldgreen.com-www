@@ -1,0 +1,11 @@
+title: Deerfield Green
+description: Strategic consulting, investment, and innovation services
+baseurl: ""  # leave empty for root domain
+url: "https://yourusername.github.io"  # change after you create the repo
+permalink: /:title/
+theme: minima  # default; you can change later
+plugins:
+  - jekyll-feed
+
+# Future-dated posts will be published (remove line if you want to hide them)
+future: true
