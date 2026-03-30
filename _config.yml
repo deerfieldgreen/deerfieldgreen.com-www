@@ -1,11 +1,34 @@
 title: Deerfield Green
 description: Strategic consulting, investment, and innovation services
-baseurl: ""  # leave empty for root domain
-url: "https://yourusername.github.io"  # change after you create the repo
+baseurl: ""
+url: "https://deerfieldgreen.com"
 permalink: /:title/
-theme: minima  # default; you can change later
+theme: minima
 plugins:
   - jekyll-feed
 
-# Future-dated posts will be published (remove line if you want to hide them)
 future: true
+
+include:
+  - _pages
+
+defaults:
+  - scope:
+      path: "_pages"
+    values:
+      layout: page
+  - scope:
+      path: "ja"
+    values:
+      lang: ja
+
+header_pages:
+  - _pages/team.md
+  - _pages/consulting.md
+  - _pages/investment.md
+  - _pages/incubator.md
+  - _pages/private-equity.md
+  - _pages/philanthropy.md
+  - _pages/life.md
+  - blog.md
+  - _pages/contact.md
