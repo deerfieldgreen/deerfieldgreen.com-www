@@ -7,7 +7,6 @@ author: "Kevin Stoll"
 
 This comprehensive examination explores the epistemological foundations, structural dynamics, and strategic implications of Japan's incubator ecosystem, particularly as it relates to the healthcare, biotechnology, and artificial intelligence sectors that increasingly define the nation's economic future. 
 
-\[ez-toc exclude="Strategic guidance, "\]
 
 ## Introduction: Reconceptualizing Innovation Infrastructure in Contemporary Japan
 

@@ -7,7 +7,6 @@ author: "Kevin Stoll"
 
 This comprehensive examination explores how AI technologies are not merely augmenting existing healthcare processes but catalyzing a fundamental reimagination of care delivery, clinical decision-making, and health system organization within the distinctive context of Japanese society.
 
-\[ez-toc exclude=""\]
 
 ## Introduction: The Paradigmatic Integration of Intelligence and Medicine
 

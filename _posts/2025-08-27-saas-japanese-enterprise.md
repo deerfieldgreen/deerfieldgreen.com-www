@@ -7,7 +7,6 @@ author: "Kevin Stoll"
 
 This comprehensive examination explores the complex interplay between global SaaS paradigms and distinctively Japanese business cultures, revealing how the subscription economy's expansion into Japan necessitates sophisticated strategies that transcend mere linguistic localization to encompass fundamental reimagining of product design, customer engagement, and value delivery mechanisms.
 
-\[ez-toc exclude=""\]
 
 ## Introduction: The Paradigmatic Shift in Enterprise Software Delivery
 

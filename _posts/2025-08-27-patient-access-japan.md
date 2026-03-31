@@ -7,7 +7,6 @@ author: "Kevin Stoll"
 
 A 5-minute read exploring how patients experience Japan's healthcare system in 2025
 
-\[ez-toc exclude=""\]
 
 Japan's universal healthcare system, established in 1961, promised equitable access to medical care for all citizens. Today, while this system continues to provide **98.3% population coverage**\[10\] and maintains **world-class health outcomes**, patients increasingly face complex challenges navigating a system under strain. From rural residents traveling hours for specialized care to urban elderly managing chronic conditions across fragmented providers, the patient experience reveals both the strengths and critical vulnerabilities of Japan's healthcare infrastructure.
 

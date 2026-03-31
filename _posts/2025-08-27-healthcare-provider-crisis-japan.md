@@ -7,7 +7,6 @@ author: "Kevin Stoll"
 
 A 5-minute read examining the critical challenges facing Japan's healthcare providers in 2025
 
-\[ez-toc exclude=""\]
 
 Japan's healthcare system, once celebrated for achieving universal coverage and contributing to the world's highest life expectancy, now faces unprecedented challenges that threaten its sustainability. Healthcare providers—from rural family practitioners to urban hospital administrators—are grappling with a perfect storm of workforce shortages, aging infrastructure, and mounting operational pressures that have fundamentally altered the landscape of medical care delivery.
 

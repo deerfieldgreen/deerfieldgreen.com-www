@@ -7,7 +7,6 @@ author: "Kevin Stoll"
 
 This comprehensive analysis examines the multifaceted implications of demographic transition for healthcare demand, exploring how the convergence of population aging, technological innovation, and evolving care models creates both existential challenges and transformative opportunities for healthcare system redesign.
 
-\[ez-toc exclude=""\]
 
 ## Introduction: Confronting the Unprecedented Demographic Transition
 

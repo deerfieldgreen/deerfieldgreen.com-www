@@ -7,7 +7,6 @@ author: "Kevin Stoll"
 
 A 5-minute read examining policy solutions and innovations shaping Japan's healthcare system in 2025
 
-\[ez-toc exclude=""\]
 
 Japan's healthcare system stands at a critical inflection point. With **one in five residents entering the 75+ age category by 2025** and healthcare costs projected to reach **Â¥5.1 trillion additional burden by 2030**\[9\], the nation must fundamentally transform how it delivers, finances, and coordinates care. Yet within this crisis lies opportunity—innovative government programs, digital transformation initiatives, and evidence-based policy reforms are emerging that could position Japan as a global leader in sustainable healthcare for aging societies.
 
