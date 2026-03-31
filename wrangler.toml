@@ -3,7 +3,9 @@ compatibility_date = "2026-03-30"
 
 routes = [
   { pattern = "deerfieldgreen.com/*", zone_name = "deerfieldgreen.com" },
-  { pattern = "www.deerfieldgreen.com/*", zone_name = "deerfieldgreen.com" }
+  { pattern = "www.deerfieldgreen.com/*", zone_name = "deerfieldgreen.com" },
+  { custom_domain = true, pattern = "deerfieldgreen.com" },
+  { custom_domain = true, pattern = "www.deerfieldgreen.com" }
 ]
 
 [assets]
