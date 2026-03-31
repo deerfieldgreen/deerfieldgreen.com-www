@@ -14,7 +14,7 @@ description: Strategic consulting, investment, and innovation services
 baseurl: ""
 url: "https://deerfieldgreen.com"
 permalink: /:title/
-logo: /assets/images/linkedin-1.png
+# logo: /assets/images/logo.png
 
 future: true
 
