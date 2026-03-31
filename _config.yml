@@ -1,5 +1,12 @@
 remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 minimal_mistakes_skin: "mint"
+locale: "en"
+
+# Organization info for structured data
+name: "Deerfield Green"
+
+# SEO
+title_separator: "|"
 
 title: Deerfield Green
 subtitle: "Strategic Consulting & Quantitative Investment"
@@ -15,6 +22,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-remote-theme
+  - jekyll-sitemap
 
 include:
   - _pages

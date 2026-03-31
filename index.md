@@ -1,6 +1,6 @@
 ---
 layout: splash
-title: "Deerfield Green"
+title: " "
 permalink: /
 header:
   overlay_image: /assets/images/handshake.jpg
@@ -8,7 +8,7 @@ header:
   actions:
     - label: "Contact Us"
       url: /contact/
-tagline: "Strategic consulting, quantitative investment, and purposeful philanthropy — bridging Japanese excellence with global ambition."
+tagline: "Thoughtful. Patient. Quantitative."
 
 feature_row:
   - image_path: /assets/images/2250982679.jpg
