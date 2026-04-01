@@ -1,0 +1,249 @@
+---
+# Only the main Sass file needs front matter dashes
+---
+
+@charset "utf-8";
+
+// Brand colors - gold/warm palette inspired by original Divi design
+$primary-color: #b8860b; // dark goldenrod
+$footer-background-color: #1a1a2e; // dark navy
+$link-color: #b8860b;
+$masthead-link-color: #494e52;
+$masthead-link-color-hover: #b8860b;
+$navicon-link-color-hover: #b8860b;
+
+// Typography - elegant serif for headings
+$serif: "Playfair Display", Georgia, "Times New Roman", serif;
+$header-font-family: $serif;
+$caption-font-family: $serif;
+
+// Skin overrides
+$background-color: #fff;
+$text-color: #2d2d2d;
+
+@import "minimal-mistakes/skins/mint";
+@import "minimal-mistakes";
+
+// === CUSTOM STYLES ===
+
+// Google Fonts import
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+// Body font
+body {
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+// Masthead / Navigation
+.masthead {
+  border-bottom: 2px solid rgba(184, 134, 11, 0.3);
+  background: #fff;
+
+  .site-title {
+    font-family: $serif;
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+
+  .site-subtitle {
+    font-size: 0.65em;
+    color: #b8860b;
+    display: block;
+  }
+}
+
+.greedy-nav {
+  a {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+  }
+
+  .visible-links a {
+    &:before {
+      background: #b8860b;
+    }
+  }
+}
+
+// Hero / Splash page
+.page__hero--overlay {
+  padding: 6em 0 4em;
+  min-height: 400px;
+
+  .page__title {
+    font-family: $serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .page__lead {
+    font-family: $serif;
+    font-style: italic;
+    font-size: 1.3em;
+    max-width: 700px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  }
+
+  .btn--primary {
+    background-color: #b8860b;
+    border-color: #b8860b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.75em 2em;
+
+    &:hover {
+      background-color: darken(#b8860b, 10%);
+      border-color: darken(#b8860b, 10%);
+    }
+  }
+}
+
+// Feature rows - card style with dark backgrounds
+.feature__wrapper {
+  margin-bottom: 0;
+  border-bottom: none;
+
+  .feature__item {
+    margin-bottom: 2em;
+
+    .feature__item-teaser {
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+
+      img {
+        transition: transform 0.3s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+      }
+    }
+
+    .archive__item {
+      background: #1a1a2e;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      }
+    }
+
+    .archive__item-title {
+      color: #b8860b;
+      font-family: $serif;
+      padding: 0 1em;
+      margin-top: 0.8em;
+    }
+
+    .archive__item-excerpt {
+      color: #ccc;
+      padding: 0 1em;
+      font-size: 0.9em;
+      line-height: 1.6;
+    }
+
+    .archive__item-body {
+      padding-bottom: 1em;
+    }
+
+    .btn--primary {
+      background-color: #b8860b;
+      border-color: #b8860b;
+      margin-left: 1em;
+      margin-bottom: 1em;
+
+      &:hover {
+        background-color: lighten(#b8860b, 10%);
+      }
+    }
+  }
+}
+
+// Diagonal section divider between feature rows
+.feature__wrapper + .feature__wrapper {
+  position: relative;
+  margin-top: 3em;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2em;
+    left: 0;
+    right: 0;
+    height: 4em;
+    background: linear-gradient(175deg, #fff 49%, transparent 49%);
+    z-index: 1;
+  }
+}
+
+// Section separator
+.page__content {
+  h2 {
+    font-family: $serif;
+    color: #1a1a2e;
+    border-bottom: 2px solid rgba(184, 134, 11, 0.3);
+    padding-bottom: 0.3em;
+  }
+}
+
+// Footer
+.page__footer {
+  background: #1a1a2e;
+  color: #ccc;
+
+  footer {
+    color: #999;
+  }
+
+  a {
+    color: #b8860b;
+
+    &:hover {
+      color: lighten(#b8860b, 15%);
+    }
+  }
+}
+
+// Single page styling
+.page__title {
+  font-family: $serif;
+}
+
+// Author sidebar
+.author__name {
+  font-family: $serif;
+}
+
+.author__bio {
+  font-style: italic;
+}
+
+// Blog post cards
+.list__item {
+  .archive__item-title {
+    font-family: $serif;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .page__hero--overlay {
+    padding: 3em 1em 2em;
+
+    .page__title {
+      font-size: 1.8em;
+    }
+
+    .page__lead {
+      font-size: 1.1em;
+    }
+  }
+}

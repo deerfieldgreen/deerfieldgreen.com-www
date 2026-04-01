@@ -1,0 +1,75 @@
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+minimal_mistakes_skin: "mint"
+locale: "en"
+
+# Organization info for structured data
+name: "Deerfield Green"
+
+# SEO
+title_separator: "|"
+
+title: Deerfield Green
+subtitle: "Strategic Consulting & Quantitative Investment"
+description: Strategic consulting, investment, and innovation services
+baseurl: ""
+url: "https://deerfieldgreen.com"
+permalink: /:title/
+logo: /assets/images/Deerfield-Green-Vertical-logo-JEPG.jpg
+
+future: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-remote-theme
+  - jekyll-sitemap
+
+include:
+  - _pages
+  - ja
+
+# Author sidebar
+author:
+  name: "Deerfield Green"
+  bio: "Quantitative investment, strategic consulting, and purposeful philanthropy. Based in Tokyo and Atlanta."
+  location: "Minato-ku, Tokyo"
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/Kevinostoll"
+
+# Navigation
+header_pages: []
+
+# Footer
+footer:
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/Kevinostoll"
+
+# Defaults
+defaults:
+  - scope:
+      path: "_pages"
+    values:
+      layout: single
+      author_profile: false
+  - scope:
+      path: "_posts"
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+  - scope:
+      path: "ja"
+    values:
+      lang: ja
+      author_profile: false
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
