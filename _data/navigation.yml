@@ -1,14 +1,12 @@
 main:
-  - title: "Team"
-    url: /team/
+  - title: "Assets"
+    url: /assets/
   - title: "Consulting"
     url: /consulting/
+  - title: "Team"
+    url: /team/
   - title: "Investment"
     url: /investment/
-  - title: "Incubator"
-    url: /incubator/
-  - title: "Private Equity"
-    url: /private-equity/
   - title: "Philanthropy"
     url: /philanthropy/
   - title: "Life @DFG"
@@ -21,16 +19,14 @@ main:
     url: /ja/
 
 main_ja:
-  - title: "チーム"
-    url: /ja/team/
+  - title: "アセット"
+    url: /ja/assets/
   - title: "コンサルティング"
     url: /ja/consulting/
+  - title: "チーム"
+    url: /ja/team/
   - title: "投資"
     url: /ja/investment/
-  - title: "インキュベーター"
-    url: /ja/incubator/
-  - title: "プライベート・エクイティ"
-    url: /ja/private-equity/
   - title: "慈善活動"
     url: /ja/philanthropy/
   - title: "DFGでの生活"
