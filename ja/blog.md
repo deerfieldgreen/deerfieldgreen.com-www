@@ -1,7 +1,7 @@
 ---
 layout: home
-title: "ブログ"
-permalink: /ja/blog/
+title: "記事"
+permalink: /ja/articles/
 lang: ja
 ---
 

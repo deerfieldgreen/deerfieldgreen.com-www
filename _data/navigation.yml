@@ -11,8 +11,8 @@ main:
     url: /philanthropy/
   - title: "Life @DFG"
     url: /life/
-  - title: "Blog"
-    url: /blog/
+  - title: "Articles"
+    url: /articles/
   - title: "Contact"
     url: /contact/
   - title: "JP"
@@ -31,8 +31,8 @@ main_ja:
     url: /ja/philanthropy/
   - title: "DFGでの生活"
     url: /ja/life/
-  - title: "ブログ"
-    url: /ja/blog/
+  - title: "記事"
+    url: /ja/articles/
   - title: "お問い合わせ"
     url: /ja/contact/
   - title: "EN"
