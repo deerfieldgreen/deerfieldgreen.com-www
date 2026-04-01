@@ -1,0 +1,115 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Life @DFG',
+  description: 'A haven for intellectual exploration and innovation',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Life @DFG"
+    title="A Haven for Intellectual Exploration"
+  />
+
+  <!-- Culture Section ******************* -->
+
+  <Content
+    id="culture"
+    image={{
+      src: '~/assets/images/workforce-960x540.jpg.webp',
+      alt: 'Culture at Deerfield Green',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Culture</h3>
+      <p class="text-lg text-muted mb-4">
+        Deerfield Green is a unique firm that fosters a culture of intellectual curiosity, embracing the geeky and nerdy passions of its diverse and vibrant team. At Deerfield Green, our people are perpetually hungry for new knowledge, techniques, and ideas, driven by an insatiable desire to learn and explore. We are a community of individuals who thrive on sharing knowledge, seeking out the experiences of others, and engaging in open and respectful discussions.
+      </p>
+      <p class="text-lg text-muted">
+        The heartbeat of our firm is a shared love for intellectual pursuits. We celebrate the geeky and nerdy aspects of our team, recognizing that their unconventional interests and passions often lead to the most groundbreaking and innovative ideas. Our people are not only intellectually curious but also deeply passionate about their areas of expertise. They channel their passion into their work, inspiring others around them and infusing the entire organization with a sense of excitement and discovery.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Collaboration Section ******************* -->
+
+  <Content
+    id="collaboration"
+    isReversed
+    image={{
+      src: '~/assets/images/team-work.jpg',
+      alt: 'Teamwork at Deerfield Green',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Collaboration</h3>
+      <p class="text-lg text-muted mb-4">
+        At Deerfield Green, we understand that true intellectual growth comes from collaboration and a constant thirst for new perspectives. Our team actively seeks out the knowledge and experience of others, recognizing that each individual brings a unique set of insights to the table. We foster an environment where sharing knowledge is not only encouraged but celebrated, enabling our team to collectively expand their horizons and push the boundaries of what's possible.
+      </p>
+      <p class="text-lg text-muted">
+        In this firm, individuals are not limited to a narrow focus on the immediate details in front of them. They possess a deep understanding of the bigger picture and how their work fits into the broader context. This holistic view allows them to see connections, identify patterns, and come up with new and creative ideas that challenge the status quo. Each day brings fresh perspectives, innovative approaches, and the excitement of discovering unexplored possibilities.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Openness Section ******************* -->
+
+  <Content
+    id="openness"
+    image={{
+      src: '~/assets/images/team-1.jpg',
+      alt: 'Team collaboration at Deerfield Green',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Open & Inclusive</h3>
+      <p class="text-lg text-muted mb-4">
+        The culture at Deerfield Green is open and inclusive, where every individual's voice is respected and valued. We believe that diversity of thought and opinion is crucial for stimulating intellectual discourse and fostering a truly dynamic and innovative environment. We encourage our team members to express their ideas freely, knowing that their contributions are valued and will be met with open minds. This culture of openness creates a safe space for collaboration, where ideas can be refined, expanded upon, and transformed into meaningful outcomes.
+      </p>
+      <p class="text-lg text-muted">
+        In summary, Deerfield Green is not just a firm, but a community of intellectually curious individuals who embrace their geeky and nerdy passions. With a thirst for knowledge, a drive for exploration, and a commitment to sharing ideas, our team propels us forward on a continuous journey of growth and innovation. Together, we create a haven for intellectual exploration, where creative ideas are born, and the possibilities are endless.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Locations ******************* -->
+
+  <Features2
+    title="Our Locations"
+    tagline="Where we work"
+    columns={2}
+    items={[
+      {
+        title: 'Minato-ku, Tokyo, Japan',
+        description: 'Our headquarters in the heart of Tokyo.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Milton, Georgia',
+        description: 'Our U.S. office in the greater Atlanta area.',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <!-- Careers ******************* -->
+
+  <Content
+    id="careers"
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">For Researchers, For Quants, For Students</h3>
+      <h4 class="text-xl font-semibold tracking-tight dark:text-white mb-2">Open Positions</h4>
+      <p class="text-lg text-muted">
+        Nothing available now
+      </p>
+    </Fragment>
+  </Content>
+</Layout>

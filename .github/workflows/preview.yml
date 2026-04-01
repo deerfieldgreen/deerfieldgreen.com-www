@@ -12,13 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: ruby/setup-ruby@v1
+      - uses: actions/setup-node@v4
         with:
-          ruby-version: "3.3"
-          bundler-cache: true
+          node-version: '20'
+          cache: 'npm'
 
-      - name: Build Jekyll
-        run: bundle exec jekyll build
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Astro
+        run: npm run build
 
       - name: Deploy preview
         uses: cloudflare/wrangler-action@v3
@@ -26,11 +29,11 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy --name deerfieldgreen-www-pr-${{ github.event.pull_request.number }}
+          command: pages deploy dist --project-name=deerfieldgreen-www --branch=pr-${{ github.event.pull_request.number }}
 
       - name: Comment preview URL
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           message: |
             **Preview deployed!**
-            https://deerfieldgreen-www-pr-${{ github.event.pull_request.number }}.kevin-stoll.workers.dev
+            https://pr-${{ github.event.pull_request.number }}.deerfieldgreen-www.pages.dev

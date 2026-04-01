@@ -1,0 +1,57 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Assets',
+  description: 'Curated resources from the Deerfield Green team',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Assets"
+    title="Curated Resources"
+    subtitle="Curated resources from the Deerfield Green team"
+  />
+
+  <!-- Resources Grid ******************* -->
+
+  <Features2
+    title="Our Resources"
+    columns={2}
+    items={[
+      {
+        title: 'Books',
+        description:
+          'Recommended reading from our team — titles that have shaped our thinking on investment, strategy, and innovation. Coming soon.',
+        icon: 'tabler:book',
+      },
+      {
+        title: 'Articles',
+        description:
+          'Selected articles and publications by our team and partners.',
+        icon: 'tabler:article',
+        callToAction: {
+          text: 'View all articles',
+          href: '/articles/',
+        },
+      },
+      {
+        title: 'Frameworks',
+        description:
+          'Proprietary and open frameworks we use to guide decision-making, strategy, and analysis. Coming soon.',
+        icon: 'tabler:sitemap',
+      },
+      {
+        title: 'Prototypes',
+        description:
+          'Experimental projects and proof-of-concept work from our incubator and research teams. Coming soon.',
+        icon: 'tabler:flask',
+      },
+    ]}
+  />
+</Layout>

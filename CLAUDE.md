@@ -4,33 +4,42 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Content and assets for [deerfieldgreen.com](https://deerfieldgreen.com/) — a Jekyll site deployed via GitHub Pages.
+Content and assets for [deerfieldgreen.com](https://deerfieldgreen.com/) — an Astro site (AstroWind template) deployed via Cloudflare Pages.
 
 ## Build & Serve
 
 ```bash
-bundle install          # install dependencies
-bundle exec jekyll serve  # local dev server (http://localhost:4000)
-bundle exec jekyll build  # build to _site/
+npm install             # install dependencies
+npm run dev             # local dev server (http://localhost:4321)
+npm run build           # build to dist/
+npm run preview         # preview build locally
 ```
 
-Requires Ruby and Bundler. Uses the `github-pages` gem with the `minima` theme.
+Requires Node.js 20+. Uses Astro with Tailwind CSS (AstroWind template).
 
 ## Repository Structure
 
-- **_config.yml** — Jekyll configuration (title, URL, permalink structure, plugins)
-- **_posts/** — Blog posts (Jekyll naming convention: `YYYY-MM-DD-title.md`)
-- **_pages/** — Static pages
-- **assets/images/** — Site images
-- **_site/** — Generated output (do not edit directly)
-- **v2.0/** — Previous version of site content (markdown, pre-Jekyll)
-- **v3.0/** — Current content drafts with assets — source material being migrated into Jekyll structure
-- **research/** — Research notes (incubators, private equity) used as source material
+- **src/pages/** — Astro page components (.astro files)
+- **src/data/post/** — Blog posts in Markdown/MDX
+- **src/components/** — Reusable Astro components and widgets
+- **src/layouts/** — Page layouts (Layout, PageLayout, MarkdownLayout)
+- **src/assets/images/** — Site images (processed by Astro image optimization)
+- **src/config.yaml** — Site configuration (metadata, blog settings, analytics)
+- **src/navigation.ts** — Header and footer navigation structure
+- **public/** — Static files served as-is
+- **_jekyll_backup/** — Archived Jekyll content (migration reference)
+
+## Deployment
+
+- **Production**: Push to `main` triggers GitHub Actions → Astro build → `wrangler pages deploy` to Cloudflare Pages
+- **PR Previews**: Each PR gets a preview at `pr-{N}.deerfieldgreen-www.pages.dev`
+- **Config**: `wrangler.toml` sets `pages_build_output_dir` to `dist/`
 
 ## Key Details
 
-- `_config.yml` has `future: true` enabled, so future-dated posts are published
-- Permalink structure is `/:title/` (no date in URLs)
-- The `.gitignore` is Python-oriented (from initial repo setup) — not Jekyll-specific
-- WordPress XML exports in the root are for backup/migration (converting old site content to markdown)
-- Content in v2.0/v3.0 directories is reference material from the pre-Jekyll site; new content should go into `_posts/` and `_pages/`
+- Bilingual site: English at `/` and Japanese at `/ja/`
+- Blog posts use `publishDate` frontmatter field (ISO format with Z suffix)
+- Blog is configured as "articles" in config.yaml (pathname: 'articles')
+- Permalink structure for posts: `/%slug%`
+- Uses AstroWind widgets: Hero, Content, Features, CallToAction, Contact, etc.
+- Tailwind CSS for styling with custom configuration in tailwind.config.js

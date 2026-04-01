@@ -6,18 +6,25 @@ import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
   title: 'Contact',
+  description: 'Get in touch with the Deerfield Green team',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <HeroText
+    tagline="Contact Us"
+    title="Get in Touch"
+    subtitle="Got an idea? Use the form below to shoot us a message and we'll get back to you within a few days."
+  />
+
+  <!-- Contact Form ******************* -->
 
   <ContactUs
     id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    title="Leave a Message"
+    subtitle="We'd love to hear from you. Fill out the form below and our team will respond promptly."
     inputs={[
       {
         type: 'text',
@@ -37,42 +44,43 @@ const metadata = {
       label:
         'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
     }}
-    description="Our support team typically responds within 24 business hours."
+    description="Our team typically responds within a few business days."
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- Locations & Contact Info ******************* -->
 
   <Features2
-    title="We are here to help!"
+    title="Find Us"
+    tagline="Our locations"
+    columns={2}
     items={[
       {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      },
-      {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      },
-      {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Email',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
+        title: 'Tokyo, Japan',
+        description: 'Minato-ku, Tokyo',
         icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Atlanta, GA',
+        description: 'Greater Atlanta area',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <Features2
+    title="Connect"
+    tagline="Online"
+    columns={1}
+    items={[
+      {
+        title: 'LinkedIn',
+        description: 'Connect with Kevin Stoll on LinkedIn',
+        icon: 'tabler:brand-linkedin',
+        callToAction: {
+          text: 'View Profile',
+          href: 'https://www.linkedin.com/in/Kevinostoll',
+          target: '_blank',
+        },
       },
     ]}
   />
