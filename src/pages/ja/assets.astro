@@ -1,0 +1,57 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'アセット',
+  description: 'Deerfield Greenチームが厳選したリソース',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="アセット"
+    title="厳選リソース"
+    subtitle="Deerfield Greenチームが厳選したリソース"
+  />
+
+  <!-- Resources Grid ******************* -->
+
+  <Features2
+    title="リソース"
+    columns={2}
+    items={[
+      {
+        title: '書籍',
+        description:
+          '投資、戦略、イノベーションに関する私たちの考え方を形作ってきた推薦図書。近日公開。',
+        icon: 'tabler:book',
+      },
+      {
+        title: '記事',
+        description:
+          'チームおよびパートナーによる厳選された記事・出版物。',
+        icon: 'tabler:article',
+        callToAction: {
+          text: '記事一覧を見る',
+          href: '/ja/articles/',
+        },
+      },
+      {
+        title: 'フレームワーク',
+        description:
+          '意思決定、戦略、分析を導くために使用する独自およびオープンなフレームワーク。近日公開。',
+        icon: 'tabler:sitemap',
+      },
+      {
+        title: 'プロトタイプ',
+        description:
+          'インキュベーターおよびリサーチチームによる実験的プロジェクトとプルーフオブコンセプト。近日公開。',
+        icon: 'tabler:flask',
+      },
+    ]}
+  />
+</Layout>

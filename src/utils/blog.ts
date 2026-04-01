@@ -40,6 +40,8 @@ const generatePermalink = async ({
     .join('/');
 };
 
+const isJapanesePost = (id: string): boolean => id.startsWith('ja/');
+
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
   const { id, data } = post;
   const { Content, remarkPluginFrontmatter } = await render(post);
@@ -57,7 +59,11 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     metadata = {},
   } = data;
 
-  const slug = cleanSlug(id); // cleanSlug(rawSlug.split('/').pop());
+  // For Japanese posts (ja/ja-foo), produce slug "ja/foo" instead of "ja/ja-foo"
+  let slug = cleanSlug(id);
+  if (isJapanesePost(id)) {
+    slug = slug.replace(/^ja\/ja-/, 'ja/');
+  }
   const publishDate = new Date(rawPublishDate);
   const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
 
@@ -137,6 +143,18 @@ export const fetchPosts = async (): Promise<Array<Post>> => {
   return _posts;
 };
 
+/** Fetch only English posts */
+export const fetchEnglishPosts = async (): Promise<Array<Post>> => {
+  const posts = await fetchPosts();
+  return posts.filter((post) => !post.id.startsWith('ja/'));
+};
+
+/** Fetch only Japanese posts */
+export const fetchJapanesePosts = async (): Promise<Array<Post>> => {
+  const posts = await fetchPosts();
+  return posts.filter((post) => post.id.startsWith('ja/'));
+};
+
 /** */
 export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Post>> => {
   if (!Array.isArray(slugs)) return [];
@@ -176,7 +194,7 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
 /** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
-  return paginate(await fetchPosts(), {
+  return paginate(await fetchEnglishPosts(), {
     params: { blog: BLOG_BASE || undefined },
     pageSize: blogPostsPerPage,
   });
@@ -185,7 +203,7 @@ export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateF
 /** */
 export const getStaticPathsBlogPost = async () => {
   if (!isBlogEnabled || !isBlogPostRouteEnabled) return [];
-  return (await fetchPosts()).flatMap((post) => ({
+  return (await fetchEnglishPosts()).flatMap((post) => ({
     params: {
       blog: post.permalink,
     },
@@ -193,11 +211,34 @@ export const getStaticPathsBlogPost = async () => {
   }));
 };
 
+/** Japanese article list */
+export const getStaticPathsJaBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
+  if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
+  return paginate(await fetchJapanesePosts(), {
+    params: { page: undefined },
+    pageSize: blogPostsPerPage,
+  });
+};
+
+/** Japanese individual post pages */
+export const getStaticPathsJaBlogPost = async () => {
+  if (!isBlogEnabled || !isBlogPostRouteEnabled) return [];
+  const posts = await fetchJapanesePosts();
+  return posts.map((post) => {
+    // Strip "ja/" prefix from permalink for the catch-all param (the /ja/ is in the file path)
+    const postSlug = post.permalink.replace(/^ja\//, '');
+    return {
+      params: { post: postSlug },
+      props: { post },
+    };
+  });
+};
+
 /** */
 export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogCategoryRouteEnabled) return [];
 
-  const posts = await fetchPosts();
+  const posts = await fetchEnglishPosts();
   const categories = {};
   posts.map((post) => {
     if (post.category?.slug) {
@@ -221,7 +262,7 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
 export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogTagRouteEnabled) return [];
 
-  const posts = await fetchPosts();
+  const posts = await fetchEnglishPosts();
   const tags = {};
   posts.map((post) => {
     if (Array.isArray(post.tags)) {
@@ -245,7 +286,8 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
 
 /** */
 export async function getRelatedPosts(originalPost: Post, maxResults: number = 4): Promise<Post[]> {
-  const allPosts = await fetchPosts();
+  const isJa = originalPost.id.startsWith('ja/');
+  const allPosts = isJa ? await fetchJapanesePosts() : await fetchEnglishPosts();
   const originalTagsSet = new Set(originalPost.tags ? originalPost.tags.map((tag) => tag.slug) : []);
 
   const postsWithScores = allPosts.reduce((acc: { post: Post; score: number }[], iteratedPost: Post) => {
