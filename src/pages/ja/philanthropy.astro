@@ -1,0 +1,118 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: '慈善活動',
+  description: '日本文化の保護とコミュニティの支援',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="慈善活動"
+    title="日本文化の保護とコミュニティの支援"
+  />
+
+  <!-- Introduction Content ******************* -->
+
+  <Content
+    id="intro"
+    columns={1}
+  >
+    <Fragment slot="content">
+      <p class="text-lg text-muted mb-4">
+        Deerfield Green is a dedicated philanthropic firm with a strong focus on the preservation of Japanese culture, supporting scholarships, and promoting mental health initiatives, particularly in the areas of suicide prevention and domestic abuse. With a predominant focus on the Japanese market, we strive to make a meaningful impact by partnering with notable non-profit organizations that share our vision and have a primary mission in these critical areas.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Focus Areas ******************* -->
+
+  <Features2
+    title="重点分野"
+    tagline="社会への貢献"
+    columns={3}
+    items={[
+      {
+        title: '文化遺産の保護',
+        description:
+          '伝統芸術、工芸、祭り、史跡、文化教育プログラムなど、日本文化の保護と振興に関する活動への投資。',
+        icon: 'tabler:building-castle',
+      },
+      {
+        title: '奨学金',
+        description:
+          '将来のリーダー、思想家、イノベーターの育成に貢献するため、優秀な学生への資金援助とリソースの提供。',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'メンタルヘルス',
+        description:
+          '自殺予防や家庭内虐待に関するカウンセリング、啓発活動、ヘルプライン等のサービスを提供する組織の支援。',
+        icon: 'tabler:heart-handshake',
+      },
+    ]}
+  />
+
+  <!-- Cultural Preservation Detail ******************* -->
+
+  <Content
+    id="culture"
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">文化遺産の保護</h3>
+      <p class="text-lg text-muted mb-4">
+        At Deerfield Green, our primary objective is to preserve and celebrate the rich cultural heritage of Japan. We believe that cultural preservation is essential for the identity and well-being of a society. By investing in initiatives that promote and safeguard Japanese culture, we aim to ensure that future generations can embrace and learn from their historical roots. We support organizations that engage in activities such as the preservation of traditional arts, crafts, festivals, historical sites, and cultural education programs.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Scholarships Detail ******************* -->
+
+  <Content
+    id="scholarships"
+    isReversed
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">奨学金</h3>
+      <p class="text-lg text-muted mb-4">
+        Recognizing the importance of education and knowledge, Deerfield Green places a significant emphasis on scholarships. We firmly believe that education is the key to unlocking opportunities and empowering individuals to realize their full potential. By providing financial support and resources to deserving students, we aim to create pathways for excellence and contribute to the development of future leaders, thinkers, and innovators who will shape Japan's future.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Mental Health Detail ******************* -->
+
+  <Content
+    id="mental-health"
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">メンタルヘルスの推進</h3>
+      <p class="text-lg text-muted mb-4">
+        In addition to cultural preservation and scholarships, Deerfield Green is deeply committed to mental health initiatives, with a particular focus on suicide prevention and domestic abuse. We understand the urgent need to address these pressing societal challenges and support organizations that work tirelessly to provide counseling, awareness campaigns, helplines, and other crucial resources. By funding programs that promote mental health, reduce stigma, and offer support to individuals in crisis, we strive to create a society that prioritizes emotional well-being and provides a safe environment for all.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Grant-Making Process ******************* -->
+
+  <Content
+    id="grants"
+    isReversed
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">私たちのアプローチ</h3>
+      <p class="text-lg text-muted mb-4">
+        Central to our approach is the annual grant-making process, where we carefully select notable non-profit organizations that align with our core mission. We value transparency, accountability, and measurable impact, ensuring that our grants are utilized effectively to maximize positive outcomes. By establishing long-term partnerships and fostering collaboration among diverse stakeholders, we aim to create a sustainable and lasting change in the areas we support.
+      </p>
+      <p class="text-lg text-muted">
+        In summary, Deerfield Green is a firm deeply committed to preserving Japanese culture, empowering communities through scholarships, and advancing mental health initiatives, specifically focused on suicide prevention and domestic abuse. By investing in the Japanese market and partnering with notable non-profit organizations, we strive to make a significant and meaningful impact. Together, we can create a society that cherishes its cultural heritage, nurtures its youth, and provides support for those in need, building a brighter and more inclusive future for all.
+      </p>
+    </Fragment>
+  </Content>
+</Layout>

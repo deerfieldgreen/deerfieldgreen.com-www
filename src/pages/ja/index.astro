@@ -1,0 +1,126 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'ディアフィールド・グリーン',
+  description: '戦略的コンサルティング、クオンツ投資、そして目的ある慈善活動 — 日本の卓越性とグローバルな志をつなぐ。',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'お問い合わせ',
+        href: '/ja/contact/',
+      },
+    ]}
+    image={{ src: '~/assets/images/handshake.jpg', alt: 'ディアフィールド・グリーン' }}
+  >
+    <Fragment slot="title">
+      ディアフィールド・グリーン
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      戦略的コンサルティング、クオンツ投資、そして目的ある慈善活動 — 日本の卓越性とグローバルな志をつなぐ。
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="services"
+    title="事業内容"
+    items={[
+      {
+        title: '投資',
+        description:
+          'アルゴリズム、機械学習、AIを活用してNYSEとNASDAQへの戦略的投資を行う最先端のブティック型ヘッジファンド。',
+        icon: 'tabler:chart-line',
+        callToAction: {
+          text: '詳細を見る',
+          href: '/ja/investment/',
+        },
+      },
+      {
+        title: 'コンサルティング',
+        description:
+          'SaaSビジネスのサブスクリプション収益拡大を支援。シリコンバレー、ヘルスケア、製造業など40社以上の実績。',
+        icon: 'tabler:briefcase',
+        callToAction: {
+          text: '詳細を見る',
+          href: '/ja/consulting/',
+        },
+      },
+      {
+        title: 'インキュベーター',
+        description:
+          'インキュベーター型ベンチャーキャピタルモデルを通じて、日本のイノベーションをグローバルヘルスケア市場へつなぐ。',
+        icon: 'tabler:bulb',
+        callToAction: {
+          text: '詳細を見る',
+          href: '/ja/incubator/',
+        },
+      },
+      {
+        title: '慈善活動',
+        description:
+          '日本文化の保護、奨学金の支援、メンタルヘルスの推進 — 特に自殺予防と家庭内虐待の分野に注力。',
+        icon: 'tabler:heart-handshake',
+        callToAction: {
+          text: '詳細を見る',
+          href: '/ja/philanthropy/',
+        },
+      },
+      {
+        title: 'プライベート・エクイティ',
+        description:
+          '日本のヘルスケアPE革命 — オペレーショナル・エクセレンスを通じた卓越したリターンを実現するペイシェント・キャピタル。',
+        icon: 'tabler:building-bank',
+        callToAction: {
+          text: '詳細を見る',
+          href: '/ja/private-equity/',
+        },
+      },
+      {
+        title: 'DFGでの生活',
+        description:
+          '知的探求の場。好奇心を大切にし、多様な情熱を受け入れ、継続的な学びの文化を育んでいます。',
+        icon: 'tabler:users',
+        callToAction: {
+          text: '詳細を見る',
+          href: '/ja/life/',
+        },
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'お問い合わせ',
+        href: '/ja/contact/',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      お気軽にお問い合わせください
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      ディアフィールド・グリーンは、日本の卓越性とグローバルな志をつなぐパートナーです。
+    </Fragment>
+  </CallToAction>
+</Layout>

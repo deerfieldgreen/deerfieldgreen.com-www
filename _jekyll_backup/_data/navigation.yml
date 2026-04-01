@@ -1,0 +1,39 @@
+main:
+  - title: "Assets"
+    url: /assets/
+  - title: "Consulting"
+    url: /consulting/
+  - title: "Team"
+    url: /team/
+  - title: "Investment"
+    url: /investment/
+  - title: "Philanthropy"
+    url: /philanthropy/
+  - title: "Life @DFG"
+    url: /life/
+  - title: "Articles"
+    url: /articles/
+  - title: "Contact"
+    url: /contact/
+  - title: "JP"
+    url: /ja/
+
+main_ja:
+  - title: "アセット"
+    url: /ja/assets/
+  - title: "コンサルティング"
+    url: /ja/consulting/
+  - title: "チーム"
+    url: /ja/team/
+  - title: "投資"
+    url: /ja/investment/
+  - title: "慈善活動"
+    url: /ja/philanthropy/
+  - title: "DFGでの生活"
+    url: /ja/life/
+  - title: "記事"
+    url: /ja/articles/
+  - title: "お問い合わせ"
+    url: /ja/contact/
+  - title: "EN"
+    url: /

@@ -1,0 +1,87 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact',
+  description: 'Get in touch with the Deerfield Green team',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Contact Us"
+    title="Get in Touch"
+    subtitle="Got an idea? Use the form below to shoot us a message and we'll get back to you within a few days."
+  />
+
+  <!-- Contact Form ******************* -->
+
+  <ContactUs
+    id="form"
+    title="Leave a Message"
+    subtitle="We'd love to hear from you. Fill out the form below and our team will respond promptly."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+    ]}
+    textarea={{
+      label: 'Message',
+    }}
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+    }}
+    description="Our team typically responds within a few business days."
+  />
+
+  <!-- Locations & Contact Info ******************* -->
+
+  <Features2
+    title="Find Us"
+    tagline="Our locations"
+    columns={2}
+    items={[
+      {
+        title: 'Tokyo, Japan',
+        description: 'Minato-ku, Tokyo',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Atlanta, GA',
+        description: 'Greater Atlanta area',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <Features2
+    title="Connect"
+    tagline="Online"
+    columns={1}
+    items={[
+      {
+        title: 'LinkedIn',
+        description: 'Connect with Kevin Stoll on LinkedIn',
+        icon: 'tabler:brand-linkedin',
+        callToAction: {
+          text: 'View Profile',
+          href: 'https://www.linkedin.com/in/Kevinostoll',
+          target: '_blank',
+        },
+      },
+    ]}
+  />
+</Layout>

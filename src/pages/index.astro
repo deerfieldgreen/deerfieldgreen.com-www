@@ -1,0 +1,152 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Deerfield Green — Strategic Consulting & Quantitative Investment',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/contact/',
+        icon: 'tabler:mail',
+      },
+    ]}
+    image={{ src: '~/assets/images/handshake.jpg', alt: 'Deerfield Green — Thoughtful. Patient. Quantitative.' }}
+  >
+    <Fragment slot="title">
+      Thoughtful. Patient.<br /><span class="text-accent dark:text-white">Quantitative.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Strategic consulting, quantitative investment, and purposeful philanthropy.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="services"
+    tagline="What We Do"
+    title="Our Services"
+    subtitle="Deerfield Green bridges Japanese innovation with global markets through strategic consulting, quantitative investment, and purposeful community engagement."
+    items={[
+      {
+        title: 'Investment',
+        description:
+          'Algorithms, machine learning, and AI-driven strategic investment in NYSE and NASDAQ, focused on managing risk and generating alpha through non-correlated returns.',
+        icon: 'tabler:chart-line',
+        callToAction: { text: 'Learn more', href: '/investment/' },
+      },
+      {
+        title: 'Consulting',
+        description:
+          'Helping SaaS businesses grow their subscription revenue. Over 40 clients across Silicon Valley, healthcare, and manufacturing.',
+        icon: 'tabler:briefcase',
+        callToAction: { text: 'Learn more', href: '/consulting/' },
+      },
+      {
+        title: 'Incubator',
+        description:
+          'Bridging Japanese innovation with global healthcare markets through an incubator-style venture capital model.',
+        icon: 'tabler:rocket',
+        callToAction: { text: 'Learn more', href: '/incubator/' },
+      },
+      {
+        title: 'Private Equity',
+        description:
+          "Japan's healthcare revolution through patient capital — operational excellence delivering exceptional returns.",
+        icon: 'tabler:building-bank',
+        callToAction: { text: 'Learn more', href: '/private-equity/' },
+      },
+      {
+        title: 'Philanthropy',
+        description:
+          'Japanese cultural preservation, scholarship support, and mental health advocacy — focusing on suicide prevention and domestic abuse.',
+        icon: 'tabler:heart',
+        callToAction: { text: 'Learn more', href: '/philanthropy/' },
+      },
+      {
+        title: 'Life @DFG',
+        description:
+          'A place of intellectual exploration. We value curiosity, embrace diverse passions, and foster a culture of continuous learning.',
+        icon: 'tabler:home',
+        callToAction: { text: 'Learn more', href: '/life/' },
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="About Our Firm"
+    title="Bridging Japanese Excellence with Global Ambition"
+    items={[
+      {
+        title: 'Cross-Pacific Expertise',
+        description:
+          'With over 25 years of experience building and scaling companies across both Japanese and American markets, we bring unique bicultural fluency to every engagement.',
+      },
+      {
+        title: 'Patient Capital Philosophy',
+        description:
+          'Aligned with the Japanese principle of "wa" (harmony), we take a long-term view — investing in relationships, operational excellence, and sustainable growth.',
+      },
+      {
+        title: 'Technology-Driven Approach',
+        description:
+          'Our proprietary algorithms, machine learning models, and AI-powered analysis enable us to uncover hidden opportunities with unparalleled accuracy.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/team-work.jpg',
+      alt: 'Deerfield Green team collaboration',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Where Eastern wisdom meets Western innovation
+      </h3>
+      Deerfield Green is a strategic consulting and quantitative investment firm connecting Japanese technological excellence with global market reach.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get in Touch',
+        href: '/contact/',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready to explore how we can work together?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Whether you're seeking strategic consulting, investment partnership, or cross-Pacific market expertise,
+      we'd love to hear from you.
+    </Fragment>
+  </CallToAction>
+</Layout>
