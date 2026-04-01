@@ -1,8 +1,9 @@
 ---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
@@ -13,217 +14,147 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- HeroText Widget ******************* -->
 
-  <Hero
-    tagline="About us"
+  <HeroText
+    tagline="About Us"
+    title="Thoughtful. Patient. Quantitative."
+  >
+    <Fragment slot="subtitle">
+      A boutique investment and consulting firm bridging Japanese excellence with global markets — combining
+      quantitative rigor, cross-Pacific expertise, and purposeful philanthropy.
+    </Fragment>
+  </HeroText>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="mission"
+    tagline="Who We Are"
+    title="Our Mission"
     image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
+      src: '~/assets/images/team-work.jpg',
+      alt: 'Deerfield Green team collaboration',
     }}
   >
-    <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white"> Beautiful Website Templates</span>
+    <Fragment slot="content">
+      <p class="text-lg text-muted mb-4">
+        Deerfield Green is a private quantitative investment firm based in Minato-ku, Tokyo, Japan. Our mission is
+        twofold: seeking alpha across global markets and channeling the yields from our portfolio into philanthropic
+        endeavors that make a positive impact on society. We firmly believe that capitalistic endeavors can be blended
+        with a deep sense of purpose to empower and improve the lives of others.
+      </p>
+      <p class="text-lg text-muted">
+        Our investment thesis centers around the singular purpose of philanthropy. We apply quantitative strategies to
+        identify and capture alpha in global markets, leveraging data-driven models and rigorous analysis. By generating
+        strong financial returns, we ensure the sustainability and growth of our philanthropic initiatives — from
+        Japanese cultural preservation and scholarships to mental health advocacy.
+      </p>
     </Fragment>
 
-    <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Hero>
+  </Content>
 
-  <!-- Stats Widget ****************** -->
+  <!-- Features Widget *************** -->
 
-  <Stats
-    title="Statistics about us"
-    stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
-    ]}
-  />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
-      },
-    ]}
-  />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'E-commerce',
-        description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
-    }}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
-    items={[
-      {
-        title: 'Customer-centric approach',
-        description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
-      },
-      {
-        title: 'Constant Improvement',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
-      },
-      {
-        title: 'Ethical Practices',
-        description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-      },
-    ]}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
-    isReversed={true}
-    callToAction={{
-      text: 'See more',
-      href: '/',
-    }}
-    items={[
-      {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
-    items={[
-      {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
-      },
-      {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
-      {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
+  <Features
+    id="services"
+    tagline="What We Do"
+    title="Our Services"
     columns={2}
     items={[
       {
-        title: 'Chat with us',
+        title: 'Investment',
         description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
+          'AI-driven quantitative investment in NYSE and NASDAQ, focused on managing risk and generating alpha through non-correlated returns.',
+        icon: 'tabler:chart-line',
       },
       {
-        title: 'Call us',
+        title: 'Consulting',
         description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
+          'Helping SaaS businesses grow their subscription revenue, with over 40 clients across Silicon Valley, healthcare, and manufacturing.',
+        icon: 'tabler:briefcase',
+      },
+      {
+        title: 'Incubator',
+        description:
+          'Bridging Japanese innovation with global healthcare markets through an incubator-style venture capital model.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Private Equity',
+        description:
+          "Japan's healthcare revolution through patient capital — operational excellence delivering exceptional returns.",
+        icon: 'tabler:building-bank',
       },
     ]}
   />
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Our Values"
+    subtitle="Guided by principles that bridge Eastern wisdom with Western innovation."
+    items={[
+      {
+        title: 'Patient Capital Philosophy',
+        description:
+          'Aligned with the Japanese principle of "wa" (harmony), we take a long-term view — investing in relationships, operational excellence, and sustainable growth.',
+      },
+      {
+        title: 'Cross-Pacific Expertise',
+        description:
+          'With over 25 years of experience building and scaling companies across both Japanese and American markets, we bring unique bicultural fluency to every engagement.',
+      },
+      {
+        title: 'Technology-Driven Approach',
+        description:
+          'Our proprietary algorithms, machine learning models, and AI-powered analysis enable us to uncover hidden opportunities with unparalleled accuracy.',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Our Locations"
+    tagline="Where we work"
+    columns={2}
+    items={[
+      {
+        title: 'Minato-ku, Tokyo, Japan',
+        description: 'Our headquarters in the heart of Tokyo.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Milton, Georgia',
+        description: 'Our U.S. office in the greater Atlanta area.',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get in Touch',
+        href: '/contact/',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready to explore how we can work together?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Whether you're seeking strategic consulting, investment partnership, or cross-Pacific market expertise,
+      we'd love to hear from you.
+    </Fragment>
+  </CallToAction>
 </Layout>
