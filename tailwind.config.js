@@ -12,11 +12,14 @@ export default {
         accent: 'var(--aw-color-accent)',
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
+        subtle: 'var(--aw-color-text-subtle)',
+        surface: 'var(--aw-color-bg-surface)',
+        border: 'var(--aw-color-border)',
       },
       fontFamily: {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
-        heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
+        heading: ['var(--aw-font-heading, ui-serif)', ...defaultTheme.fontFamily.serif],
       },
 
       animation: {
@@ -32,7 +35,17 @@ export default {
     },
   },
   plugins: [
-    typographyPlugin,
+    typographyPlugin({
+      className: 'prose',
+      config: {
+        DEFAULT: {
+          css: {
+            a: { color: 'var(--aw-color-primary)' },
+            'a:hover': { color: 'var(--aw-color-secondary)' },
+          },
+        },
+      },
+    }),
     plugin(({ addVariant }) => {
       addVariant('intersect', '&:not([no-intersect])');
     }),
