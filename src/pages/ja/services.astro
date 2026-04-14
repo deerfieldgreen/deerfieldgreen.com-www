@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -14,27 +14,17 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- HeroText Widget ******************* -->
 
-  <Hero
+  <HeroText
     tagline="サービス"
-    image={{ src: '~/assets/images/services-hero.jpg', alt: 'AIとデジタル戦略' }}
-  >
-    <Fragment slot="title">
-      AIプロダクト戦略<br /><span class="text-accent dark:text-white">& SaaS成長戦略</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      ディアフィールド・グリーンは、先進的なAIプロダクト戦略とSaaSサブスクリプション収益の専門知識を融合し、次世代インテリジェント・プロダクトの構築と定期収益の拡大を支援します。
-      <span class="block mt-1 text-xs text-gray-400">Photo by <a href="https://unsplash.com/@choys_?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Conny Schneider</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></span>
-    </Fragment>
-  </Hero>
+    title="AIプロダクト戦略 & SaaS成長戦略"
+  />
 
   <!-- Intro Narrative ******************* -->
 
   <Content
     id="intro"
-    columns={1}
   >
     <Fragment slot="content">
       <p class="text-lg text-muted mb-4">
@@ -43,6 +33,20 @@ const metadata = {
       <p class="text-lg text-muted">
         ディアフィールド・グリーンは、この2つの専門分野をワンストップで提供します。AI対応プロダクトラインの立ち上げ、ARRの加速、またはその両方が必要な場合でも、イノベーションと経済的価値を結びつける意思決定を支援します。
       </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <Image
+        src="~/assets/images/services-hero.jpg"
+        alt="AIとデジタル戦略"
+        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+        width={500}
+        height={500}
+        widths={[400, 768]}
+        sizes="(max-width: 768px) 100vw, 432px"
+        layout="responsive"
+      />
+      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@choys_?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Conny Schneider</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
     </Fragment>
   </Content>
 

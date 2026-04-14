@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -14,27 +14,17 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- HeroText Widget ******************* -->
 
-  <Hero
+  <HeroText
     tagline="Services"
-    image={{ src: '~/assets/images/services-hero.jpg', alt: 'AI and digital strategy' }}
-  >
-    <Fragment slot="title">
-      AI Product Strategy<br /><span class="text-accent dark:text-white">& SaaS Growth</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Deerfield Green combines forward-looking AI product strategy with deep SaaS subscription revenue expertise — helping organizations build the intelligent products that define what comes next while growing recurring revenue.
-      <span class="block mt-1 text-xs text-gray-400">Photo by <a href="https://unsplash.com/@choys_?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Conny Schneider</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></span>
-    </Fragment>
-  </Hero>
+    title="AI Product Strategy & SaaS Growth"
+  />
 
   <!-- Intro Narrative ******************* -->
 
   <Content
     id="intro"
-    columns={1}
   >
     <Fragment slot="content">
       <p class="text-lg text-muted mb-4">
@@ -43,6 +33,20 @@ const metadata = {
       <p class="text-lg text-muted">
         At Deerfield Green, we bring both disciplines under one roof. Whether you need to launch AI-enabled product lines, accelerate ARR, or both, our team ensures every decision connects innovation with economic value.
       </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <Image
+        src="~/assets/images/services-hero.jpg"
+        alt="AI and digital strategy"
+        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+        width={500}
+        height={500}
+        widths={[400, 768]}
+        sizes="(max-width: 768px) 100vw, 432px"
+        layout="responsive"
+      />
+      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@choys_?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Conny Schneider</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
     </Fragment>
   </Content>
 
