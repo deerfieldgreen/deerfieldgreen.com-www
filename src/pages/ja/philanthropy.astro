@@ -2,6 +2,7 @@
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
+import Image from '~/components/common/Image.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -63,11 +64,20 @@ const metadata = {
 
   <Content
     id="culture"
-    image={{
-      src: '~/assets/images/philanthropy-culture.jpg',
-      alt: '緑に囲まれた日本の伝統的な寺院の参道',
-    }}
   >
+    <Fragment slot="image">
+      <Image
+        src="~/assets/images/philanthropy-culture.jpg"
+        alt="緑に囲まれた日本の伝統的な寺院の参道"
+        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+        width={500}
+        height={500}
+        widths={[400, 768]}
+        sizes="(max-width: 768px) 100vw, 432px"
+        layout="responsive"
+      />
+      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@remi_b?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Rémi Bertogliati</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+    </Fragment>
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">文化遺産の保護</h3>
       <p class="text-lg text-muted mb-4">
@@ -81,11 +91,20 @@ const metadata = {
   <Content
     id="scholarships"
     isReversed
-    image={{
-      src: '~/assets/images/philanthropy-scholarships.jpg',
-      alt: '制服を着た日本の学生たち',
-    }}
   >
+    <Fragment slot="image">
+      <Image
+        src="~/assets/images/philanthropy-scholarships.jpg"
+        alt="制服を着た日本の学生たち"
+        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+        width={500}
+        height={500}
+        widths={[400, 768]}
+        sizes="(max-width: 768px) 100vw, 432px"
+        layout="responsive"
+      />
+      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@duonguyen?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">DuoNguyen</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+    </Fragment>
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">奨学金</h3>
       <p class="text-lg text-muted mb-4">
@@ -98,11 +117,20 @@ const metadata = {
 
   <Content
     id="mental-health"
-    image={{
-      src: '~/assets/images/philanthropy-mental-health.jpg',
-      alt: 'コミュニティサポートとメンタルウェルネス',
-    }}
   >
+    <Fragment slot="image">
+      <Image
+        src="~/assets/images/philanthropy-mental-health.jpg"
+        alt="コミュニティサポートとメンタルウェルネス"
+        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+        width={500}
+        height={500}
+        widths={[400, 768]}
+        sizes="(max-width: 768px) 100vw, 432px"
+        layout="responsive"
+      />
+      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@shamimnakhaei?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Shamim Nakhaei</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+    </Fragment>
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">メンタルヘルスの推進</h3>
       <p class="text-lg text-muted mb-4">
@@ -116,11 +144,20 @@ const metadata = {
   <Content
     id="grants"
     isReversed
-    image={{
-      src: '~/assets/images/philanthropy-approach.jpg',
-      alt: 'チームの協力とパートナーシップ',
-    }}
   >
+    <Fragment slot="image">
+      <Image
+        src="~/assets/images/philanthropy-approach.jpg"
+        alt="チームの協力とパートナーシップ"
+        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+        width={500}
+        height={500}
+        widths={[400, 768]}
+        sizes="(max-width: 768px) 100vw, 432px"
+        layout="responsive"
+      />
+      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@camylla93?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Camylla Battani</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+    </Fragment>
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">私たちのアプローチ</h3>
       <p class="text-lg text-muted mb-4">
