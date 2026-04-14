@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import HeroText from '~/components/widgets/HeroText.astro';
+import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -14,13 +14,21 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+  <!-- Hero Widget ******************* -->
 
-  <HeroText
+  <Hero
     tagline="Services"
-    title="AI Product Strategy & SaaS Growth"
-    subtitle="Deerfield Green combines forward-looking AI product strategy with deep SaaS subscription revenue expertise — helping organizations build the intelligent products that define what comes next while growing recurring revenue."
-  />
+    image={{ src: '~/assets/images/services-hero.jpg', alt: 'AI and digital strategy' }}
+  >
+    <Fragment slot="title">
+      AI Product Strategy<br /><span class="text-accent dark:text-white">& SaaS Growth</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Deerfield Green combines forward-looking AI product strategy with deep SaaS subscription revenue expertise — helping organizations build the intelligent products that define what comes next while growing recurring revenue.
+      <span class="block mt-1 text-xs text-gray-400">Photo by <a href="https://unsplash.com/@choys_?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Conny Schneider</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></span>
+    </Fragment>
+  </Hero>
 
   <!-- Intro Narrative ******************* -->
 
