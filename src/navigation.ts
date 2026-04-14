@@ -2,24 +2,20 @@ import { getPermalink, getBlogPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
-    { text: 'Investment', href: getPermalink('/investment/') },
-    { text: 'Consulting', href: getPermalink('/consulting/') },
-    { text: 'Assets', href: getPermalink('/assets/') },
+    { text: 'Services', href: getPermalink('/consulting/') },
     { text: 'Philanthropy', href: getPermalink('/philanthropy/') },
-    { text: 'Articles', href: getBlogPermalink() },
-    { text: 'Contact', href: getPermalink('/contact/') },
+    { text: 'Insights', href: getPermalink('/assets/') },
+    { text: '@DFG', href: getPermalink('/life/') },
   ],
   actions: [{ text: 'JP', href: '/ja/' }],
 };
 
 export const headerDataJa = {
   links: [
-    { text: '投資', href: '/ja/investment/' },
-    { text: 'コンサルティング', href: '/ja/consulting/' },
-    { text: 'アセット', href: '/ja/assets/' },
+    { text: 'サービス', href: '/ja/consulting/' },
     { text: '慈善活動', href: '/ja/philanthropy/' },
-    { text: '記事', href: '/ja/articles/' },
-    { text: 'お問い合わせ', href: '/ja/contact/' },
+    { text: 'インサイト', href: '/ja/assets/' },
+    { text: '@DFG', href: '/ja/life/' },
   ],
   actions: [{ text: 'EN', href: '/' }],
 };
