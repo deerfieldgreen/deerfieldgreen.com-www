@@ -17,6 +17,18 @@ npm run preview         # preview build locally
 
 Requires Node.js 20+. Uses Astro 5.12+ with Tailwind CSS 3.4 (AstroWind template).
 
+## Linting & Formatting
+
+```bash
+npm run check           # run all checks (astro + eslint + prettier)
+npm run check:astro     # type-check Astro/TS files
+npm run check:eslint    # lint with ESLint
+npm run check:prettier  # check formatting with Prettier
+npm run fix             # auto-fix eslint + prettier issues
+```
+
+Pre-commit hooks: `.pre-commit-config.yaml` runs `black` (Python formatter — for any Python scripts in the repo).
+
 ## Repository Structure
 
 ```
@@ -90,8 +102,8 @@ Widgets use slot pattern: `<Fragment slot="title">`, `<Fragment slot="subtitle">
 ## Styling
 
 - Tailwind CSS with `@tailwindcss/typography` plugin
-- CSS variables in `CustomStyles.astro`: `--aw-color-primary` (blue), `--aw-color-secondary` (dark blue), `--aw-color-accent` (purple)
-- Font: Inter Variable
+- CSS variables in `CustomStyles.astro`: `--aw-color-primary` (warm gold `rgb(196 168 130)`), `--aw-color-secondary` (dark warm `rgb(61 56 50)`), `--aw-color-accent` (same warm gold)
+- Fonts: DM Sans Variable (body), Fraunces Variable (headings/serif)
 - Theme: `light:only` (no dark mode toggle)
 - Scroll animations via custom `intersect` Tailwind variant
 
