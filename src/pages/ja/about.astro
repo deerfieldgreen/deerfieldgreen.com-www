@@ -1,0 +1,152 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: '会社概要',
+  description: '東京都港区を拠点とするプライベート・クオンツ投資会社、ディアフィールド・グリーン。戦略的投資と目的ある慈善活動の融合。',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="会社概要"
+    title="思慮深く。忍耐強く。定量的に。"
+  >
+    <Fragment slot="subtitle">
+      日本の卓越性とグローバル市場をつなぐブティック型投資・コンサルティング会社 — 定量的な厳密さ、環太平洋の専門知識、そして目的ある慈善活動を融合しています。
+    </Fragment>
+  </HeroText>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="mission"
+    tagline="私たちについて"
+    title="私たちの使命"
+    image={{
+      src: '~/assets/images/team-work.jpg',
+      alt: 'ディアフィールド・グリーンのチームコラボレーション',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="text-lg text-muted mb-4">
+        ディアフィールド・グリーンは東京都港区に本社を置くプライベート・クオンツ投資会社です。私たちの使命は2つあります。グローバル市場でアルファを追求すること、そしてポートフォリオから得られる利回りを社会にポジティブな影響を与える慈善活動に振り向けることです。資本主義的な努力は、他の人々の生活を向上させるという深い目的意識と融合させることができると確信しています。
+      </p>
+      <p class="text-lg text-muted">
+        私たちの投資理念は、フィランソロピーという唯一の目的を中心に据えています。データドリブンモデルと厳密な分析を活用し、グローバル市場でアルファを特定・獲得する定量的投資戦略を適用しています。強力な財務リターンを創出することで、日本文化の保護、奨学金、メンタルヘルスの推進といった慈善活動の持続可能性と成長を確保しています。
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="services"
+    tagline="事業内容"
+    title="サービス"
+    columns={2}
+    items={[
+      {
+        title: '投資',
+        description:
+          'AIを活用したNYSEおよびNASDAQへの定量的投資。リスク管理と非相関リターンによるアルファの創出に注力。',
+        icon: 'tabler:chart-line',
+      },
+      {
+        title: 'サービス',
+        description:
+          'SaaSビジネスのサブスクリプション収益拡大を支援。シリコンバレー、ヘルスケア、製造業など40社以上の実績。',
+        icon: 'tabler:briefcase',
+      },
+      {
+        title: 'インキュベーター',
+        description:
+          'インキュベーター型ベンチャーキャピタルモデルを通じて、日本のイノベーションをグローバルヘルスケア市場へつなぐ。',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'プライベート・エクイティ',
+        description:
+          '日本のヘルスケアPE革命 — オペレーショナル・エクセレンスを通じた卓越したリターンを実現するペイシェント・キャピタル。',
+        icon: 'tabler:building-bank',
+      },
+    ]}
+  />
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="私たちの価値観"
+    subtitle="東洋の叡智と西洋のイノベーションを架橋する原則に導かれて。"
+    items={[
+      {
+        title: 'ペイシェント・キャピタル哲学',
+        description:
+          '日本の「和」の原則に沿い、長期的な視点で投資に臨みます。関係構築、オペレーショナル・エクセレンス、持続可能な成長に注力しています。',
+      },
+      {
+        title: '環太平洋の専門知識',
+        description:
+          '日米両市場で25年以上にわたり企業の立ち上げとスケーリングに携わってきた経験から、あらゆるエンゲージメントにユニークなバイカルチュラルな視点をもたらします。',
+      },
+      {
+        title: 'テクノロジー主導のアプローチ',
+        description:
+          '独自のアルゴリズム、機械学習モデル、AIを活用した分析により、比類のない精度で隠れた投資機会を発見します。',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="所在地"
+    tagline="拠点"
+    columns={2}
+    items={[
+      {
+        title: '東京都港区',
+        description: '日本本社。',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'ジョージア州ミルトン',
+        description: '米国オフィス（アトランタ都市圏）。',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'お問い合わせ',
+        href: '/ja/contact/',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      協業の可能性を探りませんか？
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      戦略コンサルティング、投資パートナーシップ、環太平洋の市場専門知識など、お気軽にご相談ください。
+    </Fragment>
+  </CallToAction>
+</Layout>

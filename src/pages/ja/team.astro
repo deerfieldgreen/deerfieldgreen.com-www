@@ -1,6 +1,5 @@
 ---
 import Content from '~/components/widgets/Content.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
@@ -73,24 +72,4 @@ const metadata = {
       </p>
     </Fragment>
   </Content>
-
-  <!-- Additional Team Roles ******************* -->
-
-  <Features2
-    title="チームメンバー"
-    tagline="役職"
-    columns={2}
-    items={[
-      {
-        title: '主任研究員',
-        description: '',
-        icon: 'tabler:search',
-      },
-      {
-        title: 'クオンツ・アナリスト',
-        description: '',
-        icon: 'tabler:chart-bar',
-      },
-    ]}
-  />
 </Layout>

@@ -5,6 +5,7 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 import Image from '~/components/common/Image.astro';
 
 const metadata = {
@@ -204,4 +205,24 @@ const metadata = {
       },
     ]}
   />
+
+  <!-- CTA ******************* -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get in Touch',
+        href: '/contact/',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready to transform your business?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Let's discuss how Deerfield Green can help you grow.
+    </Fragment>
+  </CallToAction>
 </Layout>
