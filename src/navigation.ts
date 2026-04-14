@@ -2,7 +2,7 @@ import { getPermalink, getBlogPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
-    { text: 'Services', href: getPermalink('/consulting/') },
+    { text: 'Services', href: getPermalink('/services/') },
     { text: 'Philanthropy', href: getPermalink('/philanthropy/') },
     { text: 'Insights', href: getPermalink('/insights/') },
     { text: '@DFG', href: getPermalink('/life/') },
@@ -12,7 +12,7 @@ export const headerData = {
 
 export const headerDataJa = {
   links: [
-    { text: 'サービス', href: '/ja/consulting/' },
+    { text: 'サービス', href: '/ja/services/' },
     { text: '慈善活動', href: '/ja/philanthropy/' },
     { text: 'インサイト', href: '/ja/insights/' },
     { text: '@DFG', href: '/ja/life/' },
@@ -26,7 +26,7 @@ export const footerData = {
       title: 'Services',
       links: [
         { text: 'Investment', href: getPermalink('/investment/') },
-        { text: 'Consulting', href: getPermalink('/consulting/') },
+        { text: 'Services', href: getPermalink('/services/') },
         { text: 'Incubator', href: getPermalink('/incubator/') },
         { text: 'Private Equity', href: getPermalink('/private-equity/') },
       ],
@@ -52,7 +52,7 @@ export const footerDataJa = {
       title: 'サービス',
       links: [
         { text: '投資', href: '/ja/investment/' },
-        { text: 'コンサルティング', href: '/ja/consulting/' },
+        { text: 'サービス', href: '/ja/services/' },
         { text: 'インキュベーター', href: '/ja/incubator/' },
         { text: 'プライベート・エクイティ', href: '/ja/private-equity/' },
       ],
