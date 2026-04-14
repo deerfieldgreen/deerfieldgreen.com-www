@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import HeroText from '~/components/widgets/HeroText.astro';
+import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -14,13 +14,21 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+  <!-- Hero Widget ******************* -->
 
-  <HeroText
+  <Hero
     tagline="サービス"
-    title="AIプロダクト戦略 & SaaS成長戦略"
-    subtitle="ディアフィールド・グリーンは、先進的なAIプロダクト戦略とSaaSサブスクリプション収益の専門知識を融合し、次世代インテリジェント・プロダクトの構築と定期収益の拡大を支援します。"
-  />
+    image={{ src: '~/assets/images/services-hero.jpg', alt: 'AIとデジタル戦略' }}
+  >
+    <Fragment slot="title">
+      AIプロダクト戦略<br /><span class="text-accent dark:text-white">& SaaS成長戦略</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      ディアフィールド・グリーンは、先進的なAIプロダクト戦略とSaaSサブスクリプション収益の専門知識を融合し、次世代インテリジェント・プロダクトの構築と定期収益の拡大を支援します。
+      <span class="block mt-1 text-xs text-gray-400">Photo by <a href="https://unsplash.com/@choys_?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Conny Schneider</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></span>
+    </Fragment>
+  </Hero>
 
   <!-- Intro Narrative ******************* -->
 
