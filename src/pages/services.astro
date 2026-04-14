@@ -1,0 +1,170 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Services',
+  description: 'SaaS subscription revenue consulting and AI product strategy — where data-driven growth meets intelligent innovation.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Services"
+    title="SaaS Growth & AI Product Strategy"
+    subtitle="Deerfield Green combines deep SaaS subscription revenue expertise with forward-looking AI product strategy — helping organizations grow recurring revenue while building the intelligent products that define what comes next."
+  />
+
+  <!-- Intro Narrative ******************* -->
+
+  <Content
+    id="intro"
+    columns={1}
+  >
+    <Fragment slot="content">
+      <p class="text-lg text-muted mb-4">
+        The most successful technology companies don't treat subscription growth and AI adoption as separate initiatives — they weave them together. A stronger data strategy fuels smarter AI features. Intelligent automation reduces churn and increases lifetime value. AI-driven personalization unlocks new monetization pathways within existing subscription models.
+      </p>
+      <p class="text-lg text-muted">
+        At Deerfield Green, we bring both disciplines under one roof. Whether you need to accelerate ARR, launch AI-enabled product lines, or both, our team ensures every decision connects innovation with economic value.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- SaaS Consulting Section ******************* -->
+
+  <Content
+    id="saas"
+    image={{
+      src: '~/assets/images/team-work.jpg',
+      alt: 'Consulting Team',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">SaaS Subscription Revenue</h3>
+      <p class="mb-4">
+        Deerfield Green is a management consulting firm that helps SaaS businesses grow their subscription revenue. We have helped over 40 clients across Silicon Valley, healthcare, and manufacturing to pivot, accelerate, and grow their ARR portfolios.
+      </p>
+      <p class="mb-4">
+        We work with our clients to develop and implement comprehensive subscription revenue growth strategies that take into account the specific needs of the business, the target market, and the competitive landscape.
+      </p>
+      <p class="mb-4">
+        We also help our clients improve their sales and marketing processes, optimize their pricing strategy, and build strong customer retention programs.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- SaaS Features ******************* -->
+
+  <Features
+    title="SaaS Growth Services"
+    subtitle="A holistic approach to sustainable subscription revenue growth."
+    items={[
+      {
+        title: 'Direct and Channel Sales',
+        description:
+          'Building and optimizing direct and channel sales strategies to maximize reach and revenue.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Subscription Marketing Strategy',
+        description:
+          'Developing targeted marketing strategies designed to acquire and retain subscription customers.',
+        icon: 'tabler:speakerphone',
+      },
+      {
+        title: 'Data Strategy',
+        description:
+          'Leveraging data analytics to inform decision-making and drive business growth.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Finance',
+        description:
+          'Financial planning and modeling to ensure sustainable growth and profitability.',
+        icon: 'tabler:calculator',
+      },
+      {
+        title: 'Product Led Growth',
+        description:
+          'Implementing product-led growth strategies that drive adoption and expansion revenue.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <!-- AI Product Strategy Section ******************* -->
+
+  <Content
+    id="ai"
+    isReversed
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">AI Product Strategy</h3>
+      <p class="text-xl text-muted mb-4">Where intelligent vision meets measurable impact</p>
+      <p class="mb-4">
+        Deerfield Green partners with forward-looking leaders to transform artificial intelligence from potential into performance. We help organizations design and scale AI-enabled products that not only redefine customer experience but also drive capital efficiency and operational ROI.
+      </p>
+      <p class="mb-4">
+        We believe effective AI strategy begins with clarity of purpose and ends with measurable change. Our approach pairs visionary product thinking with pragmatic execution — architecting systems and business models that make AI investment self-reinforcing.
+      </p>
+      <p class="mb-4">
+        We collaborate with executives, product teams, and data leaders to define enterprise-wide AI vision, design scalable architectures, monetize intelligent features, orchestrate workforce transformations, and build transparent governance frameworks.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- AI Features ******************* -->
+
+  <Features2
+    title="AI Strategy Services"
+    subtitle="Building the systems and disciplines that let AI scale sustainably across your organization."
+    columns={3}
+    items={[
+      {
+        title: 'AI ROI Modeling',
+        description:
+          'Connecting investment to business outcomes through detailed performance metrics, payback analysis, and growth projections.',
+        icon: 'tabler:chart-dots-3',
+      },
+      {
+        title: 'Intelligent Cost Efficiency',
+        description:
+          'Reducing token-level OpEx through optimized inference pipelines, caching strategies, and adaptive model routing.',
+        icon: 'tabler:cpu',
+      },
+      {
+        title: 'Feature-Led Monetization',
+        description:
+          'Creating AI-driven value propositions — personalization, prediction, automation — that convert directly into revenue or retention lift.',
+        icon: 'tabler:currency-dollar',
+      },
+      {
+        title: 'Workforce Reimagination',
+        description:
+          'Guiding teams to shift from task execution to higher-order problem-solving through AI-augmented roles and continuous learning.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Data & Product Continuity',
+        description:
+          'Establishing lifecycle systems for data, models, and experimentation that keep innovation aligned with evolving market needs.',
+        icon: 'tabler:refresh',
+      },
+    ]}
+  />
+</Layout>
