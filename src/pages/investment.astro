@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Investment',
@@ -85,4 +86,24 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
+
+  <!-- CTA ******************* -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/contact/',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Interested in learning more?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Discover how Deerfield Green's quantitative approach can work for you.
+    </Fragment>
+  </CallToAction>
 </Layout>

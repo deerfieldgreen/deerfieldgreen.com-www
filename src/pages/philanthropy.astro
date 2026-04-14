@@ -2,6 +2,7 @@
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 import Image from '~/components/common/Image.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
@@ -168,4 +169,24 @@ const metadata = {
       </p>
     </Fragment>
   </Content>
+
+  <!-- CTA ******************* -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/contact/',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Support our mission
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Learn more about our philanthropic initiatives and partnership opportunities.
+    </Fragment>
+  </CallToAction>
 </Layout>

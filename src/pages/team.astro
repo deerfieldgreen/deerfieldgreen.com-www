@@ -1,11 +1,10 @@
 ---
 import Content from '~/components/widgets/Content.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'The Team',
+  title: 'Our Team',
   description: 'Blending Quantitative Investing with Purposeful Philanthropy',
 };
 ---
@@ -73,24 +72,4 @@ const metadata = {
       </p>
     </Fragment>
   </Content>
-
-  <!-- Additional Team Roles ******************* -->
-
-  <Features2
-    title="Our Team"
-    tagline="Roles"
-    columns={2}
-    items={[
-      {
-        title: 'Senior Researcher',
-        description: '',
-        icon: 'tabler:search',
-      },
-      {
-        title: 'Quant Analyst',
-        description: '',
-        icon: 'tabler:chart-bar',
-      },
-    ]}
-  />
 </Layout>

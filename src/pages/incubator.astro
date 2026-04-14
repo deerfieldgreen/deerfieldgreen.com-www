@@ -4,6 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Incubator',
@@ -262,4 +263,24 @@ const metadata = {
       </p>
     </Fragment>
   </Content>
+
+  <!-- CTA ******************* -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get in Touch',
+        href: '/contact/',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Partner with us
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Learn how our incubator model bridges Japanese innovation with global healthcare markets.
+    </Fragment>
+  </CallToAction>
 </Layout>
