@@ -5,6 +5,7 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
   title: 'Services',
@@ -17,8 +18,8 @@ const metadata = {
 
   <HeroText
     tagline="Services"
-    title="SaaS Growth & AI Product Strategy"
-    subtitle="Deerfield Green combines deep SaaS subscription revenue expertise with forward-looking AI product strategy — helping organizations grow recurring revenue while building the intelligent products that define what comes next."
+    title="AI Product Strategy & SaaS Growth"
+    subtitle="Deerfield Green combines forward-looking AI product strategy with deep SaaS subscription revenue expertise — helping organizations build the intelligent products that define what comes next while growing recurring revenue."
   />
 
   <!-- Intro Narrative ******************* -->
@@ -29,85 +30,18 @@ const metadata = {
   >
     <Fragment slot="content">
       <p class="text-lg text-muted mb-4">
-        The most successful technology companies don't treat subscription growth and AI adoption as separate initiatives — they weave them together. A stronger data strategy fuels smarter AI features. Intelligent automation reduces churn and increases lifetime value. AI-driven personalization unlocks new monetization pathways within existing subscription models.
+        The most successful technology companies don't treat AI adoption and subscription growth as separate initiatives — they weave them together. Intelligent automation reduces churn and increases lifetime value. AI-driven personalization unlocks new monetization pathways within existing subscription models. A stronger data strategy fuels smarter AI features.
       </p>
       <p class="text-lg text-muted">
-        At Deerfield Green, we bring both disciplines under one roof. Whether you need to accelerate ARR, launch AI-enabled product lines, or both, our team ensures every decision connects innovation with economic value.
+        At Deerfield Green, we bring both disciplines under one roof. Whether you need to launch AI-enabled product lines, accelerate ARR, or both, our team ensures every decision connects innovation with economic value.
       </p>
     </Fragment>
   </Content>
-
-  <!-- SaaS Consulting Section ******************* -->
-
-  <Content
-    id="saas"
-    image={{
-      src: '~/assets/images/team-work.jpg',
-      alt: 'Consulting Team',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">SaaS Subscription Revenue</h3>
-      <p class="mb-4">
-        Deerfield Green is a management consulting firm that helps SaaS businesses grow their subscription revenue. We have helped over 40 clients across Silicon Valley, healthcare, and manufacturing to pivot, accelerate, and grow their ARR portfolios.
-      </p>
-      <p class="mb-4">
-        We work with our clients to develop and implement comprehensive subscription revenue growth strategies that take into account the specific needs of the business, the target market, and the competitive landscape.
-      </p>
-      <p class="mb-4">
-        We also help our clients improve their sales and marketing processes, optimize their pricing strategy, and build strong customer retention programs.
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- SaaS Features ******************* -->
-
-  <Features
-    title="SaaS Growth Services"
-    subtitle="A holistic approach to sustainable subscription revenue growth."
-    items={[
-      {
-        title: 'Direct and Channel Sales',
-        description:
-          'Building and optimizing direct and channel sales strategies to maximize reach and revenue.',
-        icon: 'tabler:users',
-      },
-      {
-        title: 'Subscription Marketing Strategy',
-        description:
-          'Developing targeted marketing strategies designed to acquire and retain subscription customers.',
-        icon: 'tabler:speakerphone',
-      },
-      {
-        title: 'Data Strategy',
-        description:
-          'Leveraging data analytics to inform decision-making and drive business growth.',
-        icon: 'tabler:chart-bar',
-      },
-      {
-        title: 'Finance',
-        description:
-          'Financial planning and modeling to ensure sustainable growth and profitability.',
-        icon: 'tabler:calculator',
-      },
-      {
-        title: 'Product Led Growth',
-        description:
-          'Implementing product-led growth strategies that drive adoption and expansion revenue.',
-        icon: 'tabler:rocket',
-      },
-    ]}
-  />
 
   <!-- AI Product Strategy Section ******************* -->
 
   <Content
     id="ai"
-    isReversed
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">AI Product Strategy</h3>
@@ -121,6 +55,20 @@ const metadata = {
       <p class="mb-4">
         We collaborate with executives, product teams, and data leaders to define enterprise-wide AI vision, design scalable architectures, monetize intelligent features, orchestrate workforce transformations, and build transparent governance frameworks.
       </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <Image
+        src="~/assets/images/services-ai.jpg"
+        alt="AI technology and data visualization"
+        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+        width={500}
+        height={500}
+        widths={[400, 768]}
+        sizes="(max-width: 768px) 100vw, 432px"
+        layout="responsive"
+      />
+      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@growtika?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Growtika</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
     </Fragment>
 
     <Fragment slot="bg">
@@ -164,6 +112,83 @@ const metadata = {
         description:
           'Establishing lifecycle systems for data, models, and experimentation that keep innovation aligned with evolving market needs.',
         icon: 'tabler:refresh',
+      },
+    ]}
+  />
+
+  <!-- SaaS Consulting Section ******************* -->
+
+  <Content
+    id="saas"
+    isReversed
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">SaaS Subscription Revenue</h3>
+      <p class="mb-4">
+        Deerfield Green is a management consulting firm that helps SaaS businesses grow their subscription revenue. We have helped over 40 clients across Silicon Valley, healthcare, and manufacturing to pivot, accelerate, and grow their ARR portfolios.
+      </p>
+      <p class="mb-4">
+        We work with our clients to develop and implement comprehensive subscription revenue growth strategies that take into account the specific needs of the business, the target market, and the competitive landscape.
+      </p>
+      <p class="mb-4">
+        We also help our clients improve their sales and marketing processes, optimize their pricing strategy, and build strong customer retention programs.
+      </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <Image
+        src="~/assets/images/services-saas.jpg"
+        alt="Team brainstorming strategy with sticky notes"
+        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+        width={500}
+        height={500}
+        widths={[400, 768]}
+        sizes="(max-width: 768px) 100vw, 432px"
+        layout="responsive"
+      />
+      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@silverkblack?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Vitaly Gariev</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- SaaS Features ******************* -->
+
+  <Features
+    title="SaaS Growth Services"
+    subtitle="A holistic approach to sustainable subscription revenue growth."
+    items={[
+      {
+        title: 'Direct and Channel Sales',
+        description:
+          'Building and optimizing direct and channel sales strategies to maximize reach and revenue.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Subscription Marketing Strategy',
+        description:
+          'Developing targeted marketing strategies designed to acquire and retain subscription customers.',
+        icon: 'tabler:speakerphone',
+      },
+      {
+        title: 'Data Strategy',
+        description:
+          'Leveraging data analytics to inform decision-making and drive business growth.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Finance',
+        description:
+          'Financial planning and modeling to ensure sustainable growth and profitability.',
+        icon: 'tabler:calculator',
+      },
+      {
+        title: 'Product Led Growth',
+        description:
+          'Implementing product-led growth strategies that drive adoption and expansion revenue.',
+        icon: 'tabler:rocket',
       },
     ]}
   />
