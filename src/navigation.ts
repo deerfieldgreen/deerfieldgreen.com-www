@@ -4,7 +4,7 @@ export const headerData = {
   links: [
     { text: 'Services', href: getPermalink('/consulting/') },
     { text: 'Philanthropy', href: getPermalink('/philanthropy/') },
-    { text: 'Insights', href: getPermalink('/assets/') },
+    { text: 'Insights', href: getPermalink('/insights/') },
     { text: '@DFG', href: getPermalink('/life/') },
   ],
   actions: [{ text: 'JP', href: '/ja/' }],
@@ -14,7 +14,7 @@ export const headerDataJa = {
   links: [
     { text: 'サービス', href: '/ja/consulting/' },
     { text: '慈善活動', href: '/ja/philanthropy/' },
-    { text: 'インサイト', href: '/ja/assets/' },
+    { text: 'インサイト', href: '/ja/insights/' },
     { text: '@DFG', href: '/ja/life/' },
   ],
   actions: [{ text: 'EN', href: '/' }],

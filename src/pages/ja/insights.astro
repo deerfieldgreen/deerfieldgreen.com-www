@@ -1,0 +1,79 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'インサイト',
+  description: 'Deerfield Greenチームが厳選したインサイト',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="インサイト"
+    title="厳選インサイト"
+    subtitle="Deerfield Greenチームが厳選したインサイト"
+  />
+
+  <!-- Insights Grid ******************* -->
+
+  <Features2
+    title="インサイト"
+    columns={2}
+    items={[
+      {
+        title: '書籍',
+        description:
+          '投資、戦略、イノベーションに関する私たちの考え方を形作ってきた推薦図書。',
+        icon: 'tabler:book',
+        callToAction: {
+          text: '書籍を見る',
+          href: 'https://books.deerfieldgreen.com/',
+        },
+      },
+      {
+        title: 'ホワイトペーパー',
+        description:
+          '投資、テクノロジー、戦略に関する詳細な調査と分析。',
+        icon: 'tabler:file-text',
+        callToAction: {
+          text: 'ホワイトペーパーを見る',
+          href: 'https://whitepapers.deerfieldgreen.com/',
+        },
+      },
+      {
+        title: '記事',
+        description:
+          'チームおよびパートナーによる厳選された記事・出版物。',
+        icon: 'tabler:article',
+        callToAction: {
+          text: '記事一覧を見る',
+          href: '/ja/articles/',
+        },
+      },
+      {
+        title: 'フレームワーク',
+        description:
+          '意思決定、戦略、分析を導くために使用する独自およびオープンなフレームワーク。',
+        icon: 'tabler:sitemap',
+        callToAction: {
+          text: 'フレームワークを見る',
+          href: 'https://frameworks.deerfieldgreen.com/',
+        },
+      },
+      {
+        title: 'プロトタイプ',
+        description:
+          'インキュベーターおよびリサーチチームによる実験的プロジェクトとプルーフオブコンセプト。',
+        icon: 'tabler:flask',
+        callToAction: {
+          text: 'プロトタイプを見る',
+          href: 'https://prototypes.deerfieldgreen.com/',
+        },
+      },
+    ]}
+  />
+</Layout>

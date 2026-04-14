@@ -4,8 +4,8 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Assets',
-  description: 'Curated assets from the Deerfield Green team',
+  title: 'Insights',
+  description: 'Curated insights from the Deerfield Green team',
 };
 ---
 
@@ -13,22 +13,36 @@ const metadata = {
   <!-- HeroText Widget ******************* -->
 
   <HeroText
-    tagline="Assets"
-    title="Curated Assets"
-    subtitle="Curated assets from the Deerfield Green team"
+    tagline="Insights"
+    title="Curated Insights"
+    subtitle="Curated insights from the Deerfield Green team"
   />
 
-  <!-- Assets Grid ******************* -->
+  <!-- Insights Grid ******************* -->
 
   <Features2
-    title="Our Assets"
+    title="Our Insights"
     columns={2}
     items={[
       {
         title: 'Books',
         description:
-          'Recommended reading from our team — titles that have shaped our thinking on investment, strategy, and innovation. Coming soon.',
+          'Recommended reading from our team — titles that have shaped our thinking on investment, strategy, and innovation.',
         icon: 'tabler:book',
+        callToAction: {
+          text: 'View books',
+          href: 'https://books.deerfieldgreen.com/',
+        },
+      },
+      {
+        title: 'Whitepapers',
+        description:
+          'In-depth research and analysis on topics shaping investment, technology, and strategy.',
+        icon: 'tabler:file-text',
+        callToAction: {
+          text: 'View whitepapers',
+          href: 'https://whitepapers.deerfieldgreen.com/',
+        },
       },
       {
         title: 'Articles',
