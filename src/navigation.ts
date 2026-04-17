@@ -23,7 +23,7 @@ export const headerDataJa = {
 export const footerData = {
   links: [
     {
-      title: 'Services',
+      title: 'What We Do',
       links: [
         { text: 'Investment', href: getPermalink('/investment/') },
         { text: 'Services', href: getPermalink('/services/') },
@@ -49,7 +49,7 @@ export const footerData = {
 export const footerDataJa = {
   links: [
     {
-      title: 'サービス',
+      title: '事業内容',
       links: [
         { text: '投資', href: '/ja/investment/' },
         { text: 'サービス', href: '/ja/services/' },
