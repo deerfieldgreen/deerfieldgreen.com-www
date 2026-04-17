@@ -6,7 +6,7 @@ site:
 
 metadata:
   title:
-    default: 'Deerfield Green'
+    default: 'Deerfield Green — Thoughtful. Patient. Quantitative.'
     template: '%s | Deerfield Green'
   description: 'Strategic consulting, quantitative investment, and purposeful philanthropy. Based in Tokyo and Atlanta.'
   robots:
@@ -15,6 +15,12 @@ metadata:
   openGraph:
     site_name: 'Deerfield Green'
     type: website
+    description: 'A boutique firm bridging Japanese excellence with global markets — quantitative investment, AI product strategy, and purposeful philanthropy.'
+    images:
+      - url: '~/assets/images/Deerfield-Green-Dark-background-JEPG.jpg'
+        width: 1200
+        height: 630
+        alt: 'Deerfield Green'
 
 i18n:
   language: en
