@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Content and assets for [deerfieldgreen.com](https://deerfieldgreen.com/) — an Astro 5 site (AstroWind template) deployed via Cloudflare Pages.
+Content and assets for [deerfieldgreen.com](https://deerfieldgreen.com/) — an Astro 6 site (AstroWind template) deployed via Cloudflare Pages.
 
 ## Build & Serve
 
@@ -15,7 +15,7 @@ npm run build           # build to dist/
 npm run preview         # preview build locally
 ```
 
-Requires Node.js 20+. Uses Astro 5.12+ with Tailwind CSS 3.4 (AstroWind template).
+Requires Node.js 22+. Uses Astro 6.1+ with Tailwind CSS 3.4 (AstroWind template).
 
 ## Linting & Formatting
 
@@ -56,6 +56,23 @@ public/                     # Static files (_headers, robots.txt, decapcms/)
 .github/workflows/          # deploy.yml, preview.yml, preview-cleanup.yml
 ```
 
+## Pages
+
+| English Route | Japanese Route | Page |
+|---------------|---------------|------|
+| `/` | `/ja/` | Home |
+| `/about/` | `/ja/about/` | About Deerfield Green |
+| `/services/` | `/ja/services/` | Services (AI Product Strategy + SaaS Growth) |
+| `/investment/` | `/ja/investment/` | Investment (Quant Hedge Fund) |
+| `/incubator/` | `/ja/incubator/` | Incubator (Healthcare VC) |
+| `/private-equity/` | `/ja/private-equity/` | Private Equity (Japan Healthcare) |
+| `/philanthropy/` | `/ja/philanthropy/` | Philanthropy |
+| `/insights/` | `/ja/insights/` | Insights (hub linking to subdomains) |
+| `/team/` | `/ja/team/` | Team |
+| `/life/` | `/ja/life/` | Life @DFG |
+| `/contact/` | `/ja/contact/` | Contact |
+| `/articles/` | `/ja/articles/` | Blog listing |
+
 ## Configuration
 
 - **Site config**: `src/config.yaml` — exposed as virtual module `astrowind:config`
@@ -77,17 +94,13 @@ All widgets in `src/components/widgets/` accept common props: `id`, `isDark`, `b
 
 | Widget | Use for |
 |--------|---------|
-| Hero / Hero2 / HeroText | Page banners with image, text-only, or alternate layout |
-| Features / Features2 / Features3 | Icon grids with items, columns, optional image/video |
+| Hero / HeroText | Page banners with image or text-only |
+| Features / Features2 | Icon grids with items, columns, optional image/video |
 | Content | Split layout: text + image (reversible) with items |
-| Steps / Steps2 | Process/timeline displays |
+| Steps2 | Process/timeline displays |
 | CallToAction | CTA sections with actions |
 | Contact | Contact form with inputs/textarea |
 | Stats | Number/metric displays |
-| FAQs | Accordion Q&A |
-| Testimonials | Quote cards |
-| Pricing | Pricing tables |
-| Brands | Logo grids |
 | BlogLatestPosts / BlogHighlightedPosts | Blog feeds |
 
 Widgets use slot pattern: `<Fragment slot="title">`, `<Fragment slot="subtitle">`, `<Fragment slot="bg">`.
@@ -98,6 +111,16 @@ Widgets use slot pattern: `<Fragment slot="title">`, `<Fragment slot="subtitle">
 - Language detected via `Astro.url.pathname.startsWith('/ja')`
 - `PageLayout` auto-selects `headerDataJa`/`footerDataJa` for `/ja/` routes
 - Blog: `fetchJapanesePosts()` filters by `id.startsWith('ja/')`
+- All Japanese text should use です/ます (polite form) consistently
+
+## Image Attribution
+
+- Unsplash images require proper attribution below each image
+- Format: `Photo by [Name](profile_url) on [Unsplash](unsplash_url)` with UTM params (`?utm_source=deerfieldgreen&utm_medium=referral`)
+- Use small gray text: `class="mt-1 text-xs text-gray-400 text-right"`
+- Use the `<Fragment slot="image">` pattern with `Image` component + attribution `<p>` tag
+- Unsplash API key is in Doppler: project `deerfieldgreen-www`, config `prd`, key `UNSPLASH_ACCESS_KEY`
+- Always trigger download tracking via the API's `download_location` endpoint
 
 ## Styling
 
@@ -113,6 +136,7 @@ Widgets use slot pattern: `<Fragment slot="title">`, `<Fragment slot="subtitle">
 - **PR Previews**: Each PR gets a preview at `pr-{N}.deerfieldgreen-www.pages.dev`
 - **Config**: `wrangler.toml` sets `pages_build_output_dir` to `dist/`
 - **Headers**: `public/_headers` sets 1-year immutable cache for `/_astro/*` assets
+- **CI**: Node.js 22, `.npmrc` has `legacy-peer-deps=true` for Astro 6 compatibility with `@astrolib/analytics`
 
 ## Key Dependencies
 
@@ -127,7 +151,9 @@ Widgets use slot pattern: `<Fragment slot="title">`, `<Fragment slot="subtitle">
 
 ## Important Conventions
 
-- Page terminology: use "Assets" (not "Resources") — established naming
+- Page terminology: use "Insights" (not "Assets" or "Resources") for the content hub page
 - Blog is called "articles" in navigation and URLs
+- Services page covers both "AI Product Strategy" and "SaaS Growth"
 - Button variants: `primary`, `secondary`, `tertiary`, `link`
 - Images support: local paths (`~/assets/images/...`), absolute URLs, CDN URLs
+- Every content page should end with a `CallToAction` widget linking to `/contact/`
