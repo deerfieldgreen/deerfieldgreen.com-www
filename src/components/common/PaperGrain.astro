@@ -1,0 +1,33 @@
+---
+// PaperGrain — subtle paper-texture overlay rendered via inline SVG fractal noise.
+//
+// Use as a decorative absolute-positioned layer inside a `relative` container.
+// Keeps the refresh warm and tactile without adding raster assets.
+//
+// Opacity defaults are tuned for washi (light) backgrounds; bump higher on
+// sumi-black sections to let the noise register.
+
+interface Props {
+  opacity?: number;
+  tone?: 'light' | 'sumi';
+  class?: string;
+}
+
+const { opacity, tone = 'light', class: className = '' } = Astro.props;
+const effectiveOpacity = opacity ?? (tone === 'sumi' ? 0.05 : 0.035);
+const blendMode = tone === 'sumi' ? 'screen' : 'multiply';
+---
+
+<div
+  aria-hidden="true"
+  class={`pointer-events-none absolute inset-0 ${className}`}
+  style={`opacity: ${effectiveOpacity}; mix-blend-mode: ${blendMode};`}
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+    <filter id="paper-grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence>
+      <feColorMatrix type="saturate" values="0"></feColorMatrix>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#paper-grain)"></rect>
+  </svg>
+</div>

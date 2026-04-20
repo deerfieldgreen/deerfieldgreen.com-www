@@ -1,0 +1,160 @@
+---
+// ContentKintsugi — v2 of the Content widget.
+//
+// Split text + image "About Our Firm" section, Kintsugi / Wabi-Modern
+// aesthetic: sumi-ink on washi, warm sepia-duotone image with a thin
+// gold frame, numbered dossier-style bullets instead of icon lists.
+
+import Image from '~/components/common/Image.astro';
+import PaperGrain from '~/components/common/PaperGrain.astro';
+import SeamDivider from '~/components/common/SeamDivider.astro';
+
+interface ContentItem {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  intro?: string;
+  items: ContentItem[];
+  // `src` accepts a local import path string or an Astro ImageMetadata object.
+  image?: { src: string | import('astro').ImageMetadata; alt: string };
+  isReversed?: boolean;
+}
+
+const { id, eyebrow, title, intro, items, image, isReversed = false } = Astro.props;
+
+const eyebrowSlot = await Astro.slots.render('eyebrow');
+const titleSlot = await Astro.slots.render('title');
+const introSlot = await Astro.slots.render('intro');
+
+const eyebrowHtml = eyebrowSlot || eyebrow || '';
+const titleHtml = titleSlot || title || '';
+const introHtml = introSlot || intro || '';
+
+const pad = (n: number) => String(n).padStart(2, '0');
+
+const textOrder = isReversed ? 'md:order-2' : 'md:order-1';
+const imageOrder = isReversed ? 'md:order-1' : 'md:order-2';
+---
+
+<section
+  {...id ? { id } : {}}
+  class="relative bg-[var(--aw-color-bg-page)] py-24 md:py-36"
+>
+  <PaperGrain tone="light" opacity={0.03} />
+
+  <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
+    <SeamDivider variant="default" tone="light" class="mb-20 md:mb-28" />
+
+    <div class="md:grid md:grid-cols-12 md:gap-16 lg:gap-24 items-center">
+      {/* Text column */}
+      <div class={`${textOrder} md:col-span-7`}>
+        {
+          eyebrowHtml && (
+            <p
+              class="font-mono text-[11px] tracking-[0.22em] uppercase text-[var(--aw-color-primary)] mb-6 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+              style="animation-delay: 0ms;"
+              set:html={eyebrowHtml}
+            />
+          )
+        }
+
+        {
+          titleHtml && (
+            <h2
+              class="font-heading text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-[-0.01em] text-[var(--aw-color-text-heading)] intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+              style="animation-delay: 80ms;"
+              set:html={titleHtml}
+            />
+          )
+        }
+
+        {
+          introHtml && (
+            <p
+              class="mt-6 text-lg md:text-xl leading-relaxed text-[var(--aw-color-text-default)] max-w-[54ch] intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+              style="animation-delay: 160ms;"
+              set:html={introHtml}
+            />
+          )
+        }
+
+        {
+          items && items.length > 0 && (
+            <ol
+              class="mt-12 md:mt-16 space-y-10 list-none intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+              style="animation-delay: 240ms;"
+            >
+              {items.map((item, i) => (
+                <li class="flex gap-6 items-start">
+                  <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-[var(--aw-color-primary)] pt-1">
+                    {pad(i + 1)}
+                  </span>
+                  <div>
+                    <h3 class="font-heading text-xl md:text-2xl leading-snug text-[var(--aw-color-text-heading)]">
+                      {item.title}
+                    </h3>
+                    <p class="mt-2 text-[var(--aw-color-text-muted)] text-base md:text-[17px] leading-relaxed max-w-[52ch]">
+                      {item.description}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          )
+        }
+      </div>
+
+      {/* Image column */}
+      <div class={`${imageOrder} md:col-span-5 mt-12 md:mt-0`}>
+        {
+          image && (
+            <figure
+              class="relative intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+              style="animation-delay: 320ms;"
+            >
+              <div class="relative">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  widths={[400, 768, 1024]}
+                  sizes="(max-width: 768px) 100vw, 432px"
+                  layout="responsive"
+                  width={800}
+                  height={1000}
+                  class="w-full h-auto"
+                  style="filter: grayscale(1) sepia(0.25) contrast(1.05) brightness(0.97);"
+                />
+                <div
+                  class="absolute inset-0 bg-[rgb(183_138_67_/_10%)] mix-blend-multiply pointer-events-none"
+                  aria-hidden="true"
+                />
+                <div
+                  class="absolute inset-0 border border-[var(--aw-color-border)] pointer-events-none"
+                  aria-hidden="true"
+                />
+              </div>
+
+              <SeamDivider
+                variant="inline"
+                tone="light"
+                animated={false}
+                class="mt-6 !max-w-[180px]"
+              />
+
+              <figcaption
+                class="mt-3 font-mono text-[11px] tracking-[0.22em] uppercase text-[var(--aw-color-text-subtle)]"
+              >
+                {image.alt}
+              </figcaption>
+            </figure>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

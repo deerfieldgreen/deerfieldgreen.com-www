@@ -1,0 +1,116 @@
+---
+// FeaturesSeam — Kintsugi refresh of the homepage offerings grid.
+//
+// Replaces the 6-card services grid with a numbered, seam-divided list.
+// Each offering is its own row — like chapters in a thesis letter. No
+// cards, no icons. Typographic mono tags, serif titles, restrained.
+
+import PaperGrain from '~/components/common/PaperGrain.astro';
+import SeamDivider from '~/components/common/SeamDivider.astro';
+
+interface FeatureItem {
+  label: string;
+  title: string;
+  description: string;
+  href?: string;
+  linkText?: string;
+}
+
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  items: FeatureItem[];
+  defaultLinkText?: string;
+}
+
+const { id, eyebrow, title, subtitle, items, defaultLinkText = 'Learn more →' } = Astro.props;
+
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+
+<section
+  {...id ? { id } : {}}
+  class="relative bg-[var(--aw-color-bg-surface)] py-24 md:py-36"
+>
+  <PaperGrain tone="light" opacity={0.03} />
+
+  <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
+    {
+      (eyebrow || title || subtitle) && (
+        <div class="max-w-3xl">
+          {eyebrow && (
+            <p class="font-mono text-[11px] tracking-[0.22em] uppercase text-[var(--aw-color-primary)] mb-6">
+              {eyebrow}
+            </p>
+          )}
+          {title && (
+            <h2 class="font-heading text-4xl md:text-6xl leading-[1.05] tracking-[-0.01em] text-[var(--aw-color-text-heading)]">
+              {title}
+            </h2>
+          )}
+          {subtitle && (
+            <p class="mt-5 text-lg text-[var(--aw-color-text-muted)] max-w-[56ch]">{subtitle}</p>
+          )}
+        </div>
+      )
+    }
+
+    <SeamDivider variant="default" tone="light" class="mt-16 md:mt-24" />
+
+    <ol class="mt-0 list-none" role="list">
+      {
+        items.map((item, index) => (
+          <li class="relative">
+            <div class="py-10 md:py-14 md:grid md:grid-cols-12 md:gap-10 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+              {/* Mobile: stacked prefix + label on one line above title */}
+              <div class="flex items-center gap-4 md:hidden mb-4">
+                <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-[var(--aw-color-primary)]">
+                  § {pad(index + 1)}
+                </span>
+                <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-[var(--aw-color-text-subtle)]">
+                  {item.label}
+                </span>
+              </div>
+
+              {/* Desktop col 1: numeric prefix */}
+              <div class="hidden md:block md:col-span-1">
+                <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-[var(--aw-color-primary)]">
+                  § {pad(index + 1)}
+                </span>
+              </div>
+
+              {/* Desktop col 2: mono label */}
+              <div class="hidden md:block md:col-span-3">
+                <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-[var(--aw-color-text-subtle)]">
+                  {item.label}
+                </span>
+              </div>
+
+              {/* Col 3: serif title + description */}
+              <div class="md:col-span-5">
+                <h3 class="font-heading text-[28px] md:text-[32px] leading-[1.15] text-[var(--aw-color-text-heading)]">
+                  {item.title}
+                </h3>
+                <p class="mt-4 text-[var(--aw-color-text-default)] text-base md:text-[17px] leading-relaxed max-w-[48ch]">
+                  {item.description}
+                </p>
+              </div>
+
+              {/* Col 4: right-aligned learn more */}
+              <div class="md:col-span-3 md:text-right md:self-end mt-6 md:mt-0">
+                {item.href && (
+                  <a href={item.href} class="kintsugi-link font-sans text-[14px] tracking-wide">
+                    {item.linkText ?? defaultLinkText}
+                  </a>
+                )}
+              </div>
+            </div>
+            {index < items.length - 1 && <SeamDivider variant="default" tone="light" />}
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
