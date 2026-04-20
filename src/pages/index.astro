@@ -1,153 +1,125 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
-import Content from '~/components/widgets/Content.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import ContentKintsugi from '~/components/widgets/v2/ContentKintsugi.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
 
 const metadata = {
   title: 'Deerfield Green — Strategic Consulting & Quantitative Investment',
-  description: 'Deerfield Green is a boutique firm combining AI-driven quantitative investment, SaaS consulting, healthcare private equity, and purposeful philanthropy from Tokyo, Japan.',
+  description:
+    'Deerfield Green is a boutique firm combining AI-driven quantitative investment, SaaS consulting, healthcare private equity, and purposeful philanthropy from Tokyo, Japan.',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Hero (Kintsugi) ************************************************ -->
 
-  <Hero
+  <HeroKintsugi
+    eyebrow="DEERFIELD GREEN · 東京 / ATLANTA · MMXXVI"
+    titleEn="Thoughtful. Patient.<br/>Quantitative."
+    titleJa="思慮深く、辛抱強く、定量的に。"
+    subtitle="Strategic consulting, quantitative investment, and purposeful philanthropy — from Tokyo to global markets."
     actions={[
-      {
-        variant: 'primary',
-        text: 'Contact Us',
-        href: '/contact/',
-        icon: 'tabler:mail',
-      },
+      { text: 'Begin a conversation', href: '/contact/' },
+      { text: 'About the firm', href: '/about/' },
     ]}
-    image={{ src: '~/assets/images/handshake.jpg', alt: 'Deerfield Green — Thoughtful. Patient. Quantitative.' }}
-  >
-    <Fragment slot="title">
-      Thoughtful. Patient.<br /><span class="text-accent dark:text-white">Quantitative.</span>
-    </Fragment>
+  />
 
-    <Fragment slot="subtitle">
-      Strategic consulting, quantitative investment, and purposeful philanthropy.
-    </Fragment>
-  </Hero>
+  <!-- Offerings (FeaturesSeam) *************************************** -->
 
-  <!-- Features Widget *************** -->
-
-  <Features
-    id="services"
-    tagline="What We Do"
-    title="Our Services"
-    subtitle="Deerfield Green bridges Japanese innovation with global markets through strategic consulting, quantitative investment, and purposeful community engagement."
+  <FeaturesSeam
+    id="practice"
+    eyebrow="§ 02 / OFFERINGS"
+    title="Our Practice"
+    subtitle="Six disciplines, one patient-capital philosophy."
+    defaultLinkText="Learn more →"
     items={[
       {
+        label: 'QUANT / AI',
         title: 'Investment',
         description:
-          'Algorithms, machine learning, and AI-driven strategic investment in NYSE and NASDAQ, focused on managing risk and generating alpha through non-correlated returns.',
-        icon: 'tabler:chart-line',
-        callToAction: { text: 'Learn more', href: '/investment/' },
+          'Algorithms, machine learning, and AI-driven strategic investment in NYSE and NASDAQ — managing risk and generating alpha through non-correlated returns.',
+        href: '/investment/',
       },
       {
+        label: 'SAAS / AI STRATEGY',
         title: 'Services',
         description:
-          'SaaS subscription revenue consulting and AI product strategy — where data-driven growth meets intelligent innovation.',
-        icon: 'tabler:briefcase',
-        callToAction: { text: 'Learn more', href: '/services/' },
+          'SaaS subscription-revenue consulting and AI product strategy — where data-driven growth meets intelligent innovation.',
+        href: '/services/',
       },
       {
+        label: 'HEALTHCARE / VC',
         title: 'Incubator',
         description:
           'Bridging Japanese innovation with global healthcare markets through an incubator-style venture capital model.',
-        icon: 'tabler:rocket',
-        callToAction: { text: 'Learn more', href: '/incubator/' },
+        href: '/incubator/',
       },
       {
+        label: 'HEALTHCARE / PE',
         title: 'Private Equity',
         description:
           "Japan's healthcare revolution through patient capital — operational excellence delivering exceptional returns.",
-        icon: 'tabler:building-bank',
-        callToAction: { text: 'Learn more', href: '/private-equity/' },
+        href: '/private-equity/',
       },
       {
+        label: 'CULTURE / CARE',
         title: 'Philanthropy',
         description:
-          'Japanese cultural preservation, scholarship support, and mental health advocacy — focusing on suicide prevention and domestic abuse.',
-        icon: 'tabler:heart',
-        callToAction: { text: 'Learn more', href: '/philanthropy/' },
+          'Japanese cultural preservation, scholarship support, and mental-health advocacy — with a focus on suicide prevention and domestic abuse.',
+        href: '/philanthropy/',
       },
       {
+        label: 'CULTURE / FIRM',
         title: 'Life @DFG',
         description:
           'A place of intellectual exploration. We value curiosity, embrace diverse passions, and foster a culture of continuous learning.',
-        icon: 'tabler:home',
-        callToAction: { text: 'Learn more', href: '/life/' },
+        href: '/life/',
       },
     ]}
   />
 
-  <!-- Content Widget **************** -->
+  <!-- Firm (ContentKintsugi) ***************************************** -->
 
-  <Content
-    isReversed
-    tagline="About Our Firm"
-    title="Bridging Japanese Excellence with Global Ambition"
+  <ContentKintsugi
+    id="firm"
+    eyebrow="§ 03 / FIRM"
+    title="Where eastern wisdom<br/>meets western innovation."
+    intro="Deerfield Green bridges Japanese technological excellence with global market reach — a strategic consulting and quantitative investment firm built on patient capital and bicultural fluency."
+    image={{ src: '~/assets/images/team-work.jpg', alt: 'Deerfield Green — Tokyo and Atlanta' }}
     items={[
       {
         title: 'Cross-Pacific Expertise',
         description:
-          'With over 25 years of experience building and scaling companies across both Japanese and American markets, we bring unique bicultural fluency to every engagement.',
+          'Over 25 years building and scaling companies across Japanese and American markets — bicultural fluency in every engagement.',
       },
       {
         title: 'Patient Capital Philosophy',
         description:
-          'Aligned with the Japanese principle of "wa" (harmony), we take a long-term view — investing in relationships, operational excellence, and sustainable growth.',
+          'Aligned with the Japanese principle of "wa" (harmony) — a long-term view, investing in relationships, operational excellence, and sustainable growth.',
       },
       {
         title: 'Technology-Driven Approach',
         description:
-          'Our proprietary algorithms, machine learning models, and AI-powered analysis enable us to uncover hidden opportunities with unparalleled accuracy.',
+          'Proprietary algorithms, machine learning models, and AI-powered analysis surface opportunities with unusual accuracy.',
       },
     ]}
-    image={{
-      src: '~/assets/images/team-work.jpg',
-      alt: 'Deerfield Green team collaboration',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Where Eastern wisdom meets Western innovation
-      </h3>
-      Deerfield Green is a strategic consulting and quantitative investment firm connecting Japanese technological excellence with global market reach.
-    </Fragment>
+  />
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+  <!-- Contact (CTASumi) ********************************************** -->
 
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
+  <CTASumi
+    id="contact"
+    eyebrow="§ 04 / CONTACT"
+    titleEn="Let's talk."
+    titleJa="お話ししましょう。"
+    subtitle="Whether you're seeking strategic consulting, investment partnership, or cross-Pacific market expertise — we'd like to hear from you."
     actions={[
-      {
-        variant: 'primary',
-        text: 'Get in Touch',
-        href: '/contact/',
-        icon: 'tabler:mail',
-      },
+      { text: 'Begin a conversation', href: '/contact/', variant: 'primary' },
+      { text: 'Read our thesis', href: '/about/' },
     ]}
-  >
-    <Fragment slot="title">
-      Ready to explore how we can work together?
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Whether you're seeking strategic consulting, investment partnership, or cross-Pacific market expertise,
-      we'd love to hear from you.
-    </Fragment>
-  </CallToAction>
+  />
 </Layout>

@@ -1,125 +1,127 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import ContentKintsugi from '~/components/widgets/v2/ContentKintsugi.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
 
 const metadata = {
   title: 'ディアフィールド・グリーン',
-  description: '戦略的コンサルティング、クオンツ投資、そして目的ある慈善活動 — 日本の卓越性とグローバルな志をつなぐ。',
+  description:
+    '戦略的コンサルティング、クオンツ投資、そして目的ある慈善活動 — 日本の卓越性とグローバルな志をつなぐ。',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Hero (Kintsugi) ************************************************ -->
 
-  <Hero
+  <HeroKintsugi
+    primaryLang="ja"
+    eyebrow="DEERFIELD GREEN · 東京 / ATLANTA · MMXXVI"
+    titleJa="思慮深く。<br/>辛抱強く。定量的に。"
+    titleEn="Thoughtful. Patient. Quantitative."
+    subtitle="戦略的コンサルティング、クオンツ投資、そして目的ある慈善活動 — 日本の卓越性とグローバルな志をつなぐ。"
     actions={[
-      {
-        variant: 'primary',
-        text: 'お問い合わせ',
-        href: '/ja/contact/',
-      },
+      { text: 'お問い合わせ', href: '/ja/contact/' },
+      { text: '会社概要', href: '/ja/about/' },
     ]}
-    image={{ src: '~/assets/images/handshake.jpg', alt: 'ディアフィールド・グリーン' }}
-  >
-    <Fragment slot="title">
-      ディアフィールド・グリーン
-    </Fragment>
+  />
 
-    <Fragment slot="subtitle">
-      戦略的コンサルティング、クオンツ投資、そして目的ある慈善活動 — 日本の卓越性とグローバルな志をつなぐ。
-    </Fragment>
-  </Hero>
+  <!-- Offerings (FeaturesSeam) *************************************** -->
 
-  <!-- Features Widget *************** -->
-
-  <Features
-    id="services"
-    title="事業内容"
+  <FeaturesSeam
+    id="practice"
+    eyebrow="§ 02 / 事業内容"
+    title="私たちの実践"
+    subtitle="六つの専門領域、一つのペイシェント・キャピタル哲学。"
+    defaultLinkText="詳細を見る →"
     items={[
       {
+        label: 'QUANT / AI',
         title: '投資',
         description:
           'アルゴリズム、機械学習、AIを活用してNYSEとNASDAQへの戦略的投資を行う最先端のブティック型ヘッジファンド。',
-        icon: 'tabler:chart-line',
-        callToAction: {
-          text: '詳細を見る',
-          href: '/ja/investment/',
-        },
+        href: '/ja/investment/',
       },
       {
+        label: 'SAAS / AI STRATEGY',
         title: 'サービス',
         description:
           'SaaSサブスクリプション収益コンサルティングとAIプロダクト戦略 — データドリブンな成長とインテリジェントなイノベーションの融合。',
-        icon: 'tabler:briefcase',
-        callToAction: {
-          text: '詳細を見る',
-          href: '/ja/services/',
-        },
+        href: '/ja/services/',
       },
       {
+        label: 'HEALTHCARE / VC',
         title: 'インキュベーター',
         description:
           'インキュベーター型ベンチャーキャピタルモデルを通じて、日本のイノベーションをグローバルヘルスケア市場へつなぐ。',
-        icon: 'tabler:bulb',
-        callToAction: {
-          text: '詳細を見る',
-          href: '/ja/incubator/',
-        },
+        href: '/ja/incubator/',
       },
       {
-        title: '慈善活動',
-        description:
-          '日本文化の保護、奨学金の支援、メンタルヘルスの推進 — 特に自殺予防と家庭内虐待の分野に注力。',
-        icon: 'tabler:heart-handshake',
-        callToAction: {
-          text: '詳細を見る',
-          href: '/ja/philanthropy/',
-        },
-      },
-      {
+        label: 'HEALTHCARE / PE',
         title: 'プライベート・エクイティ',
         description:
           '日本のヘルスケアPE革命 — オペレーショナル・エクセレンスを通じた卓越したリターンを実現するペイシェント・キャピタル。',
-        icon: 'tabler:building-bank',
-        callToAction: {
-          text: '詳細を見る',
-          href: '/ja/private-equity/',
-        },
+        href: '/ja/private-equity/',
       },
       {
+        label: 'CULTURE / CARE',
+        title: '慈善活動',
+        description:
+          '日本文化の保護、奨学金の支援、メンタルヘルスの推進 — 特に自殺予防と家庭内虐待の分野に注力。',
+        href: '/ja/philanthropy/',
+      },
+      {
+        label: 'CULTURE / FIRM',
         title: 'DFGでの生活',
         description:
           '知的探求の場。好奇心を大切にし、多様な情熱を受け入れ、継続的な学びの文化を育んでいます。',
-        icon: 'tabler:users',
-        callToAction: {
-          text: '詳細を見る',
-          href: '/ja/life/',
-        },
+        href: '/ja/life/',
       },
     ]}
   />
 
-  <!-- CallToAction Widget *********** -->
+  <!-- Firm (ContentKintsugi) ***************************************** -->
 
-  <CallToAction
-    actions={[
+  <ContentKintsugi
+    id="firm"
+    eyebrow="§ 03 / 会社について"
+    title="東洋の知恵と<br/>西洋の革新が出会う場所"
+    intro="ディアフィールド・グリーンは、日本の技術的卓越性とグローバルな市場をつなぎます — ペイシェント・キャピタルとバイカルチュラルな理解に根ざした、戦略的コンサルティング・クオンツ投資ファームです。"
+    image={{ src: '~/assets/images/team-work.jpg', alt: 'ディアフィールド・グリーン — 東京とアトランタ' }}
+    items={[
       {
-        variant: 'primary',
-        text: 'お問い合わせ',
-        href: '/ja/contact/',
+        title: '日米にまたがる専門性',
+        description:
+          '日米双方の市場で企業の構築とスケールに25年以上携わってきました — すべての業務にバイカルチュラルな視点を。',
+      },
+      {
+        title: 'ペイシェント・キャピタル哲学',
+        description:
+          '日本の「和」の精神に従い、長期的視点で関係性、オペレーショナル・エクセレンス、持続可能な成長に投資します。',
+      },
+      {
+        title: 'テクノロジー駆動のアプローチ',
+        description:
+          '独自のアルゴリズム、機械学習モデル、AI分析により、他では見えない機会を高い精度で発見します。',
       },
     ]}
-  >
-    <Fragment slot="title">
-      お気軽にお問い合わせください
-    </Fragment>
+  />
 
-    <Fragment slot="subtitle">
-      ディアフィールド・グリーンは、日本の卓越性とグローバルな志をつなぐパートナーです。
-    </Fragment>
-  </CallToAction>
+  <!-- Contact (CTASumi) ********************************************** -->
+
+  <CTASumi
+    id="contact"
+    primaryLang="ja"
+    eyebrow="§ 04 / お問い合わせ"
+    titleJa="お話ししましょう。"
+    titleEn="Let's talk."
+    subtitle="戦略的コンサルティング、投資パートナーシップ、あるいは日米間の市場専門知識 — ぜひお聞かせください。"
+    actions={[
+      { text: 'お問い合わせ', href: '/ja/contact/', variant: 'primary' },
+      { text: '会社概要を読む', href: '/ja/about/' },
+    ]}
+  />
 </Layout>
