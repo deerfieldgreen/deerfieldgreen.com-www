@@ -1,109 +1,110 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import HeroText from '~/components/widgets/HeroText.astro';
-import Content from '~/components/widgets/Content.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import ContentKintsugi from '~/components/widgets/v2/ContentKintsugi.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
 
 const metadata = {
   title: 'Investment',
-  description: 'A boutique hedge fund leveraging algorithms, machine learning, and AI for strategic investments in the NYSE and NASDAQ, focused on managing risk and generating alpha.',
+  description:
+    'A boutique hedge fund leveraging algorithms, machine learning, and AI for strategic investments in the NYSE and NASDAQ, focused on managing risk and generating alpha.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText
-    tagline="Investment"
-    title="Algorithms, Machine Learning, and AI-Driven Strategic Investment"
+  <HeroKintsugi
+    eyebrow="§ 01 / INVESTMENT"
+    titleEn="Algorithms, machine learning, and AI-driven strategic investment."
+    titleJa="アルゴリズム、機械学習、AIによる戦略的投資。"
     subtitle="A cutting-edge boutique hedge fund leveraging the power of algorithms, machine learning, and artificial intelligence to make strategic investments in the NYSE and NASDAQ."
+    actions={[{ text: 'Begin a conversation', href: '/contact/' }]}
+    primaryLang="en"
   />
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    image={{
-      src: '~/assets/images/2250982679.jpg',
-      alt: 'Investment Strategy',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">About Deerfield Green Investment</h3>
-      <p class="mb-4">
-        Deerfield Green is a cutting-edge boutique hedge fund that leverages the power of algorithms, machine learning, and artificial intelligence to make strategic investments in the New York Stock Exchange (NYSE) and NASDAQ. With a primary focus on managing risk and generating alpha through non-correlated returns, Deerfield Green stands out as a truly unique player in the market.
-      </p>
-      <p class="mb-4">
-        At Deerfield Green, we have harnessed the latest advancements in technology to create a sophisticated investment approach. Our proprietary algorithms and machine learning models enable us to analyze vast amounts of data, uncover hidden patterns, and identify opportunities with unparalleled accuracy. By leveraging artificial intelligence, we continuously refine our models and adapt to ever-changing market dynamics, staying ahead of the curve and capitalizing on emerging trends.
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    image={{
-      src: '~/assets/images/investment-risk.jpg',
-      alt: 'Financial data analytics and stock market graph',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">Managing Risk</h3>
-      <p class="mb-4">
-        One of our key differentiators is our ability to effectively manage risk. Our algorithms incorporate a comprehensive range of risk management techniques, enabling us to minimize downside exposure and protect capital during market downturns. By dynamically adjusting our portfolio allocations and employing sophisticated risk models, we strive to achieve consistent returns while safeguarding our investors' assets.
-      </p>
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4 mt-8">Generating Alpha</h3>
-      <p class="mb-4">
-        Furthermore, Deerfield Green's investment strategy is designed to generate alpha through non-correlated returns. By employing a diversified approach, we explore investment opportunities across various sectors, asset classes, and geographic regions. This diversification allows us to capture unique sources of alpha and reduce exposure to systematic risks, thereby enhancing the stability and resilience of our portfolio.
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    image={{
-      src: '~/assets/images/investment-innovation.jpg',
-      alt: 'AI chip illustrating technological advancement',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">Innovation at the Forefront</h3>
-      <p class="mb-4">
-        What truly sets Deerfield Green apart is our unwavering commitment to innovation and staying at the forefront of technological advancements. Our dedicated team of experts includes seasoned quantitative analysts, data scientists, and financial engineers who continuously explore new avenues for extracting alpha and improving our investment strategies. By embracing a culture of continuous learning and adaptation, we ensure that our investors benefit from the latest advancements in algorithms, machine learning, and AI.
-      </p>
-      <p class="mb-4">
-        In summary, Deerfield Green is a boutique hedge fund that represents the future of investment management. Through our advanced algorithms, machine learning capabilities, and AI-driven approach, we navigate the complex landscape of the NYSE and NASDAQ, managing risk and generating alpha with non-correlated returns. With our unique position in the market, we deliver exceptional value to our investors by combining cutting-edge technology with a disciplined investment philosophy. Join us on this revolutionary journey and experience the power of Deerfield Green.
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- CTA ******************* -->
-
-  <CallToAction
-    actions={[
+  <ContentKintsugi
+    id="thesis"
+    eyebrow="§ 02 / THESIS"
+    title="About Deerfield Green Investment"
+    image={{ src: '~/assets/images/2250982679.jpg', alt: 'Investment Strategy' }}
+    intro="Deerfield Green is a cutting-edge boutique hedge fund that leverages the power of algorithms, machine learning, and artificial intelligence to make strategic investments in the New York Stock Exchange (NYSE) and NASDAQ. With a primary focus on managing risk and generating alpha through non-correlated returns, Deerfield Green stands out as a truly unique player in the market."
+    items={[
       {
-        variant: 'primary',
-        text: 'Contact Us',
-        href: '/contact/',
+        title: 'Sophisticated approach',
+        description:
+          'At Deerfield Green, we have harnessed the latest advancements in technology to create a sophisticated investment approach. Our proprietary algorithms and machine learning models enable us to analyze vast amounts of data, uncover hidden patterns, and identify opportunities with unparalleled accuracy.',
+      },
+      {
+        title: 'Continuous adaptation',
+        description:
+          'By leveraging artificial intelligence, we continuously refine our models and adapt to ever-changing market dynamics, staying ahead of the curve and capitalizing on emerging trends.',
+      },
+      {
+        title: 'Alpha with non-correlated returns',
+        description:
+          'Our focus is on managing risk and generating alpha through non-correlated returns — a discipline that distinguishes Deerfield Green as a truly unique player in the market.',
       },
     ]}
-  >
-    <Fragment slot="title">
-      Interested in learning more?
-    </Fragment>
+  />
 
-    <Fragment slot="subtitle">
-      Discover how Deerfield Green's quantitative approach can work for you.
-    </Fragment>
-  </CallToAction>
+  <ContentKintsugi
+    id="risk-alpha"
+    eyebrow="§ 03 / RISK & ALPHA"
+    title="Managing risk. Generating alpha."
+    isReversed
+    image={{ src: '~/assets/images/investment-risk.jpg', alt: 'Financial data analytics and stock market graph' }}
+    intro="One of our key differentiators is our ability to effectively manage risk. Our algorithms incorporate a comprehensive range of risk management techniques, enabling us to minimize downside exposure and protect capital during market downturns."
+    items={[
+      {
+        title: 'Dynamic portfolio allocation',
+        description:
+          "By dynamically adjusting our portfolio allocations and employing sophisticated risk models, we strive to achieve consistent returns while safeguarding our investors' assets.",
+      },
+      {
+        title: 'Non-correlated returns',
+        description:
+          "Deerfield Green's investment strategy is designed to generate alpha through non-correlated returns. By employing a diversified approach, we explore investment opportunities across various sectors, asset classes, and geographic regions.",
+      },
+      {
+        title: 'Diversification as resilience',
+        description:
+          'This diversification allows us to capture unique sources of alpha and reduce exposure to systematic risks, thereby enhancing the stability and resilience of our portfolio.',
+      },
+    ]}
+  />
+
+  <ContentKintsugi
+    id="innovation"
+    eyebrow="§ 04 / INNOVATION"
+    title="Innovation at the forefront."
+    image={{ src: '~/assets/images/investment-innovation.jpg', alt: 'AI chip illustrating technological advancement' }}
+    intro="What truly sets Deerfield Green apart is our unwavering commitment to innovation and staying at the forefront of technological advancements. Our dedicated team of experts includes seasoned quantitative analysts, data scientists, and financial engineers who continuously explore new avenues for extracting alpha and improving our investment strategies."
+    items={[
+      {
+        title: 'A culture of learning',
+        description:
+          'By embracing a culture of continuous learning and adaptation, we ensure that our investors benefit from the latest advancements in algorithms, machine learning, and AI.',
+      },
+      {
+        title: 'The future of investment management',
+        description:
+          'Through our advanced algorithms, machine learning capabilities, and AI-driven approach, we navigate the complex landscape of the NYSE and NASDAQ, managing risk and generating alpha with non-correlated returns.',
+      },
+      {
+        title: 'Technology meets discipline',
+        description:
+          'With our unique position in the market, we deliver exceptional value to our investors by combining cutting-edge technology with a disciplined investment philosophy. Join us on this revolutionary journey and experience the power of Deerfield Green.',
+      },
+    ]}
+  />
+
+  <CTASumi
+    id="contact"
+    eyebrow="§ 05 / CONTACT"
+    titleEn="Interested in learning more?"
+    titleJa="詳しくお話ししませんか。"
+    subtitle="Discover how Deerfield Green's quantitative approach can work for you."
+    actions={[{ text: 'Begin a conversation', href: '/contact/', variant: 'primary' }]}
+    primaryLang="en"
+  />
 </Layout>

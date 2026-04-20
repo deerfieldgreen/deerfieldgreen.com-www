@@ -1,102 +1,101 @@
 ---
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Content from '~/components/widgets/Content.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import ContentKintsugi from '~/components/widgets/v2/ContentKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
 
 const metadata = {
   title: 'About Deerfield Green',
-  description: 'Learn about Deerfield Green, a private quantitative investment firm based in Tokyo, Japan, blending strategic investing with purposeful philanthropy.',
+  description:
+    'Learn about Deerfield Green, a private quantitative investment firm based in Tokyo, Japan, blending strategic investing with purposeful philanthropy.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+  <!-- Hero ************************ -->
 
-  <HeroText
-    tagline="About Us"
-    title="Thoughtful. Patient. Quantitative."
-  >
-    <Fragment slot="subtitle">
-      A boutique investment and consulting firm bridging Japanese excellence with global markets — combining
-      quantitative rigor, cross-Pacific expertise, and purposeful philanthropy.
-    </Fragment>
-  </HeroText>
+  <HeroKintsugi
+    eyebrow="§ 01 / ABOUT"
+    titleEn="Thoughtful.<br/>Patient.<br/>Quantitative."
+    titleJa="思慮深く。忍耐強く。定量的に。"
+    subtitle="A boutique investment and consulting firm bridging Japanese excellence with global markets — combining quantitative rigor, cross-Pacific expertise, and purposeful philanthropy."
+    actions={[{ text: 'Begin a conversation', href: '/contact/' }]}
+  />
 
-  <!-- Content Widget **************** -->
+  <!-- Mission ********************* -->
 
-  <Content
+  <ContentKintsugi
     id="mission"
-    tagline="Who We Are"
+    eyebrow="§ 02 / MISSION"
     title="Our Mission"
+    intro="Deerfield Green is a private quantitative investment firm based in Minato-ku, Tokyo, Japan. Our mission is twofold: seeking alpha across global markets and channeling the yields from our portfolio into philanthropic endeavors that make a positive impact on society. We firmly believe that capitalistic endeavors can be blended with a deep sense of purpose to empower and improve the lives of others."
+    items={[
+      {
+        title: 'Alpha with Purpose',
+        description:
+          'We apply quantitative strategies to identify and capture alpha in global markets, leveraging data-driven models and rigorous analysis.',
+      },
+      {
+        title: 'Philanthropy at the Center',
+        description:
+          'Our investment thesis centers around the singular purpose of philanthropy — from Japanese cultural preservation and scholarships to mental health advocacy.',
+      },
+      {
+        title: 'Sustainable Impact',
+        description:
+          'By generating strong financial returns, we ensure the sustainability and growth of our philanthropic initiatives over the long term.',
+      },
+    ]}
     image={{
       src: '~/assets/images/team-work.jpg',
       alt: 'Deerfield Green team collaboration',
     }}
-  >
-    <Fragment slot="content">
-      <p class="text-lg text-muted mb-4">
-        Deerfield Green is a private quantitative investment firm based in Minato-ku, Tokyo, Japan. Our mission is
-        twofold: seeking alpha across global markets and channeling the yields from our portfolio into philanthropic
-        endeavors that make a positive impact on society. We firmly believe that capitalistic endeavors can be blended
-        with a deep sense of purpose to empower and improve the lives of others.
-      </p>
-      <p class="text-lg text-muted">
-        Our investment thesis centers around the singular purpose of philanthropy. We apply quantitative strategies to
-        identify and capture alpha in global markets, leveraging data-driven models and rigorous analysis. By generating
-        strong financial returns, we ensure the sustainability and growth of our philanthropic initiatives — from
-        Japanese cultural preservation and scholarships to mental health advocacy.
-      </p>
-    </Fragment>
+  />
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+  <!-- Practice ******************** -->
 
-  <!-- Features Widget *************** -->
-
-  <Features
+  <FeaturesSeam
     id="services"
-    tagline="What We Do"
+    eyebrow="§ 03 / PRACTICE"
     title="Our Services"
-    columns={2}
+    subtitle="Four practices, one thesis — quantitative rigor and patient capital in service of purpose."
     items={[
       {
+        label: 'QUANT / AI',
         title: 'Investment',
         description:
           'AI-driven quantitative investment in NYSE and NASDAQ, focused on managing risk and generating alpha through non-correlated returns.',
-        icon: 'tabler:chart-line',
       },
       {
+        label: 'AI / SAAS',
         title: 'Services',
         description:
           'AI product strategy and SaaS subscription revenue consulting — where data-driven growth meets intelligent innovation.',
-        icon: 'tabler:briefcase',
       },
       {
+        label: 'HEALTHCARE / VC',
         title: 'Incubator',
         description:
           'Bridging Japanese innovation with global healthcare markets through an incubator-style venture capital model.',
-        icon: 'tabler:rocket',
       },
       {
+        label: 'HEALTHCARE / PE',
         title: 'Private Equity',
         description:
           "Japan's healthcare revolution through patient capital — operational excellence delivering exceptional returns.",
-        icon: 'tabler:building-bank',
       },
     ]}
   />
 
-  <!-- Steps2 Widget ****************** -->
+  <!-- Values ********************** -->
 
-  <Steps2
+  <ContentKintsugi
+    id="values"
+    eyebrow="§ 04 / VALUES"
     title="Our Values"
-    subtitle="Guided by principles that bridge Eastern wisdom with Western innovation."
+    intro="Guided by principles that bridge Eastern wisdom with Western innovation."
+    isReversed={true}
     items={[
       {
         title: 'Patient Capital Philosophy',
@@ -116,45 +115,33 @@ const metadata = {
     ]}
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- Locations ******************* -->
 
-  <Features2
-    title="Our Locations"
-    tagline="Where we work"
-    columns={2}
+  <FeaturesSeam
+    id="locations"
+    eyebrow="§ 05 / LOCATIONS"
+    title="Where We Work"
     items={[
       {
+        label: 'JAPAN / HQ',
         title: 'Minato-ku, Tokyo, Japan',
         description: 'Our headquarters in the heart of Tokyo.',
-        icon: 'tabler:map-pin',
       },
       {
+        label: 'USA / OFFICE',
         title: 'Milton, Georgia',
         description: 'Our U.S. office in the greater Atlanta area.',
-        icon: 'tabler:map-pin',
       },
     ]}
   />
 
-  <!-- CallToAction Widget *********** -->
+  <!-- CTA ************************* -->
 
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get in Touch',
-        href: '/contact/',
-        icon: 'tabler:mail',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Ready to explore how we can work together?
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Whether you're seeking strategic consulting, investment partnership, or cross-Pacific market expertise,
-      we'd love to hear from you.
-    </Fragment>
-  </CallToAction>
+  <CTASumi
+    eyebrow="§ 06 / CONTACT"
+    titleEn="Let's build together."
+    titleJa="ご一緒に築きましょう。"
+    subtitle="Whether you're seeking strategic consulting, investment partnership, or cross-Pacific market expertise, we'd love to hear from you."
+    actions={[{ text: 'Get in touch', href: '/contact/', variant: 'primary' }]}
+  />
 </Layout>

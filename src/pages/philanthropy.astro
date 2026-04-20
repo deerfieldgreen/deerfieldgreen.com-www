@@ -1,10 +1,9 @@
 ---
-import Content from '~/components/widgets/Content.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Image from '~/components/common/Image.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import ContentKintsugi from '~/components/widgets/v2/ContentKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
 
 const metadata = {
   title: 'Philanthropy',
@@ -13,180 +12,156 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText
-    tagline="Philanthropy"
-    title="Preserving Japanese Culture and Empowering Communities"
+  <!-- Hero ******************* -->
+  <HeroKintsugi
+    eyebrow="§ 01 / PHILANTHROPY"
+    titleEn="Preserving Japanese Culture and Empowering Communities"
+    titleJa="日本文化の保護とコミュニティの支援"
+    subtitle="A dedicated philanthropic practice focused on cultural preservation, scholarships, and mental health — with a predominant focus on the Japanese market."
+    primaryLang="en"
   />
 
-  <!-- Introduction Content ******************* -->
-
-  <Content
+  <!-- Intro ******************* -->
+  <ContentKintsugi
     id="intro"
-    columns={1}
-  >
-    <Fragment slot="content">
-      <p class="text-lg text-muted mb-4">
-        Deerfield Green is a dedicated philanthropic firm with a strong focus on the preservation of Japanese culture, supporting scholarships, and promoting mental health initiatives, particularly in the areas of suicide prevention and domestic abuse. With a predominant focus on the Japanese market, we strive to make a meaningful impact by partnering with notable non-profit organizations that share our vision and have a primary mission in these critical areas.
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Focus Areas ******************* -->
-
-  <Features2
-    title="Our Focus Areas"
-    tagline="Making a difference"
-    columns={3}
+    eyebrow="§ 02 / APPROACH"
+    title="A practice of partnership and patience."
+    intro="Deerfield Green is a dedicated philanthropic firm with a strong focus on the preservation of Japanese culture, supporting scholarships, and promoting mental health initiatives, particularly in the areas of suicide prevention and domestic abuse. With a predominant focus on the Japanese market, we strive to make a meaningful impact by partnering with notable non-profit organizations that share our vision and have a primary mission in these critical areas."
     items={[
       {
+        title: 'Long-horizon partnerships',
+        description:
+          'We build enduring relationships with organizations whose mission aligns with our own, rather than one-off grants.',
+      },
+      {
+        title: 'Measurable impact',
+        description:
+          'We value transparency, accountability, and measurable outcomes, ensuring grants are deployed effectively.',
+      },
+      {
+        title: 'Japan-focused',
+        description:
+          'A predominant focus on the Japanese market, its cultural heritage, and its communities in need.',
+      },
+    ]}
+  />
+
+  <!-- Focus Areas ******************* -->
+  <FeaturesSeam
+    id="focus"
+    eyebrow="§ 03 / FOCUS AREAS"
+    title="Three areas of commitment."
+    subtitle="Where we concentrate our giving and our attention."
+    items={[
+      {
+        label: 'CULTURE',
         title: 'Cultural Preservation',
         description:
           'Investing in initiatives that promote and safeguard Japanese culture, including the preservation of traditional arts, crafts, festivals, historical sites, and cultural education programs.',
-        icon: 'tabler:building-castle',
       },
       {
+        label: 'SCHOLARSHIPS',
         title: 'Scholarships',
         description:
           'Providing financial support and resources to deserving students, creating pathways for excellence and contributing to the development of future leaders, thinkers, and innovators.',
-        icon: 'tabler:school',
       },
       {
+        label: 'MENTAL HEALTH',
         title: 'Mental Health',
         description:
           'Supporting organizations that provide counseling, awareness campaigns, helplines, and other crucial resources for suicide prevention and domestic abuse support.',
-        icon: 'tabler:heart-handshake',
+      },
+      {
+        label: 'COMMUNITY',
+        title: 'Community & Opportunity',
+        description:
+          'Creating pathways to opportunity through education, vocational training, and entrepreneurship initiatives that uplift individuals and communities.',
       },
     ]}
   />
 
-  <!-- Cultural Preservation Detail ******************* -->
-
-  <Content
+  <!-- Cultural Preservation ******************* -->
+  <ContentKintsugi
     id="culture"
-  >
-    <Fragment slot="image">
-      <Image
-        src="~/assets/images/philanthropy-culture.jpg"
-        alt="Traditional Japanese temple pathway surrounded by greenery"
-        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-        width={500}
-        height={500}
-        widths={[400, 768]}
-        sizes="(max-width: 768px) 100vw, 432px"
-        layout="responsive"
-      />
-      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@remi_b?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Rémi Bertogliati</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-    </Fragment>
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Cultural Preservation</h3>
-      <p class="text-lg text-muted mb-4">
-        At Deerfield Green, our primary objective is to preserve and celebrate the rich cultural heritage of Japan. We believe that cultural preservation is essential for the identity and well-being of a society. By investing in initiatives that promote and safeguard Japanese culture, we aim to ensure that future generations can embrace and learn from their historical roots. We support organizations that engage in activities such as the preservation of traditional arts, crafts, festivals, historical sites, and cultural education programs.
-      </p>
-    </Fragment>
-  </Content>
+    eyebrow="§ 04 / CULTURAL PRESERVATION"
+    title="Safeguarding the roots."
+    intro="At Deerfield Green, our primary objective is to preserve and celebrate the rich cultural heritage of Japan. We believe that cultural preservation is essential for the identity and well-being of a society. By investing in initiatives that promote and safeguard Japanese culture, we aim to ensure that future generations can embrace and learn from their historical roots. We support organizations that engage in activities such as the preservation of traditional arts, crafts, festivals, historical sites, and cultural education programs."
+    items={[]}
+    image={{
+      src: '~/assets/images/philanthropy-culture.jpg',
+      alt: 'Traditional Japanese temple pathway surrounded by greenery',
+    }}
+  />
+  <div class="max-w-7xl mx-auto px-6 md:px-10 -mt-6 mb-12 text-right">
+    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-[var(--aw-color-text-subtle)]">
+      Photo by <a href="https://unsplash.com/@remi_b?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Rémi Bertogliati</a> · <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Unsplash</a>
+    </p>
+  </div>
 
-  <!-- Scholarships Detail ******************* -->
-
-  <Content
+  <!-- Scholarships ******************* -->
+  <ContentKintsugi
     id="scholarships"
+    eyebrow="§ 05 / SCHOLARSHIPS"
+    title="Pathways for excellence."
+    intro="Recognizing the importance of education and knowledge, Deerfield Green places a significant emphasis on scholarships. We firmly believe that education is the key to unlocking opportunities and empowering individuals to realize their full potential. By providing financial support and resources to deserving students, we aim to create pathways for excellence and contribute to the development of future leaders, thinkers, and innovators who will shape Japan's future."
+    items={[]}
+    image={{
+      src: '~/assets/images/philanthropy-scholarships.jpg',
+      alt: 'Japanese students in school uniforms',
+    }}
     isReversed
-  >
-    <Fragment slot="image">
-      <Image
-        src="~/assets/images/philanthropy-scholarships.jpg"
-        alt="Japanese students in school uniforms"
-        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-        width={500}
-        height={500}
-        widths={[400, 768]}
-        sizes="(max-width: 768px) 100vw, 432px"
-        layout="responsive"
-      />
-      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@duonguyen?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">DuoNguyen</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-    </Fragment>
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scholarships</h3>
-      <p class="text-lg text-muted mb-4">
-        Recognizing the importance of education and knowledge, Deerfield Green places a significant emphasis on scholarships. We firmly believe that education is the key to unlocking opportunities and empowering individuals to realize their full potential. By providing financial support and resources to deserving students, we aim to create pathways for excellence and contribute to the development of future leaders, thinkers, and innovators who will shape Japan's future.
-      </p>
-    </Fragment>
-  </Content>
+  />
+  <div class="max-w-7xl mx-auto px-6 md:px-10 -mt-6 mb-12 text-right">
+    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-[var(--aw-color-text-subtle)]">
+      Photo by <a href="https://unsplash.com/@duonguyen?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">DuoNguyen</a> · <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Unsplash</a>
+    </p>
+  </div>
 
-  <!-- Mental Health Detail ******************* -->
-
-  <Content
+  <!-- Mental Health ******************* -->
+  <ContentKintsugi
     id="mental-health"
-  >
-    <Fragment slot="image">
-      <Image
-        src="~/assets/images/philanthropy-mental-health.jpg"
-        alt="Community support and mental wellness"
-        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-        width={500}
-        height={500}
-        widths={[400, 768]}
-        sizes="(max-width: 768px) 100vw, 432px"
-        layout="responsive"
-      />
-      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@shamimnakhaei?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Shamim Nakhaei</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-    </Fragment>
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Mental Health Initiatives</h3>
-      <p class="text-lg text-muted mb-4">
-        In addition to cultural preservation and scholarships, Deerfield Green is deeply committed to mental health initiatives, with a particular focus on suicide prevention and domestic abuse. We understand the urgent need to address these pressing societal challenges and support organizations that work tirelessly to provide counseling, awareness campaigns, helplines, and other crucial resources. By funding programs that promote mental health, reduce stigma, and offer support to individuals in crisis, we strive to create a society that prioritizes emotional well-being and provides a safe environment for all.
-      </p>
-    </Fragment>
-  </Content>
+    eyebrow="§ 06 / MENTAL HEALTH"
+    title="A society that prioritizes well-being."
+    intro="In addition to cultural preservation and scholarships, Deerfield Green is deeply committed to mental health initiatives, with a particular focus on suicide prevention and domestic abuse. We understand the urgent need to address these pressing societal challenges and support organizations that work tirelessly to provide counseling, awareness campaigns, helplines, and other crucial resources. By funding programs that promote mental health, reduce stigma, and offer support to individuals in crisis, we strive to create a society that prioritizes emotional well-being and provides a safe environment for all."
+    items={[]}
+    image={{
+      src: '~/assets/images/philanthropy-mental-health.jpg',
+      alt: 'Community support and mental wellness',
+    }}
+  />
+  <div class="max-w-7xl mx-auto px-6 md:px-10 -mt-6 mb-12 text-right">
+    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-[var(--aw-color-text-subtle)]">
+      Photo by <a href="https://unsplash.com/@shamimnakhaei?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Shamim Nakhaei</a> · <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Unsplash</a>
+    </p>
+  </div>
 
-  <!-- Grant-Making Process ******************* -->
-
-  <Content
+  <!-- Approach ******************* -->
+  <ContentKintsugi
     id="grants"
+    eyebrow="§ 07 / APPROACH"
+    title="A grant-making practice built on patience."
+    intro="Central to our approach is the annual grant-making process, where we carefully select notable non-profit organizations that align with our core mission. We value transparency, accountability, and measurable impact, ensuring that our grants are utilized effectively to maximize positive outcomes. By establishing long-term partnerships and fostering collaboration among diverse stakeholders, we aim to create a sustainable and lasting change in the areas we support."
+    items={[]}
+    image={{
+      src: '~/assets/images/philanthropy-approach.jpg',
+      alt: 'Team collaboration and partnership',
+    }}
     isReversed
-  >
-    <Fragment slot="image">
-      <Image
-        src="~/assets/images/philanthropy-approach.jpg"
-        alt="Team collaboration and partnership"
-        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-        width={500}
-        height={500}
-        widths={[400, 768]}
-        sizes="(max-width: 768px) 100vw, 432px"
-        layout="responsive"
-      />
-      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@camylla93?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Camylla Battani</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-    </Fragment>
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Our Approach</h3>
-      <p class="text-lg text-muted mb-4">
-        Central to our approach is the annual grant-making process, where we carefully select notable non-profit organizations that align with our core mission. We value transparency, accountability, and measurable impact, ensuring that our grants are utilized effectively to maximize positive outcomes. By establishing long-term partnerships and fostering collaboration among diverse stakeholders, we aim to create a sustainable and lasting change in the areas we support.
-      </p>
-      <p class="text-lg text-muted">
-        In summary, Deerfield Green is a firm deeply committed to preserving Japanese culture, empowering communities through scholarships, and advancing mental health initiatives, specifically focused on suicide prevention and domestic abuse. By investing in the Japanese market and partnering with notable non-profit organizations, we strive to make a significant and meaningful impact. Together, we can create a society that cherishes its cultural heritage, nurtures its youth, and provides support for those in need, building a brighter and more inclusive future for all.
-      </p>
-    </Fragment>
-  </Content>
+  />
+  <div class="max-w-7xl mx-auto px-6 md:px-10 -mt-6 mb-12 text-right">
+    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-[var(--aw-color-text-subtle)]">
+      Photo by <a href="https://unsplash.com/@camylla93?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Camylla Battani</a> · <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Unsplash</a>
+    </p>
+  </div>
 
   <!-- CTA ******************* -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Contact Us',
-        href: '/contact/',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Support our mission
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Learn more about our philanthropic initiatives and partnership opportunities.
-    </Fragment>
-  </CallToAction>
+  <CTASumi
+    id="contact"
+    eyebrow="§ 08 / CONTACT"
+    titleEn="Support our mission."
+    titleJa="共に歩みましょう。"
+    subtitle="Learn more about our philanthropic initiatives and partnership opportunities."
+    actions={[{ variant: 'primary', text: 'Begin a conversation', href: '/contact/' }]}
+    primaryLang="en"
+  />
 </Layout>

@@ -1,7 +1,8 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
 
 const metadata = {
   title: 'Insights',
@@ -10,80 +11,80 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText
-    tagline="Insights"
-    title="Curated Insights"
-    subtitle="Curated insights from the Deerfield Green team"
+  <!-- Hero ******************* -->
+  <HeroKintsugi
+    eyebrow="§ 01 / INSIGHTS"
+    titleEn="Curated Insights."
+    titleJa="厳選されたインサイト。"
+    subtitle="A working library from the Deerfield Green team — books, whitepapers, articles, frameworks, newsletter, and prototypes that shape our thinking."
+    primaryLang="en"
   />
 
-  <!-- Insights Grid ******************* -->
-
-  <Features2
-    title="Our Insights"
-    columns={2}
+  <!-- Catalog ******************* -->
+  <FeaturesSeam
+    id="catalog"
+    eyebrow="§ 02 / CATALOG"
+    title="Our working library."
+    subtitle="Each channel lives at its own subdomain — explore as needed."
     items={[
       {
+        label: 'BOOKS',
         title: 'Books',
         description:
           'Recommended reading from our team — titles that have shaped our thinking on investment, strategy, and innovation.',
-        icon: 'tabler:book',
-        callToAction: {
-          text: 'View books',
-          href: 'https://books.deerfieldgreen.com/',
-        },
+        href: 'https://books.deerfieldgreen.com/',
+        linkText: 'View books →',
       },
       {
+        label: 'WHITEPAPERS',
         title: 'Whitepapers',
         description:
           'In-depth research and analysis on topics shaping investment, technology, and strategy.',
-        icon: 'tabler:file-text',
-        callToAction: {
-          text: 'View whitepapers',
-          href: 'https://whitepapers.deerfieldgreen.com/',
-        },
+        href: 'https://whitepapers.deerfieldgreen.com/',
+        linkText: 'View whitepapers →',
       },
       {
+        label: 'ARTICLES',
         title: 'Articles',
-        description:
-          'Selected articles and publications by our team and partners.',
-        icon: 'tabler:article',
-        callToAction: {
-          text: 'View all articles',
-          href: '/articles/',
-        },
+        description: 'Selected articles and publications by our team and partners.',
+        href: '/articles/',
+        linkText: 'View all articles →',
       },
       {
+        label: 'FRAMEWORKS',
         title: 'Frameworks',
         description:
           'Proprietary and open frameworks we use to guide decision-making, strategy, and analysis.',
-        icon: 'tabler:sitemap',
-        callToAction: {
-          text: 'View frameworks',
-          href: 'https://frameworks.deerfieldgreen.com/',
-        },
+        href: 'https://frameworks.deerfieldgreen.com/',
+        linkText: 'View frameworks →',
       },
       {
+        label: 'NEWSLETTER',
         title: 'Newsletter',
         description:
           'Regular updates on our latest thinking, market insights, and firm news.',
-        icon: 'tabler:mail',
-        callToAction: {
-          text: 'View newsletter',
-          href: 'https://newsletter.deerfieldgreen.com/',
-        },
+        href: 'https://newsletter.deerfieldgreen.com/',
+        linkText: 'View newsletter →',
       },
       {
+        label: 'PROTOTYPES',
         title: 'Prototypes',
         description:
           'Experimental projects and proof-of-concept work from our incubator and research teams.',
-        icon: 'tabler:flask',
-        callToAction: {
-          text: 'View prototypes',
-          href: 'https://prototypes.deerfieldgreen.com/',
-        },
+        href: 'https://prototypes.deerfieldgreen.com/',
+        linkText: 'View prototypes →',
       },
     ]}
+  />
+
+  <!-- CTA ******************* -->
+  <CTASumi
+    id="contact"
+    eyebrow="§ 03 / CONTACT"
+    titleEn="Want to go deeper?"
+    titleJa="さらに深く知りたい方へ。"
+    subtitle="Reach out and we'll point you to the right material — or start a conversation."
+    actions={[{ variant: 'primary', text: 'Begin a conversation', href: '/contact/' }]}
+    primaryLang="en"
   />
 </Layout>

@@ -1,286 +1,248 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import HeroText from '~/components/widgets/HeroText.astro';
-import Content from '~/components/widgets/Content.astro';
-import Features from '~/components/widgets/Features.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import ContentKintsugi from '~/components/widgets/v2/ContentKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
 
 const metadata = {
   title: 'Incubator',
-  description: 'An incubator-style venture capital model bridging Japanese innovation with global healthcare markets, nurturing healthcare, biotech, and AI-powered medical innovations.',
+  description:
+    'An incubator-style venture capital model bridging Japanese innovation with global healthcare markets, nurturing healthcare, biotech, and AI-powered medical innovations.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText
-    tagline="Incubator"
-    title="Bridging Japanese Innovation with Global Healthcare Markets"
+  <HeroKintsugi
+    eyebrow="§ 01 / INCUBATOR"
+    titleEn="Bridging Japanese innovation with global healthcare markets."
+    titleJa="日本のイノベーションと世界のヘルスケア市場の架け橋。"
     subtitle="An incubator-style venture capital model representing a unique synthesis of Eastern and Western business philosophies, specifically designed to nurture healthcare, biotech, and AI-powered medical innovations."
+    actions={[{ text: 'Begin a conversation', href: '/contact/' }]}
+    primaryLang="en"
   />
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    image={{
-      src: '~/assets/images/incubator.jpg',
-      alt: 'Incubator Program',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">Engineering Tomorrow's Healthcare Innovation Through Cross-Pacific Partnership</h3>
-      <p class="mb-4">
-        At Deerfield Green, we believe that the future of healthcare innovation lies at the intersection of Japanese technological excellence, deep cultural wisdom, and global market reach. Our incubator-style venture capital model represents a unique synthesis of Eastern and Western business philosophies, specifically designed to nurture healthcare, biotech, and AI-powered medical innovations from Japan's extraordinary research ecosystem to global market leadership.
-      </p>
-      <p class="mb-4">
-        Drawing from our team's collective 25 years of experience building and scaling SaaS revenue companies across both Japanese and American markets, we've architected an incubator model that bridges two of the world's most sophisticated healthcare ecosystems. We understand that Japan's healthcare innovation — from regenerative medicine breakthroughs to AI-powered diagnostics — requires not just capital, but cultural fluency, operational excellence, and the ability to navigate both Japanese precision and American speed-to-market dynamics.
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget: Investment Philosophy **************** -->
-
-  <Content
-    isReversed
-    title='Our Investment Philosophy: Harmonizing Japanese Excellence with Global Ambition'
+  <ContentKintsugi
+    id="thesis"
+    eyebrow="§ 02 / THESIS"
+    title="Engineering tomorrow's healthcare innovation through cross-Pacific partnership."
+    image={{ src: '~/assets/images/incubator.jpg', alt: 'Incubator Program' }}
+    intro="At Deerfield Green, we believe that the future of healthcare innovation lies at the intersection of Japanese technological excellence, deep cultural wisdom, and global market reach. Our incubator-style venture capital model represents a unique synthesis of Eastern and Western business philosophies, specifically designed to nurture healthcare, biotech, and AI-powered medical innovations from Japan's extraordinary research ecosystem to global market leadership."
     items={[
       {
-        title: 'Long-term Relationship Building ("Nemawashi")',
+        title: '25 years bridging Japan and the United States',
+        description:
+          "Drawing from our team's collective 25 years of experience building and scaling SaaS revenue companies across both Japanese and American markets, we've architected an incubator model that bridges two of the world's most sophisticated healthcare ecosystems.",
+      },
+      {
+        title: 'More than capital',
+        description:
+          "We understand that Japan's healthcare innovation — from regenerative medicine breakthroughs to AI-powered diagnostics — requires not just capital, but cultural fluency, operational excellence, and the ability to navigate both Japanese precision and American speed-to-market dynamics.",
+      },
+      {
+        title: 'The power of "Wa" in portfolio management',
+        description:
+          'Unlike traditional Western venture capital firms that prioritize aggressive growth at all costs, Deerfield Green embraces the Japanese principle of "wa" (harmony) in our portfolio approach. We maintain a deliberately concentrated portfolio of no more than 10 healthcare startups at any given time, ensuring each company receives the patient, thoughtful support characteristic of Japanese business relationships while maintaining the urgency required for global market competition.',
+      },
+    ]}
+  />
+
+  <FeaturesSeam
+    id="philosophy"
+    eyebrow="§ 03 / PHILOSOPHY"
+    title="Our investment philosophy: harmonizing Japanese excellence with global ambition."
+    subtitle="Four disciplines that shape how we partner with founders from first conversation through global scale."
+    items={[
+      {
+        label: 'NEMAWASHI',
+        title: 'Long-term relationship building',
         description:
           'We invest 6-18 months in relationship development before investment, understanding not just the technology but the people, their values, and their vision for societal impact.',
       },
       {
-        title: 'Consensus-Driven Decision Making',
+        label: 'CONSENSUS',
+        title: 'Consensus-driven decision making',
         description:
           'Major strategic decisions involve all stakeholders, respecting the Japanese tradition of collective wisdom while maintaining entrepreneurial agility.',
       },
       {
-        title: 'Preservation of Founder Vision',
+        label: 'FOUNDER VISION',
+        title: 'Preservation of founder vision',
         description:
           "Unlike aggressive Western restructuring, we honor the founder's original mission while providing the operational support to achieve global scale.",
       },
       {
-        title: 'Patient Capital Approach',
+        label: 'PATIENT CAPITAL',
+        title: 'Patient capital approach',
         description:
           'Aligned with Japanese investment philosophy, we maintain 5-7 year investment horizons, allowing innovations to mature properly.',
       },
     ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">The Power of "Wa" in Portfolio Management</h3>
-      <p class="mb-4">
-        Unlike traditional Western venture capital firms that prioritize aggressive growth at all costs, Deerfield Green embraces the Japanese principle of "wa" (harmony) in our portfolio approach. We maintain a deliberately concentrated portfolio of no more than 10 healthcare startups at any given time, ensuring each company receives the patient, thoughtful support characteristic of Japanese business relationships while maintaining the urgency required for global market competition.
-      </p>
-    </Fragment>
-  </Content>
+  />
 
-  <!-- Features Widget: Demographic Imperative *************** -->
-
-  <Features
-    title="Healthcare Innovation at the Convergence of Cultures"
+  <FeaturesSeam
+    id="focus"
+    eyebrow="§ 04 / FOCUS AREAS"
+    title="Healthcare innovation at the convergence of cultures."
     subtitle="With 30% of Japan's population over 65 and 10% over 80, Japan serves as the world's laboratory for aging society solutions. Our portfolio companies solve problems that every developed nation will face within a decade."
     items={[
       {
-        title: 'Longevity and Anti-Aging Therapeutics',
-        description:
-          "Leveraging Japan's Blue Zone philosophies with cutting-edge biotechnology.",
-        icon: 'tabler:heart-rate-monitor',
+        label: 'LONGEVITY',
+        title: 'Longevity and anti-aging therapeutics',
+        description: "Leveraging Japan's Blue Zone philosophies with cutting-edge biotechnology.",
       },
       {
-        title: 'AI-Powered Elderly Care Solutions',
-        description:
-          'Combining robotics, AI, and human-centered design for dignified aging.',
-        icon: 'tabler:robot',
+        label: 'ELDERLY CARE',
+        title: 'AI-powered elderly care solutions',
+        description: 'Combining robotics, AI, and human-centered design for dignified aging.',
       },
       {
-        title: 'Regenerative Medicine',
-        description:
-          "Building on Japan's regulatory advantages in cell therapy and tissue engineering.",
-        icon: 'tabler:dna',
+        label: 'REGENERATIVE',
+        title: 'Regenerative medicine',
+        description: "Building on Japan's regulatory advantages in cell therapy and tissue engineering.",
       },
       {
-        title: 'Digital Therapeutics',
+        label: 'DIGITAL THERAPEUTICS',
+        title: 'Digital therapeutics',
+        description: 'Addressing the unique challenges of multi-morbidity in aging populations.',
+      },
+      {
+        label: 'DIAGNOSTICS',
+        title: 'AI-powered diagnostics and precision medicine',
         description:
-          'Addressing the unique challenges of multi-morbidity in aging populations.',
-        icon: 'tabler:device-heart-monitor',
+          "Leveraging Japan's superior medical imaging datasets, universal healthcare records, and genetic databases to develop cutting-edge AI diagnostic tools.",
+      },
+      {
+        label: 'BIOTECH',
+        title: 'Biotechnology and pharmaceutical innovation',
+        description:
+          "From regenerative medicine leadership to fragment-based drug discovery, leveraging Japan's strengths in structural biology and protein engineering.",
+      },
+      {
+        label: 'DIGITAL HEALTH',
+        title: 'Digital health and telemedicine',
+        description:
+          "Japan's digital health market projected to reach 90.87 billion by 2035. Platforms addressing fragmented healthcare delivery and rural access.",
       },
     ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features>
+  />
 
-  <!-- Content Widget: Regulatory Advantage **************** -->
-
-  <Content>
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">The Regulatory Advantage</h3>
-      <p class="mb-4">Japan offers unique regulatory pathways that accelerate innovation:</p>
-      <ul class="list-disc list-inside mb-4 space-y-2">
-        <li><strong>Conditional Approval System</strong> for regenerative medicines</li>
-        <li><strong>Sakigake Designation</strong> for breakthrough therapies</li>
-        <li><strong>Collaborative PMDA consultations</strong> that de-risk development</li>
-      </ul>
-      <p class="mb-4">
-        Our deep relationships with regulatory authorities and understanding of both PMDA and FDA requirements enable portfolio companies to leverage Japan as a springboard to global markets.
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget: Japan-US Bridge **************** -->
-
-  <Content
+  <ContentKintsugi
+    id="regulatory"
+    eyebrow="§ 05 / REGULATORY"
+    title="The regulatory advantage."
     isReversed
-    title="The Japan-US Bridge: Turning Regional Innovation into Global Impact"
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">Tokyo Operations: The Innovation Hub</h3>
-      <ul class="list-disc list-inside mb-6 space-y-2">
-        <li>Direct access to Japan's <strong>6.2 billion government funding programs</strong> for pharmaceutical startups</li>
-        <li>Partnerships with leading institutions like University of Tokyo, Keio, and RIKEN</li>
-        <li>Proximity to Japan's <strong>Greater Tokyo Biocommunity</strong>, housing 50% of the nation's biotech startups</li>
-        <li>Relationships with Japanese pharmaceutical giants seeking innovation partnerships</li>
-      </ul>
-
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">Atlanta Operations: The Commercialization Engine</h3>
-      <ul class="list-disc list-inside mb-4 space-y-2">
-        <li>Gateway to the <strong>$4.3 trillion US healthcare market</strong></li>
-        <li>Proximity to CDC, Emory University, and Georgia Tech's biomedical engineering programs</li>
-        <li>Access to the Southeast's emerging biotech corridor</li>
-        <li>Direct connections to US venture capital and strategic acquirers</li>
-      </ul>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget: Cultural Translation **************** -->
-
-  <Content
-    title="The Cultural Translation Layer"
+    intro="Japan offers unique regulatory pathways that accelerate innovation, and our deep relationships with regulatory authorities and understanding of both PMDA and FDA requirements enable portfolio companies to leverage Japan as a springboard to global markets."
     items={[
       {
-        title: 'Concept Adaptation',
-        description:
-          "Japanese innovations often emphasize subtlety and prevention; we help translate these into value propositions that resonate with Western outcome-focused healthcare systems.",
+        title: 'Conditional Approval System',
+        description: 'A pathway for regenerative medicines that compresses the path from bench to bedside.',
       },
       {
-        title: 'Clinical Trial Strategy',
+        title: 'Sakigake Designation',
+        description: 'Accelerated review for breakthrough therapies with meaningful clinical promise.',
+      },
+      {
+        title: 'Collaborative PMDA consultations',
+        description:
+          'Ongoing, collaborative engagement with the regulator that de-risks development and clarifies requirements early.',
+      },
+    ]}
+  />
+
+  <ContentKintsugi
+    id="bridge"
+    eyebrow="§ 06 / JAPAN–US BRIDGE"
+    title="Turning regional innovation into global impact."
+    intro="Our two-hub structure in Tokyo and Atlanta forms a powerful corridor for healthcare innovation."
+    items={[
+      {
+        title: 'Tokyo operations: the innovation hub',
+        description:
+          "Direct access to Japan's 6.2 billion government funding programs for pharmaceutical startups; partnerships with leading institutions like University of Tokyo, Keio, and RIKEN; proximity to Japan's Greater Tokyo Biocommunity, housing 50% of the nation's biotech startups; and relationships with Japanese pharmaceutical giants seeking innovation partnerships.",
+      },
+      {
+        title: 'Atlanta operations: the commercialization engine',
+        description:
+          "Gateway to the $4.3 trillion US healthcare market; proximity to CDC, Emory University, and Georgia Tech's biomedical engineering programs; access to the Southeast's emerging biotech corridor; and direct connections to US venture capital and strategic acquirers.",
+      },
+    ]}
+  />
+
+  <FeaturesSeam
+    id="cultural-translation"
+    eyebrow="§ 07 / CULTURAL TRANSLATION"
+    title="The cultural translation layer."
+    subtitle="Success in cross-Pacific healthcare ventures requires more than literal translation — it demands cultural interpretation and adaptation."
+    items={[
+      {
+        label: 'CONCEPT',
+        title: 'Concept adaptation',
+        description:
+          'Japanese innovations often emphasize subtlety and prevention; we help translate these into value propositions that resonate with Western outcome-focused healthcare systems.',
+      },
+      {
+        label: 'CLINICAL',
+        title: 'Clinical trial strategy',
         description:
           "Leveraging Japan's ethnically homogeneous population for proof-of-concept, then expanding to diverse populations for global validation.",
       },
       {
-        title: 'Business Model Translation',
+        label: 'BUSINESS MODEL',
+        title: 'Business model translation',
         description:
           'Converting Japanese relationship-based business models to scalable, metrics-driven approaches demanded by Western investors.',
       },
       {
-        title: 'IP Strategy',
+        label: 'IP',
+        title: 'IP strategy',
         description:
           'Navigating the differences between Japanese collaborative R&D culture and Western IP protection requirements.',
       },
     ]}
-  >
-    <Fragment slot="content">
-      <p class="mb-4">
-        Success in cross-Pacific healthcare ventures requires more than literal translation — it demands cultural interpretation and adaptation.
-      </p>
-    </Fragment>
-  </Content>
+  />
 
-  <!-- Features Widget: Healthcare Focus Areas *************** -->
-
-  <Features
-    title="Healthcare Focus Areas"
-    subtitle="Where Japanese Innovation Meets Global Need"
+  <FeaturesSeam
+    id="operations"
+    eyebrow="§ 08 / OPERATIONS"
+    title="Japanese precision meets Silicon Valley speed."
+    subtitle='Our operational framework combines the art of "Omotenashi" in B2B healthcare with US market entry strategy, creating a powerful bridge for portfolio companies.'
     items={[
       {
-        title: 'AI-Powered Diagnostics and Precision Medicine',
-        description:
-          "Leveraging Japan's superior medical imaging datasets, universal healthcare records, and genetic databases to develop cutting-edge AI diagnostic tools.",
-        icon: 'tabler:brain',
-      },
-      {
-        title: 'Biotechnology and Pharmaceutical Innovation',
-        description:
-          "From regenerative medicine leadership to fragment-based drug discovery, leveraging Japan's strengths in structural biology and protein engineering.",
-        icon: 'tabler:flask',
-      },
-      {
-        title: 'Digital Health and Telemedicine',
-        description:
-          "Japan's digital health market projected to reach 90.87 billion by 2035. Platforms addressing fragmented healthcare delivery and rural access.",
-        icon: 'tabler:device-laptop',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features>
-
-  <!-- Content Widget: Operational Framework **************** -->
-
-  <Content
-    isReversed
-    title='The Deerfield Green Operational Framework'
-    items={[
-      {
-        title: 'Building Trust Before Transactions',
+        label: 'TRUST',
+        title: 'Building trust before transactions',
         description:
           'Japanese healthcare institutions require extensive relationship development; we facilitate 6-12 month engagement cycles.',
       },
       {
-        title: 'Multi-Stakeholder Navigation',
+        label: 'STAKEHOLDERS',
+        title: 'Multi-stakeholder navigation',
         description:
           'Understanding the complex decision-making involving doctors, administrators, and government officials.',
       },
       {
-        title: 'Perfection Through Iteration',
+        label: 'ITERATION',
+        title: 'Perfection through iteration',
         description:
           'Embracing the Japanese approach of relentless refinement while balancing market timing requirements.',
       },
       {
-        title: 'Cross-Pacific Development Teams',
+        label: 'CROSS-PACIFIC',
+        title: 'Cross-Pacific development teams',
         description:
           '24-hour development cycles leveraging time zones, with bilingual documentation and regulatory-compliant architecture.',
       },
     ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">Japanese Precision Meets Silicon Valley Speed</h3>
-      <p class="mb-4">
-        Our operational framework combines the art of "Omotenashi" in B2B healthcare with US market entry strategy, creating a powerful bridge for portfolio companies.
-      </p>
-    </Fragment>
-  </Content>
+  />
 
-  <!-- CTA ******************* -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get in Touch',
-        href: '/contact/',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Partner with us
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Learn how our incubator model bridges Japanese innovation with global healthcare markets.
-    </Fragment>
-  </CallToAction>
+  <CTASumi
+    id="contact"
+    eyebrow="§ 09 / CONTACT"
+    titleEn="Partner with us."
+    titleJa="一緒に取り組みませんか。"
+    subtitle="Learn how our incubator model bridges Japanese innovation with global healthcare markets."
+    actions={[{ text: 'Begin a conversation', href: '/contact/', variant: 'primary' }]}
+    primaryLang="en"
+  />
 </Layout>

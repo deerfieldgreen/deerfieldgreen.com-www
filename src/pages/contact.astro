@@ -1,8 +1,10 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import ContactForm from '~/components/widgets/Contact.astro';
+import PaperGrain from '~/components/common/PaperGrain.astro';
+import SeamDivider from '~/components/common/SeamDivider.astro';
 
 const metadata = {
   title: 'Contact Us',
@@ -11,76 +13,69 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText
-    tagline="Contact Us"
-    title="Get in Touch"
+  <!-- Hero ******************* -->
+  <HeroKintsugi
+    eyebrow="§ 01 / CONTACT"
+    titleEn="Get in Touch."
+    titleJa="お問い合わせ。"
     subtitle="Got an idea? Use the form below to shoot us a message and we'll get back to you within a few days."
+    primaryLang="en"
   />
 
-  <!-- Contact Form ******************* -->
+  <!-- Contact Form (preserved widget, wrapped in Kintsugi aesthetic) -->
+  <section class="relative bg-[var(--aw-color-bg-page)] py-16 md:py-24">
+    <PaperGrain tone="light" opacity={0.03} />
+    <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
+      <SeamDivider variant="default" tone="light" class="mb-16" />
+      <ContactForm
+        id="form"
+        title="Leave a Message"
+        subtitle="We'd love to hear from you. Fill out the form below and our team will respond promptly."
+        inputs={[
+          { type: 'text', name: 'name', label: 'Name' },
+          { type: 'email', name: 'email', label: 'Email' },
+        ]}
+        textarea={{ label: 'Message' }}
+        disclaimer={{
+          label:
+            'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+        }}
+        description="Our team typically responds within a few business days."
+      />
+    </div>
+  </section>
 
-  <ContactUs
-    id="form"
-    title="Leave a Message"
-    subtitle="We'd love to hear from you. Fill out the form below and our team will respond promptly."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="Our team typically responds within a few business days."
-  />
-
-  <!-- Locations & Contact Info ******************* -->
-
-  <Features2
-    title="Find Us"
-    tagline="Our locations"
-    columns={2}
+  <!-- Locations ******************* -->
+  <FeaturesSeam
+    id="locations"
+    eyebrow="§ 02 / LOCATIONS"
+    title="Find us."
     items={[
       {
+        label: 'JAPAN / HQ',
         title: 'Tokyo, Japan',
-        description: 'Minato-ku, Tokyo',
-        icon: 'tabler:map-pin',
+        description: 'Minato-ku, Tokyo.',
       },
       {
-        title: 'Milton, GA',
-        description: 'Milton, Georgia (greater Atlanta area)',
-        icon: 'tabler:map-pin',
+        label: 'USA / OFFICE',
+        title: 'Milton, Georgia',
+        description: 'Milton, Georgia (greater Atlanta area).',
       },
     ]}
   />
 
-  <Features2
-    title="Connect"
-    tagline="Online"
-    columns={1}
+  <!-- Online ******************* -->
+  <FeaturesSeam
+    id="online"
+    eyebrow="§ 03 / ONLINE"
+    title="Connect."
     items={[
       {
+        label: 'LINKEDIN / FOLLOW',
         title: 'LinkedIn',
-        description: 'Connect with Kevin Stoll on LinkedIn',
-        icon: 'tabler:brand-linkedin',
-        callToAction: {
-          text: 'View Profile',
-          href: 'https://www.linkedin.com/in/Kevinostoll',
-          target: '_blank',
-        },
+        description: 'Follow Deerfield Green on LinkedIn',
+        href: 'https://www.linkedin.com/company/deerfieldgreen/',
+        linkText: 'Follow Deerfield Green on LinkedIn →',
       },
     ]}
   />

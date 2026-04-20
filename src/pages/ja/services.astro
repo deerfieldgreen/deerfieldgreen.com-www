@@ -1,11 +1,11 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import HeroText from '~/components/widgets/HeroText.astro';
-import Content from '~/components/widgets/Content.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Image from '~/components/common/Image.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import ContentKintsugi from '~/components/widgets/v2/ContentKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
+import SeamDivider from '~/components/common/SeamDivider.astro';
 
 const metadata = {
   title: 'サービス',
@@ -14,194 +14,194 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+  <!-- Hero ******************* -->
 
-  <HeroText
-    tagline="サービス"
-    title="AIプロダクト戦略 & SaaS成長戦略"
+  <HeroKintsugi
+    eyebrow="§ 01 / サービス"
+    titleEn="AI Product Strategy &amp; SaaS Growth"
+    titleJa="AI プロダクト戦略 と SaaS グロース"
+    subtitle="2つの専門分野をワンストップで。AI導入とサブスクリプション成長を一体化し、インテリジェントなプロダクトを持続的なARRへと積み上げていきます。"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'お問い合わせ',
+        href: '/ja/contact/',
+      },
+    ]}
+    primaryLang="ja"
   />
 
-  <!-- Intro Narrative ******************* -->
+  <!-- AI Product Strategy — narrative + image ******************* -->
 
-  <Content
-    id="intro"
-  >
-    <Fragment slot="content">
-      <p class="text-lg text-muted mb-4">
-        最も成功しているテクノロジー企業は、AI導入とサブスクリプション成長を別々の取り組みとして扱いません。この2つを一体化させています。インテリジェントな自動化が解約率を低減し、顧客生涯価値を向上させます。AI主導のパーソナライゼーションが、既存のサブスクリプションモデル内に新たな収益化の道を切り開きます。より強力なデータ戦略がよりスマートなAI機能を生み出します。
-      </p>
-      <p class="text-lg text-muted">
-        ディアフィールド・グリーンは、この2つの専門分野をワンストップで提供します。AI対応プロダクトラインの立ち上げ、ARRの加速、またはその両方が必要な場合でも、イノベーションと経済的価値を結びつける意思決定を支援します。
-      </p>
-    </Fragment>
-
-    <Fragment slot="image">
-      <Image
-        src="~/assets/images/services-hero.jpg"
-        alt="AIとデジタル戦略"
-        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-        width={500}
-        height={500}
-        widths={[400, 768]}
-        sizes="(max-width: 768px) 100vw, 432px"
-        layout="responsive"
-      />
-      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@choys_?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Conny Schneider</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-    </Fragment>
-  </Content>
-
-  <!-- AI Product Strategy Section ******************* -->
-
-  <Content
+  <ContentKintsugi
     id="ai"
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">AIプロダクト戦略</h3>
-      <p class="text-xl text-muted mb-4">インテリジェントなビジョンと測定可能なインパクトの融合</p>
-      <p class="mb-4">
-        ディアフィールド・グリーンは、先進的なリーダーと協力し、人工知能を「可能性」から「成果」へと変革します。顧客体験を再定義するだけでなく、資本効率とオペレーショナルROIを推進するAI対応プロダクトの設計とスケーリングを支援します。
-      </p>
-      <p class="mb-4">
-        効果的なAI戦略は、目的の明確化から始まり、測定可能な変化で終わると私たちは考えています。ビジョナリーなプロダクト思考と実践的な実行力を組み合わせ、AI投資を自己強化型にするシステムとビジネスモデルを構築します。
-      </p>
-      <p class="mb-4">
-        経営陣、プロダクトチーム、データリーダーと協力し、全社的なAIビジョンの定義、スケーラブルなアーキテクチャの設計、インテリジェント機能の収益化、ワークフォース変革の推進、透明性のあるガバナンスフレームワークの構築を支援します。
-      </p>
-    </Fragment>
-
-    <Fragment slot="image">
-      <Image
-        src="~/assets/images/services-ai.jpg"
-        alt="AIテクノロジーとデータビジュアライゼーション"
-        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-        width={500}
-        height={500}
-        widths={[400, 768]}
-        sizes="(max-width: 768px) 100vw, 432px"
-        layout="responsive"
-      />
-      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@growtika?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Growtika</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- AI Features ******************* -->
-
-  <Features2
-    title="AI戦略サービス"
-    subtitle="AIを組織全体で持続的にスケールさせるためのシステムと規律の構築。"
-    columns={3}
+    eyebrow="§ 02 / AI プロダクト戦略"
+    title="インテリジェントなビジョンと、測定可能なインパクトの融合。"
+    intro="ディアフィールド・グリーンは、先進的なリーダーと協力し、人工知能を「可能性」から「成果」へと変革します。顧客体験を再定義するだけでなく、資本効率とオペレーショナルROIを推進するAI対応プロダクトの設計とスケーリングを支援します。"
     items={[
       {
+        title: '目的の明確化と、測定可能な変化。',
+        description:
+          '効果的なAI戦略は、事業課題の明確化から始まり、成果の変化で終わります。ビジョナリーなプロダクト思考と、実践的な実行力を組み合わせます。',
+      },
+      {
+        title: '自己強化型のシステムとモデル。',
+        description:
+          'AI投資が複利的に積み上がるシステムとビジネスモデルを設計します。より良いデータがより良い機能を生み、より良い機能が次のデータを生む構造です。',
+      },
+      {
+        title: '経営陣・プロダクト・データの連携。',
+        description:
+          '経営陣、プロダクトチーム、データリーダーと協力し、全社的なAIビジョン、スケーラブルなアーキテクチャ、収益化の道筋、透明性のあるガバナンスを構築します。',
+      },
+    ]}
+    image={{ src: '~/assets/images/services-ai.jpg', alt: 'AIテクノロジーとデータビジュアライゼーション' }}
+  />
+
+  <!-- Unsplash attribution — AI image ******************* -->
+
+  <div class="max-w-7xl mx-auto px-6 md:px-10 -mt-6 mb-12 text-right">
+    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-[var(--aw-color-text-subtle)]">
+      Photo by <a href="https://unsplash.com/@growtika?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Growtika</a> · <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Unsplash</a>
+    </p>
+  </div>
+
+  <!-- AI Strategy services — seam list ******************* -->
+
+  <FeaturesSeam
+    id="ai-services"
+    eyebrow="§ 03 / AI アドバイザリー"
+    title="AI戦略サービス"
+    subtitle="AIを組織全体で持続的にスケールさせるためのシステムと規律の構築。"
+    defaultLinkText="詳細 →"
+    items={[
+      {
+        label: 'ROI',
         title: 'AI ROIモデリング',
         description:
           '詳細なパフォーマンス指標、投資回収分析、成長予測を通じて、投資をビジネス成果に結びつけます。',
-        icon: 'tabler:chart-dots-3',
       },
       {
+        label: 'EFFICIENCY',
         title: 'インテリジェント・コスト効率化',
         description:
           '最適化された推論パイプライン、キャッシング戦略、適応型モデルルーティングによりトークンレベルのOpExを削減します。',
-        icon: 'tabler:cpu',
       },
       {
+        label: 'MONETIZATION',
         title: '機能主導の収益化',
         description:
           'パーソナライゼーション、予測、自動化などのAI主導の価値提案を創出し、収益またはリテンション向上に直結させます。',
-        icon: 'tabler:currency-dollar',
       },
       {
+        label: 'WORKFORCE',
         title: 'ワークフォース・リイマジネーション',
         description:
           'AI拡張されたロールと継続的学習を通じて、タスク実行から高次の問題解決へとチームの転換を支援します。',
-        icon: 'tabler:users-group',
       },
       {
+        label: 'CONTINUITY',
         title: 'データ＆プロダクト継続性',
         description:
           'データ、モデル、実験のライフサイクルシステムを確立し、イノベーションを進化する市場ニーズに整合させます。',
-        icon: 'tabler:refresh',
       },
     ]}
   />
 
-  <!-- SaaS Consulting Section ******************* -->
+  <SeamDivider variant="default" tone="light" />
 
-  <Content
+  <!-- SaaS Subscription Growth — narrative + image ******************* -->
+
+  <ContentKintsugi
     id="saas"
-    isReversed
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">SaaSサブスクリプション収益</h3>
-      <p class="mb-4">
-        ディアフィールド・グリーンは、得意とする3つの領域 — シリコンバレーSaaS、ヘルステック、産業・製造テクノロジー — でSaaSビジネスのサブスクリプション収益成長を支援しています。40社を超える支援実績の中心にあるのは常に同じテーマです。ARRの拡大、解約率の低減、そして価格・パッケージの見直しです。
-      </p>
-      <p class="mb-4">
-        各プロジェクトは、事業がこれらの軸上のどこに位置しているかを把握するところから始まります。どのコホートから離脱が起きているか、どのセグメントが割安な価格になっているか、どのプロダクトがリテンションを支えているか。その上で、市場、買い手、競合環境に即したサブスクリプション収益計画を設計します。テンプレートを当てはめることはしません。
-      </p>
-      <p class="mb-4">
-        支援範囲は、価格・パッケージ設計、GTMモデル（ダイレクト、チャネル、プロダクト・レッド）、そして複数年にわたりARRを複利的に積み上げるリテンション・エクスパンションプログラムに及びます。
-      </p>
-    </Fragment>
-
-    <Fragment slot="image">
-      <Image
-        src="~/assets/images/services-saas.jpg"
-        alt="チームによるブレインストーミングと戦略策定"
-        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-        width={500}
-        height={500}
-        widths={[400, 768]}
-        sizes="(max-width: 768px) 100vw, 432px"
-        layout="responsive"
-      />
-      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@silverkblack?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Vitaly Gariev</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- SaaS Features ******************* -->
-
-  <Features
-    title="SaaS成長サービス"
-    subtitle="持続可能なサブスクリプション収益成長のための総合的アプローチ。"
+    eyebrow="§ 04 / SaaS グロース"
+    title="複利的に積み上がる、サブスクリプション収益。"
+    intro="ディアフィールド・グリーンは、得意とする3つの領域 — シリコンバレーSaaS、ヘルステック、産業・製造テクノロジー — でSaaSビジネスのサブスクリプション収益成長を支援しています。40社を超える支援実績の中心にあるのは、ARRの拡大、解約率の低減、価格・パッケージの見直しという一貫したテーマです。"
     items={[
       {
+        title: '事業の現在地から始める。',
+        description:
+          'どのコホートから離脱が起きているか、どのセグメントが割安な価格になっているか、どのプロダクトがリテンションを支えているか。各プロジェクトはその診断から始まります。テンプレートは使いません。',
+      },
+      {
+        title: '市場の実態に即した計画。',
+        description:
+          '市場、買い手、競合環境に即したサブスクリプション収益計画を設計します。価格・パッケージ、GTMモデル、リテンションプログラムを一貫して設計します。',
+      },
+      {
+        title: '複数年にわたり積み上がるARR。',
+        description:
+          'ダイレクト、チャネル、プロダクト・レッドの各モーションとリテンション・エクスパンションを組み合わせ、成長が自走する構造を作ります。',
+      },
+    ]}
+    image={{ src: '~/assets/images/services-saas.jpg', alt: 'チームによるブレインストーミングと戦略策定' }}
+    isReversed={true}
+  />
+
+  <!-- Unsplash attribution — SaaS image ******************* -->
+
+  <div class="max-w-7xl mx-auto px-6 md:px-10 -mt-6 mb-12 text-right">
+    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-[var(--aw-color-text-subtle)]">
+      Photo by <a href="https://unsplash.com/@silverkblack?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Vitaly Gariev</a> · <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Unsplash</a>
+    </p>
+  </div>
+
+  <!-- SaaS Advisory — seam list ******************* -->
+
+  <FeaturesSeam
+    id="saas-services"
+    eyebrow="§ 05 / SaaS アドバイザリー"
+    title="SaaS成長サービス"
+    subtitle="持続可能なサブスクリプション収益成長のための総合的アプローチ。"
+    defaultLinkText="詳細 →"
+    items={[
+      {
+        label: 'SALES',
         title: 'ダイレクト・セールスおよびチャネル・セールス',
         description:
           '効果的な販売チャネルの構築と最適化を支援します。',
-        icon: 'tabler:users',
       },
       {
+        label: 'MARKETING',
         title: 'サブスクリプション・マーケティング戦略',
         description:
           '持続的な成長を実現するマーケティング戦略を策定します。',
-        icon: 'tabler:speakerphone',
       },
       {
+        label: 'DATA',
         title: 'データ戦略',
         description:
           'データドリブンな意思決定を可能にする基盤を構築します。',
-        icon: 'tabler:chart-bar',
       },
       {
+        label: 'FINANCE',
         title: 'ファイナンス',
         description:
           '財務モデリングとサブスクリプション収益の最適化を支援します。',
-        icon: 'tabler:calculator',
       },
       {
+        label: 'PLG',
         title: '製品主導の成長',
         description:
           'プロダクト・レッド・グロース戦略の設計と実装を支援します。',
-        icon: 'tabler:rocket',
       },
     ]}
+  />
+
+  <!-- CTA ******************* -->
+
+  <CTASumi
+    eyebrow="§ 06 / お問い合わせ"
+    titleEn="Ready to transform your business?"
+    titleJa="ビジネスの変革を、ともに。"
+    subtitle="インテリジェントなプロダクト戦略と、持続的なサブスクリプション成長をどう結びつけるか。ぜひお聞かせください。"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'お問い合わせ',
+        href: '/ja/contact/',
+      },
+    ]}
+    primaryLang="ja"
   />
 </Layout>

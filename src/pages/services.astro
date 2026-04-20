@@ -1,12 +1,11 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import HeroText from '~/components/widgets/HeroText.astro';
-import Content from '~/components/widgets/Content.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Image from '~/components/common/Image.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import ContentKintsugi from '~/components/widgets/v2/ContentKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
+import SeamDivider from '~/components/common/SeamDivider.astro';
 
 const metadata = {
   title: 'Services',
@@ -15,214 +14,192 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+  <!-- Hero ******************* -->
 
-  <HeroText
-    tagline="Services"
-    title="AI Product Strategy & SaaS Growth"
+  <HeroKintsugi
+    eyebrow="§ 01 / SERVICES"
+    titleEn="AI Product Strategy &amp; SaaS Growth"
+    titleJa="AI プロダクト戦略 と SaaS グロース"
+    subtitle="Two disciplines under one roof. We help technology companies weave AI adoption and subscription growth together — so intelligent products compound into durable ARR."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Begin a conversation',
+        href: '/contact/',
+      },
+    ]}
+    primaryLang="en"
   />
 
-  <!-- Intro Narrative ******************* -->
+  <!-- AI Product Strategy — narrative + image ******************* -->
 
-  <Content
-    id="intro"
-  >
-    <Fragment slot="content">
-      <p class="text-lg text-muted mb-4">
-        The most successful technology companies don't treat AI adoption and subscription growth as separate initiatives — they weave them together. Intelligent automation reduces churn and increases lifetime value. AI-driven personalization unlocks new monetization pathways within existing subscription models. A stronger data strategy fuels smarter AI features.
-      </p>
-      <p class="text-lg text-muted">
-        At Deerfield Green, we bring both disciplines under one roof. Whether you need to launch AI-enabled product lines, accelerate ARR, or both, our team ensures every decision connects innovation with economic value.
-      </p>
-    </Fragment>
-
-    <Fragment slot="image">
-      <Image
-        src="~/assets/images/services-hero.jpg"
-        alt="AI and digital strategy"
-        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-        width={500}
-        height={500}
-        widths={[400, 768]}
-        sizes="(max-width: 768px) 100vw, 432px"
-        layout="responsive"
-      />
-      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@choys_?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Conny Schneider</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-    </Fragment>
-  </Content>
-
-  <!-- AI Product Strategy Section ******************* -->
-
-  <Content
+  <ContentKintsugi
     id="ai"
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">AI Product Strategy</h3>
-      <p class="text-xl text-muted mb-4">Where intelligent vision meets measurable impact</p>
-      <p class="mb-4">
-        Deerfield Green partners with forward-looking leaders to transform artificial intelligence from potential into performance. We help organizations design and scale AI-enabled products that not only redefine customer experience but also drive capital efficiency and operational ROI.
-      </p>
-      <p class="mb-4">
-        We believe effective AI strategy begins with clarity of purpose and ends with measurable change. Our approach pairs visionary product thinking with pragmatic execution — architecting systems and business models that make AI investment self-reinforcing.
-      </p>
-      <p class="mb-4">
-        We collaborate with executives, product teams, and data leaders to define enterprise-wide AI vision, design scalable architectures, monetize intelligent features, orchestrate workforce transformations, and build transparent governance frameworks.
-      </p>
-    </Fragment>
-
-    <Fragment slot="image">
-      <Image
-        src="~/assets/images/services-ai.jpg"
-        alt="AI technology and data visualization"
-        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-        width={500}
-        height={500}
-        widths={[400, 768]}
-        sizes="(max-width: 768px) 100vw, 432px"
-        layout="responsive"
-      />
-      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@growtika?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Growtika</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- AI Features ******************* -->
-
-  <Features2
-    title="AI Strategy Services"
-    subtitle="Building the systems and disciplines that let AI scale sustainably across your organization."
-    columns={3}
+    eyebrow="§ 02 / AI PRODUCT STRATEGY"
+    title="Where intelligent vision meets measurable impact."
+    intro="Deerfield Green partners with forward-looking leaders to transform artificial intelligence from potential into performance. We help organizations design and scale AI-enabled products that redefine customer experience and drive capital efficiency and operational ROI."
     items={[
       {
+        title: 'Clarity of purpose, measurable change.',
+        description:
+          'Effective AI strategy begins with a defined business question and ends with an observed shift in outcomes. We pair visionary product thinking with pragmatic execution.',
+      },
+      {
+        title: 'Self-reinforcing systems and models.',
+        description:
+          'We architect systems and business models that make AI investment compound — where better data feeds better features, and better features fund better data.',
+      },
+      {
+        title: 'Executives, product, and data — aligned.',
+        description:
+          'We collaborate across leadership, product teams, and data organizations to define enterprise-wide AI vision, scalable architectures, monetization pathways, and transparent governance.',
+      },
+    ]}
+    image={{ src: '~/assets/images/services-ai.jpg', alt: 'AI technology and data visualization' }}
+  />
+
+  <!-- Unsplash attribution — AI image ******************* -->
+
+  <div class="max-w-7xl mx-auto px-6 md:px-10 -mt-6 mb-12 text-right">
+    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-[var(--aw-color-text-subtle)]">
+      Photo by <a href="https://unsplash.com/@growtika?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Growtika</a> · <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Unsplash</a>
+    </p>
+  </div>
+
+  <!-- AI Strategy services — seam list ******************* -->
+
+  <FeaturesSeam
+    id="ai-services"
+    eyebrow="§ 03 / AI ADVISORY"
+    title="AI Strategy Services"
+    subtitle="Building the systems and disciplines that let AI scale sustainably across your organization."
+    items={[
+      {
+        label: 'ROI',
         title: 'AI ROI Modeling',
         description:
           'Connecting investment to business outcomes through detailed performance metrics, payback analysis, and growth projections.',
-        icon: 'tabler:chart-dots-3',
       },
       {
+        label: 'EFFICIENCY',
         title: 'Intelligent Cost Efficiency',
         description:
           'Reducing token-level OpEx through optimized inference pipelines, caching strategies, and adaptive model routing.',
-        icon: 'tabler:cpu',
       },
       {
+        label: 'MONETIZATION',
         title: 'Feature-Led Monetization',
         description:
           'Creating AI-driven value propositions — personalization, prediction, automation — that convert directly into revenue or retention lift.',
-        icon: 'tabler:currency-dollar',
       },
       {
+        label: 'WORKFORCE',
         title: 'Workforce Reimagination',
         description:
           'Guiding teams to shift from task execution to higher-order problem-solving through AI-augmented roles and continuous learning.',
-        icon: 'tabler:users-group',
       },
       {
+        label: 'CONTINUITY',
         title: 'Data & Product Continuity',
         description:
           'Establishing lifecycle systems for data, models, and experimentation that keep innovation aligned with evolving market needs.',
-        icon: 'tabler:refresh',
       },
     ]}
   />
 
-  <!-- SaaS Consulting Section ******************* -->
+  <SeamDivider variant="default" tone="light" />
 
-  <Content
+  <!-- SaaS Subscription Growth — narrative + image ******************* -->
+
+  <ContentKintsugi
     id="saas"
-    isReversed
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">SaaS Subscription Revenue</h3>
-      <p class="mb-4">
-        Deerfield Green helps SaaS businesses grow subscription revenue across three sectors we know well: Silicon Valley SaaS, healthtech, and industrial and manufacturing technology. Over 40 client engagements have centered on the same outcome themes — ARR expansion, churn reduction, and pricing and packaging resets.
-      </p>
-      <p class="mb-4">
-        Each engagement starts with where the business actually sits on those axes: which cohorts are leaking, which segments are under-priced, which products are carrying the retention curve. From there we build a subscription revenue plan that fits the specific market, buyer, and competitive reality — not a template.
-      </p>
-      <p class="mb-4">
-        The work typically spans pricing and packaging, go-to-market motion (direct, channel, and product-led), and the retention and expansion programs that compound ARR over multi-year horizons.
-      </p>
-    </Fragment>
+    eyebrow="§ 04 / SAAS GROWTH"
+    title="Subscription revenue, engineered for compounding."
+    intro="Deerfield Green helps SaaS businesses grow subscription revenue across three sectors we know well: Silicon Valley SaaS, healthtech, and industrial and manufacturing technology. Over 40 engagements have centered on the same outcomes — ARR expansion, churn reduction, and pricing and packaging resets."
+    items={[
+      {
+        title: 'Start where the business actually sits.',
+        description:
+          'Which cohorts are leaking, which segments are under-priced, which products are carrying the retention curve. Every engagement begins with that diagnosis — not a template.',
+      },
+      {
+        title: 'Plans built for the real market.',
+        description:
+          'We build a subscription revenue plan that fits the specific market, buyer, and competitive reality — spanning pricing and packaging, go-to-market motion, and retention programs.',
+      },
+      {
+        title: 'ARR that compounds across years.',
+        description:
+          'The work is designed for multi-year horizons: direct, channel, and product-led motion paired with retention and expansion programs that make growth self-sustaining.',
+      },
+    ]}
+    image={{ src: '~/assets/images/services-saas.jpg', alt: 'Team brainstorming strategy with sticky notes' }}
+    isReversed={true}
+  />
 
-    <Fragment slot="image">
-      <Image
-        src="~/assets/images/services-saas.jpg"
-        alt="Team brainstorming strategy with sticky notes"
-        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-        width={500}
-        height={500}
-        widths={[400, 768]}
-        sizes="(max-width: 768px) 100vw, 432px"
-        layout="responsive"
-      />
-      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@silverkblack?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Vitaly Gariev</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-    </Fragment>
+  <!-- Unsplash attribution — SaaS image ******************* -->
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+  <div class="max-w-7xl mx-auto px-6 md:px-10 -mt-6 mb-12 text-right">
+    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-[var(--aw-color-text-subtle)]">
+      Photo by <a href="https://unsplash.com/@silverkblack?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Vitaly Gariev</a> · <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Unsplash</a>
+    </p>
+  </div>
 
-  <!-- SaaS Features ******************* -->
+  <!-- SaaS Advisory — seam list ******************* -->
 
-  <Features
+  <FeaturesSeam
+    id="saas-services"
+    eyebrow="§ 05 / SAAS ADVISORY"
     title="SaaS Growth Services"
     subtitle="A holistic approach to sustainable subscription revenue growth."
     items={[
       {
+        label: 'SALES',
         title: 'Direct and Channel Sales',
         description:
           'Building and optimizing direct and channel sales strategies to maximize reach and revenue.',
-        icon: 'tabler:users',
       },
       {
+        label: 'MARKETING',
         title: 'Subscription Marketing Strategy',
         description:
           'Developing targeted marketing strategies designed to acquire and retain subscription customers.',
-        icon: 'tabler:speakerphone',
       },
       {
+        label: 'DATA',
         title: 'Data Strategy',
         description:
           'Leveraging data analytics to inform decision-making and drive business growth.',
-        icon: 'tabler:chart-bar',
       },
       {
+        label: 'FINANCE',
         title: 'Finance',
         description:
           'Financial planning and modeling to ensure sustainable growth and profitability.',
-        icon: 'tabler:calculator',
       },
       {
+        label: 'PLG',
         title: 'Product Led Growth',
         description:
           'Implementing product-led growth strategies that drive adoption and expansion revenue.',
-        icon: 'tabler:rocket',
       },
     ]}
   />
 
   <!-- CTA ******************* -->
 
-  <CallToAction
+  <CTASumi
+    eyebrow="§ 06 / CONTACT"
+    titleEn="Ready to transform your business?"
+    titleJa="ビジネスの変革を、ともに。"
+    subtitle="Let's discuss how Deerfield Green can help you connect intelligent product strategy with durable subscription growth."
     actions={[
       {
         variant: 'primary',
-        text: 'Get in Touch',
+        text: 'Begin a conversation',
         href: '/contact/',
       },
     ]}
-  >
-    <Fragment slot="title">
-      Ready to transform your business?
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Let's discuss how Deerfield Green can help you grow.
-    </Fragment>
-  </CallToAction>
+    primaryLang="en"
+  />
 </Layout>
