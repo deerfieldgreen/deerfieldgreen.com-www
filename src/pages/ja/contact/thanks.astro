@@ -1,0 +1,33 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
+
+const metadata = {
+  title: 'メッセージを受け取りました',
+  description: 'お問い合わせありがとうございます。数営業日以内にご返信いたします。',
+  robots: { index: false, follow: false },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero ******************* -->
+  <HeroKintsugi
+    eyebrow="§ 01 / ありがとうございます"
+    titleEn="Message received."
+    titleJa="メッセージを受け取りました。"
+    subtitle="お問い合わせいただきありがとうございます。通常、数営業日以内にご返信いたします。"
+    primaryLang="ja"
+  />
+
+  <!-- CTA ******************* -->
+  <CTASumi
+    id="return"
+    eyebrow="§ 02 / ホーム"
+    titleEn="Continue exploring."
+    titleJa="引き続きご覧ください。"
+    subtitle="ホームページに戻るか、私たちの取り組みについてさらに詳しくご覧ください。"
+    actions={[{ variant: 'primary', text: 'ホームに戻る →', href: '/ja/' }]}
+    primaryLang="ja"
+  />
+</Layout>
