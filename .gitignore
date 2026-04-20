@@ -18,6 +18,7 @@ Thumbs.db
 
 # Cloudflare
 .wrangler/
+.dev.vars
 
 # Build / misc
 *.log
