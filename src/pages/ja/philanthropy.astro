@@ -1,9 +1,9 @@
 ---
-import Content from '~/components/widgets/Content.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import Image from '~/components/common/Image.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import ContentKintsugi from '~/components/widgets/v2/ContentKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
 
 const metadata = {
   title: '慈善活動',
@@ -12,160 +12,157 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText
-    tagline="慈善活動"
-    title="日本文化の保護とコミュニティの支援"
+  <!-- Hero ******************* -->
+  <HeroKintsugi
+    eyebrow="§ 01 / 慈善活動"
+    titleEn="Preserving Japanese Culture and Empowering Communities"
+    titleJa="日本文化の保護とコミュニティの支援"
+    subtitle="文化遺産の保護、奨学金の支援、メンタルヘルスの推進——日本市場を重視した慈善活動を行っています。"
+    primaryLang="ja"
   />
 
-  <!-- Introduction Content ******************* -->
-
-  <Content
+  <!-- Intro ******************* -->
+  <ContentKintsugi
     id="intro"
-    columns={1}
-  >
-    <Fragment slot="content">
-      <p class="text-lg text-muted mb-4">
-        ディアフィールド・グリーンは、日本文化の保護、奨学金の支援、そしてメンタルヘルスの推進——特に自殺予防と家庭内虐待の分野——に注力する慈善事業会社です。日本市場を重視し、私たちのビジョンを共有し、これらの重要な分野を主要な使命とする著名な非営利団体とのパートナーシップを通じて、意義のある社会的インパクトの創出に努めています。
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Focus Areas ******************* -->
-
-  <Features2
-    title="重点分野"
-    tagline="社会への貢献"
-    columns={3}
+    eyebrow="§ 02 / アプローチ"
+    title="パートナーシップと忍耐の実践。"
+    intro="ディアフィールド・グリーンは、日本文化の保護、奨学金の支援、そしてメンタルヘルスの推進——特に自殺予防と家庭内虐待の分野——に注力する慈善事業会社です。日本市場を重視し、私たちのビジョンを共有し、これらの重要な分野を主要な使命とする著名な非営利団体とのパートナーシップを通じて、意義のある社会的インパクトの創出に努めています。"
     items={[
       {
-        title: '文化遺産の保護',
+        title: '長期的なパートナーシップ',
         description:
-          '伝統芸術、工芸、祭り、史跡、文化教育プログラムなど、日本文化の保護と振興に関する活動への投資。',
-        icon: 'tabler:building-castle',
+          '一度限りの助成ではなく、使命を共有する団体との持続的な関係を構築します。',
       },
       {
-        title: '奨学金',
+        title: '測定可能なインパクト',
         description:
-          '将来のリーダー、思想家、イノベーターの育成に貢献するため、優秀な学生への資金援助とリソースの提供。',
-        icon: 'tabler:school',
+          '透明性、説明責任、測定可能な成果を重視し、助成金が効果的に活用されるよう徹底しています。',
       },
       {
-        title: 'メンタルヘルス',
+        title: '日本市場重視',
         description:
-          '自殺予防や家庭内虐待に関するカウンセリング、啓発活動、ヘルプライン等のサービスを提供する組織の支援。',
-        icon: 'tabler:heart-handshake',
+          '日本市場、その文化遺産、そして支援を必要とするコミュニティへの重点的な取り組み。',
       },
     ]}
   />
 
-  <!-- Cultural Preservation Detail ******************* -->
+  <!-- Focus Areas ******************* -->
+  <FeaturesSeam
+    id="focus"
+    eyebrow="§ 03 / 重点分野"
+    title="3つの重点領域。"
+    subtitle="私たちが注力する分野。"
+    defaultLinkText="詳細 →"
+    items={[
+      {
+        label: 'CULTURE',
+        title: '文化遺産の保護',
+        description:
+          '伝統芸術、工芸、祭り、史跡、文化教育プログラムなど、日本文化の保護と振興に関する活動への投資。',
+      },
+      {
+        label: 'SCHOLARSHIPS',
+        title: '奨学金',
+        description:
+          '将来のリーダー、思想家、イノベーターの育成に貢献するため、優秀な学生への資金援助とリソースの提供。',
+      },
+      {
+        label: 'MENTAL HEALTH',
+        title: 'メンタルヘルス',
+        description:
+          '自殺予防や家庭内虐待に関するカウンセリング、啓発活動、ヘルプライン等のサービスを提供する組織の支援。',
+      },
+      {
+        label: 'COMMUNITY',
+        title: 'コミュニティと機会',
+        description:
+          '教育、職業訓練、起業支援を通じて、個人とコミュニティの可能性を広げる取り組み。',
+      },
+    ]}
+  />
 
-  <Content
+  <!-- Cultural Preservation ******************* -->
+  <ContentKintsugi
     id="culture"
-  >
-    <Fragment slot="image">
-      <Image
-        src="~/assets/images/philanthropy-culture.jpg"
-        alt="緑に囲まれた日本の伝統的な寺院の参道"
-        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-        width={500}
-        height={500}
-        widths={[400, 768]}
-        sizes="(max-width: 768px) 100vw, 432px"
-        layout="responsive"
-      />
-      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@remi_b?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Rémi Bertogliati</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-    </Fragment>
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">文化遺産の保護</h3>
-      <p class="text-lg text-muted mb-4">
-        ディアフィールド・グリーンの最大の目標は、日本の豊かな文化遺産を保護し、次世代に継承することです。文化の保護は、社会のアイデンティティと幸福にとって不可欠であると考えています。日本文化の振興と保護に関する取り組みに投資することで、将来の世代が歴史的なルーツを受け入れ、そこから学ぶことができるよう努めています。伝統芸術、工芸、祭り、史跡の保存、文化教育プログラムなどに携わる団体を支援しています。
-      </p>
-    </Fragment>
-  </Content>
+    eyebrow="§ 04 / 文化遺産の保護"
+    title="ルーツを未来へ。"
+    intro="ディアフィールド・グリーンの最大の目標は、日本の豊かな文化遺産を保護し、次世代に継承することです。文化の保護は、社会のアイデンティティと幸福にとって不可欠であると考えています。日本文化の振興と保護に関する取り組みに投資することで、将来の世代が歴史的なルーツを受け入れ、そこから学ぶことができるよう努めています。伝統芸術、工芸、祭り、史跡の保存、文化教育プログラムなどに携わる団体を支援しています。"
+    items={[]}
+    image={{
+      src: '~/assets/images/philanthropy-culture.jpg',
+      alt: '緑に囲まれた日本の伝統的な寺院の参道',
+    }}
+  />
+  <div class="max-w-7xl mx-auto px-6 md:px-10 -mt-6 mb-12 text-right">
+    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-[var(--aw-color-text-subtle)]">
+      Photo by <a href="https://unsplash.com/@remi_b?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Rémi Bertogliati</a> · <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Unsplash</a>
+    </p>
+  </div>
 
-  <!-- Scholarships Detail ******************* -->
-
-  <Content
+  <!-- Scholarships ******************* -->
+  <ContentKintsugi
     id="scholarships"
+    eyebrow="§ 05 / 奨学金"
+    title="卓越性への道筋。"
+    intro="教育と知識の重要性を認識し、ディアフィールド・グリーンは奨学金に大きな重点を置いています。教育こそが機会を切り開き、個人が潜在能力を最大限に発揮するための鍵であると確信しています。優秀な学生に資金援助とリソースを提供することで、卓越性への道筋を創り、日本の未来を形作る次世代のリーダー、思想家、イノベーターの育成に貢献することを目指しています。"
+    items={[]}
+    image={{
+      src: '~/assets/images/philanthropy-scholarships.jpg',
+      alt: '制服を着た日本の学生たち',
+    }}
     isReversed
-  >
-    <Fragment slot="image">
-      <Image
-        src="~/assets/images/philanthropy-scholarships.jpg"
-        alt="制服を着た日本の学生たち"
-        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-        width={500}
-        height={500}
-        widths={[400, 768]}
-        sizes="(max-width: 768px) 100vw, 432px"
-        layout="responsive"
-      />
-      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@duonguyen?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">DuoNguyen</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-    </Fragment>
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">奨学金</h3>
-      <p class="text-lg text-muted mb-4">
-        教育と知識の重要性を認識し、ディアフィールド・グリーンは奨学金に大きな重点を置いています。教育こそが機会を切り開き、個人が潜在能力を最大限に発揮するための鍵であると確信しています。優秀な学生に資金援助とリソースを提供することで、卓越性への道筋を創り、日本の未来を形作る次世代のリーダー、思想家、イノベーターの育成に貢献することを目指しています。
-      </p>
-    </Fragment>
-  </Content>
+  />
+  <div class="max-w-7xl mx-auto px-6 md:px-10 -mt-6 mb-12 text-right">
+    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-[var(--aw-color-text-subtle)]">
+      Photo by <a href="https://unsplash.com/@duonguyen?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">DuoNguyen</a> · <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Unsplash</a>
+    </p>
+  </div>
 
-  <!-- Mental Health Detail ******************* -->
-
-  <Content
+  <!-- Mental Health ******************* -->
+  <ContentKintsugi
     id="mental-health"
-  >
-    <Fragment slot="image">
-      <Image
-        src="~/assets/images/philanthropy-mental-health.jpg"
-        alt="コミュニティサポートとメンタルウェルネス"
-        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-        width={500}
-        height={500}
-        widths={[400, 768]}
-        sizes="(max-width: 768px) 100vw, 432px"
-        layout="responsive"
-      />
-      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@shamimnakhaei?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Shamim Nakhaei</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-    </Fragment>
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">メンタルヘルスの推進</h3>
-      <p class="text-lg text-muted mb-4">
-        文化の保護と奨学金に加え、ディアフィールド・グリーンはメンタルヘルスの推進にも深くコミットしており、特に自殺予防と家庭内虐待の分野に注力しています。これらの差し迫った社会的課題に対処する緊急性を理解し、カウンセリング、啓発キャンペーン、相談窓口、その他の重要なリソースの提供に尽力する団体を支援しています。メンタルヘルスを促進し、偏見を減らし、危機的状況にある方々を支援するプログラムに資金を提供することで、心の健康を最優先し、すべての人にとって安全な環境を提供する社会の実現を目指しています。
-      </p>
-    </Fragment>
-  </Content>
+    eyebrow="§ 06 / メンタルヘルス"
+    title="心の健康を最優先する社会へ。"
+    intro="文化の保護と奨学金に加え、ディアフィールド・グリーンはメンタルヘルスの推進にも深くコミットしており、特に自殺予防と家庭内虐待の分野に注力しています。これらの差し迫った社会的課題に対処する緊急性を理解し、カウンセリング、啓発キャンペーン、相談窓口、その他の重要なリソースの提供に尽力する団体を支援しています。メンタルヘルスを促進し、偏見を減らし、危機的状況にある方々を支援するプログラムに資金を提供することで、心の健康を最優先し、すべての人にとって安全な環境を提供する社会の実現を目指しています。"
+    items={[]}
+    image={{
+      src: '~/assets/images/philanthropy-mental-health.jpg',
+      alt: 'コミュニティサポートとメンタルウェルネス',
+    }}
+  />
+  <div class="max-w-7xl mx-auto px-6 md:px-10 -mt-6 mb-12 text-right">
+    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-[var(--aw-color-text-subtle)]">
+      Photo by <a href="https://unsplash.com/@shamimnakhaei?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Shamim Nakhaei</a> · <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Unsplash</a>
+    </p>
+  </div>
 
-  <!-- Grant-Making Process ******************* -->
-
-  <Content
+  <!-- Approach ******************* -->
+  <ContentKintsugi
     id="grants"
+    eyebrow="§ 07 / アプローチ"
+    title="忍耐をもって築く助成の実践。"
+    intro="私たちのアプローチの中核は、年次の助成プロセスです。私たちの基本的な使命に合致する著名な非営利団体を慎重に選定しています。透明性、説明責任、そして測定可能なインパクトを重視し、助成金がポジティブな成果を最大化するために効果的に活用されるよう徹底しています。多様なステークホルダー間の長期的なパートナーシップの構築とコラボレーションの促進を通じて、私たちが支援する分野において持続可能で永続的な変化を生み出すことを目指しています。"
+    items={[]}
+    image={{
+      src: '~/assets/images/philanthropy-approach.jpg',
+      alt: 'チームの協力とパートナーシップ',
+    }}
     isReversed
-  >
-    <Fragment slot="image">
-      <Image
-        src="~/assets/images/philanthropy-approach.jpg"
-        alt="チームの協力とパートナーシップ"
-        class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-        width={500}
-        height={500}
-        widths={[400, 768]}
-        sizes="(max-width: 768px) 100vw, 432px"
-        layout="responsive"
-      />
-      <p class="mt-1 text-xs text-gray-400 text-right">Photo by <a href="https://unsplash.com/@camylla93?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Camylla Battani</a> on <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-    </Fragment>
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">私たちのアプローチ</h3>
-      <p class="text-lg text-muted mb-4">
-        私たちのアプローチの中核は、年次の助成プロセスです。私たちの基本的な使命に合致する著名な非営利団体を慎重に選定しています。透明性、説明責任、そして測定可能なインパクトを重視し、助成金がポジティブな成果を最大化するために効果的に活用されるよう徹底しています。多様なステークホルダー間の長期的なパートナーシップの構築とコラボレーションの促進を通じて、私たちが支援する分野において持続可能で永続的な変化を生み出すことを目指しています。
-      </p>
-      <p class="text-lg text-muted">
-        要約すると、ディアフィールド・グリーンは日本文化の保護、奨学金によるコミュニティの支援、そして自殺予防と家庭内虐待に焦点を当てたメンタルヘルスの推進に深くコミットしている会社です。日本市場への投資と著名な非営利団体とのパートナーシップを通じて、意義ある社会的インパクトの創出に努めています。文化遺産を大切にし、若者を育み、支援を必要とする人々に手を差し伸べる社会を、共に築いていきましょう。
-      </p>
-    </Fragment>
-  </Content>
+  />
+  <div class="max-w-7xl mx-auto px-6 md:px-10 -mt-6 mb-12 text-right">
+    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-[var(--aw-color-text-subtle)]">
+      Photo by <a href="https://unsplash.com/@camylla93?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Camylla Battani</a> · <a href="https://unsplash.com/?utm_source=deerfieldgreen&utm_medium=referral" class="underline hover:text-[var(--aw-color-primary)]" target="_blank" rel="noopener noreferrer">Unsplash</a>
+    </p>
+  </div>
+
+  <!-- CTA ******************* -->
+  <CTASumi
+    id="contact"
+    eyebrow="§ 08 / お問い合わせ"
+    titleEn="Support our mission."
+    titleJa="共に歩みましょう。"
+    subtitle="慈善活動とパートナーシップの機会についてご相談ください。"
+    actions={[{ variant: 'primary', text: 'お問い合わせ', href: '/ja/contact/' }]}
+    primaryLang="ja"
+  />
 </Layout>

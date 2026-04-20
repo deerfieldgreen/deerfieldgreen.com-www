@@ -1,7 +1,8 @@
 ---
-import Content from '~/components/widgets/Content.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import ContentKintsugi from '~/components/widgets/v2/ContentKintsugi.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
 
 const metadata = {
   title: 'Our Team',
@@ -10,66 +11,73 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText
-    tagline="The Team"
-    title="Blending Quantitative Investing with Purposeful Philanthropy"
+  <!-- Hero ******************* -->
+  <HeroKintsugi
+    eyebrow="§ 01 / TEAM"
+    titleEn="Blending Quantitative Investing with Purposeful Philanthropy"
+    titleJa="クオンツ投資と目的ある慈善活動の融合"
+    subtitle="A boutique firm experience — financial expertise paired with an intense humanity for improving the lives of others."
+    primaryLang="en"
   />
 
-  <!-- Mission Content ******************* -->
-
-  <Content
-    id="mission"
-    columns={1}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Our Mission</h3>
-      <p class="text-lg text-muted mb-4">
-        Deerfield Green is a private quantitative investment firm based in Minato-ku, Tokyo, Japan. Our mission is twofold: seeking alpha across global markets and channeling the yields from our portfolio into philanthropic endeavors that make a positive impact on society. We firmly believe that capitalistic endeavors can be blended with a deep sense of purpose to empower and improve the lives of others.
-      </p>
-      <p class="text-lg text-muted mb-4">
-        At Deerfield Green, our investment thesis centers around the singular purpose of philanthropy. We apply quantitative investment strategies to identify and capture alpha in global markets, leveraging data-driven models and rigorous analysis. By generating strong financial returns, we ensure the sustainability and growth of our philanthropic initiatives, allowing us to make a meaningful difference in key areas.
-      </p>
-      <p class="text-lg text-muted mb-4">
-        One of our primary focuses is the support and preservation of Japanese culture and arts. We recognize the invaluable role that cultural heritage plays in shaping societies and fostering a sense of identity. Through our philanthropic efforts, we invest in initiatives that promote Japanese cultural preservation, nurture artistic talent, and provide platforms for cultural expression. By doing so, we contribute to the enrichment and appreciation of Japan's cultural legacy for future generations.
-      </p>
-      <p class="text-lg text-muted mb-4">
-        Deerfield Green is also deeply committed to developing opportunities for those in need. We believe in empowering individuals and communities by creating pathways to success and enhancing their quality of life. Our philanthropic endeavors are directed towards supporting educational programs, vocational training, and entrepreneurship initiatives that uplift disadvantaged individuals, enabling them to unlock their full potential and build sustainable futures.
-      </p>
-      <p class="text-lg text-muted mb-4">
-        Recognizing the importance of mental health growth, Deerfield Green dedicates significant resources to initiatives that address mental health challenges and promote emotional well-being. We support organizations that provide counseling, therapy, awareness campaigns, and research in this critical field. By investing in mental health, we strive to create a society that prioritizes holistic growth, resilience, and the well-being of its members.
-      </p>
-      <p class="text-lg text-muted mb-4">
-        While driven by quantitative strategies, Deerfield Green offers a boutique firm experience characterized by an intense humanity for improving the lives of others. We understand the power of compassionate and personalized approaches, and we ensure that our investment decisions align with our philanthropic goals. Our team combines financial expertise with a deep sense of purpose, working diligently to achieve both strong financial performance and positive social impact.
-      </p>
-      <p class="text-lg text-muted">
-        In summary, Deerfield Green is a private quantitative investment firm based in Tokyo, Japan, with a profound commitment to purposeful philanthropy. We seek alpha across global markets while investing the yields from our portfolio into areas such as Japanese culture and arts, opportunities for those in need, and mental health growth. By blending capitalistic endeavors with an empowering purpose in life, we strive to create a positive impact on society and improve the lives of others.
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Team Members ******************* -->
-
-  <Content
+  <!-- Founder ******************* -->
+  <ContentKintsugi
     id="founder"
+    eyebrow="§ 02 / FOUNDER"
+    title="Kevin O'Neill Stoll"
+    intro={`<span class="block font-mono text-[11px] tracking-[0.22em] uppercase text-[var(--aw-color-primary)] mb-4">Founder</span>Kevin Stoll, hailing from Alpharetta, Georgia, USA, brings over 20 years of expertise in advising Subscription Economy companies on growth strategies. A data enthusiast with a deep interest in financial markets and Japanese culture, he combines diverse perspectives to drive impactful results.<br/><br/><a href="https://www.linkedin.com/company/deerfieldgreen/" target="_blank" rel="noopener noreferrer" class="kintsugi-link font-sans text-[14px] tracking-wide">Follow Deerfield Green on LinkedIn →</a>`}
+    items={[
+      { title: 'Tokyo & Atlanta', description: 'Based between Minato-ku, Tokyo, and the greater Atlanta area.' },
+      { title: '20+ years advisory', description: 'Growth strategy for Subscription Economy companies.' },
+      { title: 'Data & Japanese culture', description: 'A data enthusiast with deep interest in financial markets and Japanese culture.' },
+    ]}
+    image={{ src: '~/assets/images/team-1.jpg', alt: 'Kevin Stoll' }}
     isReversed
-    image={{
-      src: '~/assets/images/team-1.jpg',
-      alt: 'Kevin Stoll',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kevin O'Neill Stoll</h3>
-      <p class="text-xl font-semibold text-primary mb-4">Founder</p>
-      <p class="text-lg text-muted mb-4">
-        Kevin Stoll, hailing from Alpharetta, Georgia, USA, brings over 20 years of expertise in advising Subscription Economy companies on growth strategies. A data enthusiast with a deep interest in financial markets and Japanese culture, he combines diverse perspectives to drive impactful results.
-      </p>
-      <p>
-        <a href="https://www.linkedin.com/in/Kevinostoll" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">
-          Connect on LinkedIn &rarr;
-        </a>
-      </p>
-    </Fragment>
-  </Content>
+  />
+
+  <!-- Mission ******************* -->
+  <ContentKintsugi
+    id="mission"
+    eyebrow="§ 03 / MISSION"
+    title="Alpha in service of purpose."
+    intro="Deerfield Green is a private quantitative investment firm based in Minato-ku, Tokyo, Japan. Our mission is twofold: seeking alpha across global markets and channeling the yields from our portfolio into philanthropic endeavors that make a positive impact on society. We firmly believe that capitalistic endeavors can be blended with a deep sense of purpose to empower and improve the lives of others."
+    items={[
+      {
+        title: 'Quantitative investment thesis',
+        description:
+          'We apply data-driven models and rigorous analysis to identify and capture alpha in global markets, ensuring the sustainability and growth of our philanthropic initiatives.',
+      },
+      {
+        title: 'Japanese culture and arts',
+        description:
+          'We invest in initiatives that promote Japanese cultural preservation, nurture artistic talent, and provide platforms for cultural expression.',
+      },
+      {
+        title: 'Opportunity for those in need',
+        description:
+          'Educational programs, vocational training, and entrepreneurship initiatives that empower individuals to unlock their potential and build sustainable futures.',
+      },
+      {
+        title: 'Mental health growth',
+        description:
+          'Counseling, therapy, awareness campaigns, and research that prioritize holistic well-being and resilience.',
+      },
+      {
+        title: 'A boutique firm experience',
+        description:
+          'While driven by quantitative strategies, we offer a boutique experience characterized by an intense humanity for improving the lives of others.',
+      },
+    ]}
+  />
+
+  <!-- CTA ******************* -->
+  <CTASumi
+    id="contact"
+    eyebrow="§ 04 / CONTACT"
+    titleEn="Start a conversation."
+    titleJa="お話ししましょう。"
+    subtitle="Reach out — whether about investment, philanthropy, or a shared curiosity."
+    actions={[{ variant: 'primary', text: 'Begin a conversation', href: '/contact/' }]}
+    primaryLang="en"
+  />
 </Layout>

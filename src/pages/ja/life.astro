@@ -1,8 +1,9 @@
 ---
-import Content from '~/components/widgets/Content.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import ContentKintsugi from '~/components/widgets/v2/ContentKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
 
 const metadata = {
   title: 'DFGでの生活',
@@ -11,84 +12,98 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText
-    tagline="DFGでの生活"
-    title="知的探求の天国"
+  <!-- Hero ******************* -->
+  <HeroKintsugi
+    eyebrow="§ 01 / DFG での生活"
+    titleEn="A Haven for Intellectual Exploration."
+    titleJa="知的探求の場。"
+    subtitle="知的好奇心旺盛な個人のコミュニティ——アイデアへの愛、知識への渇望、そして画期的な仕事につながるオタク的な情熱を共有しています。"
+    primaryLang="ja"
   />
 
-  <!-- Culture Section ******************* -->
-
-  <Content
+  <!-- Curiosity ******************* -->
+  <ContentKintsugi
     id="culture"
-    columns={1}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">文化</h3>
-      <p class="text-lg text-muted mb-4">
-        ディアフィールド・グリーンは知的好奇心旺盛な文化を育むユニークな会社であり、多様で活気に満ちたチームのオタク的な情熱を受け入れています。ディアフィールド・グリーンでは、社員は常に新しい知識、技術、アイデアに飢えており、学習と探求への飽くなき欲求に突き動かされています。私たちは、知識を共有し、他の人の経験を求め、オープンで尊敬に満ちたディスカッションに参加することで成長する個人のコミュニティです。
-      </p>
-      <p class="text-lg text-muted mb-4">
-        当事務所の鼓動は、知的探求に対する共通の愛です。型にはまらない興味や情熱が、しばしば最も画期的で革新的なアイデアにつながることを認識し、私たちはチームのオタク的な側面を称賛しています。当社の社員は知的好奇心が旺盛なだけでなく、それぞれの専門分野に深い情熱を抱いています。彼らはその情熱を仕事に注ぎ込み、周囲の人々を鼓舞し、組織全体に興奮と発見の感覚を吹き込んでいます。
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Collaboration Section ******************* -->
-
-  <Content
-    id="collaboration"
-    isReversed
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">コラボレーション</h3>
-      <p class="text-lg text-muted mb-4">
-        ディアフィールド・グリーンでは、真の知的成長はコラボレーションと新しい視点への絶え間ない渇望から生まれると理解しています。私たちのチームは、各個人がユニークな洞察力を持っていることを認識し、他の人の知識や経験を積極的に求めています。知識を共有することが奨励されるだけでなく、賞賛される環境を育むことで、チームは一丸となって視野を広げ、可能性の限界を押し広げることができるのです。
-      </p>
-      <p class="text-lg text-muted">
-        ディアフィールド・グリーンでは、一人ひとりが目の前の細部にとどまらず、大局的な視野を持ち、自分の仕事がより広い文脈の中でどのように位置づけられるかを深く理解しています。このような全体的な視点が、つながりを見抜き、パターンを特定し、現状を打破する新しく創造的なアイデアを生み出します。毎日が新鮮な視点、革新的なアプローチ、そして未踏の可能性を発見する興奮に満ちています。
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Openness Section ******************* -->
-
-  <Content
-    id="openness"
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">オープンな文化</h3>
-      <p class="text-lg text-muted mb-4">
-        ディアフィールド・グリーンの社風はオープンで包括的であり、一人ひとりの声が尊重され、大切にされています。私たちは、多様な考え方や意見が知的な言説を刺激し、真にダイナミックで革新的な環境を育むために不可欠であると考えています。私たちは、チームメンバーが自分の考えを自由に表現することを奨励し、その貢献が評価され、オープンマインドで迎えられることを知っています。このようなオープンな文化が、安全なコラボレーションの場を創り出し、そこでアイデアが洗練され、拡大され、有意義な成果へと変化していくのです。
-      </p>
-      <p class="text-lg text-muted">
-        要約すると、ディアフィールド・グリーンは単なる会社ではなく、知的好奇心旺盛でオタクな情熱を抱く人々のコミュニティです。知識への渇望、探究心、アイデアの共有へのコミットメントにより、私たちのチームは成長と革新の絶え間ない旅へと前進します。創造的なアイデアが生まれ、可能性が無限に広がる知的探求の楽園を、私たちは共に創り上げています。
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Locations ******************* -->
-
-  <Features2
-    title="所在地"
-    tagline="拠点"
-    columns={2}
+    eyebrow="§ 02 / 好奇心"
+    title="文化。"
+    intro="ディアフィールド・グリーンは知的好奇心旺盛な文化を育むユニークな会社であり、多様で活気に満ちたチームのオタク的な情熱を受け入れています。ディアフィールド・グリーンでは、社員は常に新しい知識、技術、アイデアに飢えており、学習と探求への飽くなき欲求に突き動かされています。私たちは、知識を共有し、他の人の経験を求め、オープンで尊敬に満ちたディスカッションに参加することで成長する個人のコミュニティです。"
     items={[
       {
-        title: '東京都港区',
-        description: '日本本社',
-        icon: 'tabler:building',
+        title: '知的探求への共通の愛',
+        description:
+          '型にはまらない興味や情熱が、しばしば最も画期的で革新的なアイデアにつながることを認識し、チームのオタク的な側面を称賛しています。',
       },
       {
-        title: 'ジョージア州ミルトン',
-        description: '米国オフィス',
-        icon: 'tabler:building',
+        title: '仕事に注がれる情熱',
+        description:
+          '社員はそれぞれの専門分野に深い情熱を持ち、組織全体に興奮と発見の感覚を吹き込んでいます。',
       },
     ]}
+  />
+
+  <!-- Collaboration ******************* -->
+  <ContentKintsugi
+    id="collaboration"
+    eyebrow="§ 03 / コラボレーション"
+    title="コラボレーション。"
+    intro="ディアフィールド・グリーンでは、真の知的成長はコラボレーションと新しい視点への絶え間ない渇望から生まれると理解しています。私たちのチームは、各個人がユニークな洞察力を持っていることを認識し、他の人の知識や経験を積極的に求めています。知識を共有することが奨励されるだけでなく、賞賛される環境を育むことで、チームは一丸となって視野を広げ、可能性の限界を押し広げることができるのです。"
+    items={[
+      {
+        title: '大局的な視野',
+        description:
+          '一人ひとりが目の前の細部にとどまらず、自分の仕事がより広い文脈の中でどう位置づけられるかを深く理解しています。',
+      },
+      {
+        title: '日々の新鮮な視点',
+        description: '毎日が新しいアプローチと未踏の可能性を発見する興奮に満ちています。',
+      },
+    ]}
+    isReversed
+  />
+
+  <!-- Openness ******************* -->
+  <ContentKintsugi
+    id="openness"
+    eyebrow="§ 04 / オープンな文化"
+    title="オープンかつ包括的。"
+    intro="ディアフィールド・グリーンの社風はオープンで包括的であり、一人ひとりの声が尊重され、大切にされています。私たちは、多様な考え方や意見が知的な言説を刺激し、真にダイナミックで革新的な環境を育むために不可欠であると考えています。私たちは、チームメンバーが自分の考えを自由に表現することを奨励し、その貢献が評価され、オープンマインドで迎えられることを知っています。このようなオープンな文化が、安全なコラボレーションの場を創り出し、そこでアイデアが洗練され、拡大され、有意義な成果へと変化していくのです。"
+    items={[
+      {
+        title: '会社ではなく、コミュニティ',
+        description:
+          '知識への渇望、探究心、アイデアの共有へのコミットメントにより、チームは成長と革新の絶え間ない旅へと前進します。',
+      },
+    ]}
+  />
+
+  <!-- Locations ******************* -->
+  <FeaturesSeam
+    id="locations"
+    eyebrow="§ 05 / 所在地"
+    title="拠点。"
+    defaultLinkText="詳細 →"
+    items={[
+      {
+        label: 'JAPAN / HQ',
+        title: '東京都港区',
+        description: '日本本社。東京の中心地に位置しています。',
+      },
+      {
+        label: 'USA / OFFICE',
+        title: 'ジョージア州ミルトン',
+        description: '米国オフィス。アトランタ郊外に位置しています。',
+      },
+    ]}
+  />
+
+  <!-- CTA ******************* -->
+  <CTASumi
+    id="contact"
+    eyebrow="§ 06 / お問い合わせ"
+    titleEn="Curious about working with us?"
+    titleJa="私たちと共に働きませんか。"
+    subtitle="ディアフィールド・グリーンでの生活について、ぜひお気軽にお問い合わせください。"
+    actions={[{ variant: 'primary', text: 'お問い合わせ', href: '/ja/contact/' }]}
+    primaryLang="ja"
   />
 </Layout>

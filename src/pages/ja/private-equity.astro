@@ -1,9 +1,10 @@
 ---
-import Content from '~/components/widgets/Content.astro';
-import Features from '~/components/widgets/Features.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import Layout from '~/layouts/PageLayout.astro';
+
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import ContentKintsugi from '~/components/widgets/v2/ContentKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
 
 const metadata = {
   title: 'プライベート・エクイティ',
@@ -12,142 +13,155 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText
-    tagline="プライベート・エクイティ"
-    title="日本のヘルスケアPE革命：バイ・アンド・ホールドの機会"
+  <HeroKintsugi
+    eyebrow="§ 01 / PRIVATE EQUITY"
+    titleJa="日本のヘルスケアPE革命：バイ・アンド・ホールドの機会。"
+    titleEn="Japan's healthcare revolution through patient capital."
+    subtitle="日本のプライベート・エクイティ・ヘルスケア市場は、世界で最も魅力的な投資先の一つとして浮上しています。2010年から2024年にかけて投資資本に対して3倍のリターンを実現し、主要地域の中で最高の成績を収めています。"
+    actions={[{ text: 'お問い合わせ', href: '/ja/contact/' }]}
+    primaryLang="ja"
   />
 
-  <!-- Market Overview ******************* -->
-
-  <Content
+  <ContentKintsugi
     id="overview"
-    columns={1}
-  >
-    <Fragment slot="content">
-      <p class="text-lg text-muted mb-4">
-        日本のプライベート・エクイティ・ヘルスケア市場は、世界で最も魅力的な投資先の一つとして浮上しています。2010年から2024年にかけて投資資本に対して3倍のリターンを実現し、主要地域の中で最高の成績を収めています。ヘルスケアPE投資は2019年以降年平均成長率20%で成長しており、年間取引額は120〜150億ドルに達していることから、この市場はペイシェント・キャピタル・アプローチにとって非常に優れた機会を提供しています。
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    title="市場データ"
-    stats={[
-      { title: '投資資本リターン', amount: '3倍' },
-      { title: 'PE年平均成長率', amount: '20%' },
-      { title: '年間取引額', amount: '120-150億ドル' },
-      { title: '買収比率', amount: '75%' },
-    ]}
-  />
-
-  <!-- Demographics ******************* -->
-
-  <Content
-    id="demographics"
-    isReversed
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">持続的成長の原動力となる人口動態</h3>
-      <p class="text-lg text-muted mb-4">
-        日本は医療危機に直面していますが、それは逆説的に、とてつもない投資機会を生み出しています。65歳以上の高齢者が人口の30％、80歳以上が10％を占める日本は、世界で最も高齢化した社会です。病院市場は2029年までに3,164億ドルに達し、在宅医療は2033年までに272億ドルから546億ドルへと倍増すると予測されています。
-      </p>
-      <p class="text-lg text-muted">
-        後継者難がこうした機会を増幅させています。日本の中小企業の経営者は245万人以上が70歳以上であり、医療関連企業の52%は後継者がいないと報告しています。日本の相続税率は55%という厳しいもので、同族継承はますます困難になり、プロの経営者や資本パートナーを求める買収ターゲットのパイプラインが形成されています。
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Sector Dynamics ******************* -->
-
-  <Features
-    id="sectors"
-    title="セクター・ダイナミクス"
-    subtitle="ヘルスケアを取り巻く環境は、セクターによって大きく異なる機会を提供しています"
+    eyebrow="§ 02 / 市場概観"
+    title="変曲点に立つ日本のヘルスケアPE市場。"
+    image={{ src: '~/assets/images/handshake.jpg', alt: 'プライベート・エクイティ・パートナーシップ' }}
+    intro="日本のプライベート・エクイティ・ヘルスケア市場は、世界で最も魅力的な投資先の一つとして浮上しています。2010年から2024年にかけて投資資本に対して3倍のリターンを実現し、主要地域の中で最高の成績を収めています。ヘルスケアPE投資は2019年以降年平均成長率20%で成長しており、年間取引額は120〜150億ドルに達していることから、この市場はペイシェント・キャピタル・アプローチにとって非常に優れた機会を提供しています。"
     items={[
       {
-        title: 'バイオテクノロジー',
-        description: '62億円の直接出資や、世界的なイノベーション・ハブとしての位置付けを持つ早期承認制度など、政府による並外れた支援。',
-        icon: 'tabler:dna',
+        title: '投資資本リターン：3倍',
+        description: '2010年から2024年にかけて主要地域の中で最高の成績。',
       },
       {
-        title: '美容医療',
-        description: '2024年の189億ドルから2030年には年平均成長率17.9%で300億ドルへ成長。美容クリニックの数は2020年から2023年にかけて43.6%増加。',
-        icon: 'tabler:sparkles',
+        title: 'PE年平均成長率：20%',
+        description: '2019年以降、ヘルスケアPE投資は年平均20%で成長。',
       },
       {
-        title: '眼科',
-        description: '安定した償還可能な手術と技術主導の成長可能性を兼ね備えた、最もバランスの取れた機会。',
-        icon: 'tabler:eye',
+        title: '年間取引額：120-150億ドル',
+        description: '市場の厚みと成熟度を示す取引規模。',
       },
       {
-        title: '歯科医療',
-        description: '米国で成功した歯科医療サービス組織から採用された実績のある統合モデル。パートナーシップ構造を通じた卓越したオペレーションの適用。',
-        icon: 'tabler:dental',
+        title: '買収比率：75%',
+        description:
+          'アジア太平洋地域の他市場ではバイアウトは30%に過ぎない一方、日本のPE取引の75%は完全買収であり、市場の成熟と売り手の完全な流動性ソリューションへのニーズを反映しています。',
       },
     ]}
   />
 
-  <!-- Operational Transformation ******************* -->
-
-  <Content
-    id="transformation"
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">価値創造の礎としての業務改革</h3>
-      <p class="text-lg text-muted mb-4">
-        デジタルトランスフォーメーションは、最も重要な価値創造の機会です。日本のデジタル競争力は世界第29位であり、EHRを使用しているプライマリ・ケア提供者はOECD平均の93%に対し、わずか42%です。デジタルヘルス市場は、2035年までに年平均成長率21.48%で908.7億ドルに成長すると予測されています。
-      </p>
-      <p class="text-lg text-muted">
-        成功している企業は、臨床ITシステム、AIを活用した診断、管理部門の自動化などを含む包括的な変革プログラムを実施しています。ユニゾン・キャピタルのCHCPプラットフォームは、テクノロジーを活用した統合のパワーを実証し、病院、薬局、訪問看護ステーション、歯科診療所にわたって業務上の相乗効果を生み出しています。
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Cultural Mastery ******************* -->
-
-  <Content
-    id="culture"
+  <ContentKintsugi
+    id="demographics"
+    eyebrow="§ 03 / 人口動態"
+    title="持続的成長の原動力となる人口動態。"
     isReversed
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">文化の習得がパートナーシップの成功を左右する</h3>
-      <p class="text-lg text-muted mb-4">
-        「和」と合意形成を重視する日本のビジネス文化は、欧米市場とは根本的に異なるアプローチを必要とします。成功する企業は、取引について議論する前に、6-18ヶ月の関係構築に投資しています。
-      </p>
-      <p class="text-lg text-muted mb-4">
-        日本の医療経営者は、売却価格の最大化よりも事業の継続と従業員の福利厚生を優先します。彼らは、自社の使命を守り、従業員を守り、医療の質を維持してくれるパートナーを求めています。
-      </p>
-      <p class="text-lg text-muted">
-        「根回し」— 舞台裏での合意形成 — とは、重要な決定が正式な会議の前に行われることを意味します。直接的な拒否はめったに起こらず、代わりに微妙な合図で保留を伝えます。
-      </p>
-    </Fragment>
-  </Content>
+    intro="日本は医療危機に直面していますが、それは逆説的に、とてつもない投資機会を生み出しています。65歳以上の高齢者が人口の30％、80歳以上が10％を占める日本は、世界で最も高齢化した社会です。"
+    items={[
+      {
+        title: '揺るぎない需要の拡大',
+        description:
+          '病院市場は2029年までに3,164億ドルに達し、在宅医療は2033年までに272億ドルから546億ドルへと倍増すると予測されています。',
+      },
+      {
+        title: '大規模な後継者難',
+        description:
+          '日本の中小企業の経営者は245万人以上が70歳以上であり、医療関連企業の52%は後継者がいないと報告しています。日本の相続税率は55%という厳しいもので、同族継承はますます困難になり、プロの経営者や資本パートナーを求める買収ターゲットのパイプラインが形成されています。',
+      },
+    ]}
+  />
 
-  <!-- Conclusion ******************* -->
+  <FeaturesSeam
+    id="sectors"
+    eyebrow="§ 04 / セクター・ダイナミクス"
+    title="セクターごとに異なる投資機会。"
+    subtitle="ヘルスケアを取り巻く環境は、セクターによって大きく異なる機会を提供しています。"
+    defaultLinkText="詳細 →"
+    items={[
+      {
+        label: 'バイオテック',
+        title: 'バイオテクノロジー',
+        description:
+          '62億円の直接出資や、世界的なイノベーション・ハブとしての位置付けを持つ早期承認制度など、政府による並外れた支援。',
+      },
+      {
+        label: '美容医療',
+        title: '美容医療',
+        description:
+          '2024年の189億ドルから2030年には年平均成長率17.9%で300億ドルへ成長。美容クリニックの数は2020年から2023年にかけて43.6%増加。',
+      },
+      {
+        label: '眼科',
+        title: '眼科',
+        description: '安定した償還可能な手術と技術主導の成長可能性を兼ね備えた、最もバランスの取れた機会。',
+      },
+      {
+        label: '歯科',
+        title: '歯科医療',
+        description:
+          '米国で成功した歯科医療サービス組織から採用された実績のある統合モデル。パートナーシップ構造を通じた卓越したオペレーションの適用。',
+      },
+    ]}
+  />
 
-  <Content
+  <ContentKintsugi
+    id="transformation"
+    eyebrow="§ 05 / 業務改革"
+    title="価値創造の礎としての業務改革。"
+    intro="デジタルトランスフォーメーションは、最も重要な価値創造の機会です。日本のデジタル競争力は世界第29位であり、EHRを使用しているプライマリ・ケア提供者はOECD平均の93%に対し、わずか42%です。デジタルヘルス市場は、2035年までに年平均成長率21.48%で908.7億ドルに成長すると予測されています。"
+    items={[
+      {
+        title: '包括的な変革プログラム',
+        description:
+          '成功している企業は、臨床ITシステム、AIを活用した診断、管理部門の自動化などを含む包括的な変革プログラムを実施しています。',
+      },
+      {
+        title: 'ユニゾン・キャピタルのCHCPプラットフォーム',
+        description:
+          'ユニゾン・キャピタルのCHCPプラットフォームは、テクノロジーを活用した統合のパワーを実証し、病院、薬局、訪問看護ステーション、歯科診療所にわたって業務上の相乗効果を生み出しています。',
+      },
+    ]}
+  />
+
+  <ContentKintsugi
+    id="culture"
+    eyebrow="§ 06 / 文化"
+    title="文化の習得が、パートナーシップの成功を左右する。"
+    isReversed
+    intro="「和」と合意形成を重視する日本のビジネス文化は、欧米市場とは根本的に異なるアプローチを必要とします。成功する企業は、取引について議論する前に、6-18ヶ月の関係構築に投資しています。"
+    items={[
+      {
+        title: '売却価格よりも事業継続を',
+        description:
+          '日本の医療経営者は、売却価格の最大化よりも事業の継続と従業員の福利厚生を優先します。彼らは、自社の使命を守り、従業員を守り、医療の質を維持してくれるパートナーを求めています。',
+      },
+      {
+        title: '根回しというプロセス',
+        description:
+          '「根回し」— 舞台裏での合意形成 — とは、重要な決定が正式な会議の前に行われることを意味します。直接的な拒否はめったに起こらず、代わりに微妙な合図で保留を伝えます。',
+      },
+    ]}
+  />
+
+  <ContentKintsugi
     id="conclusion"
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">前例のないチャンスを生み出すコンバージェンス</h3>
-      <p class="text-lg text-muted mb-4">
-        日本のヘルスケアPE市場は、人口動態の必要性、技術的変革、文化的進化が収束する変曲点に立っています。ヘルスケアPE投資の年平均成長率20%は、投機ではなく根本的な価値創造の機会を反映しています。
-      </p>
-      <p class="text-lg text-muted">
-        必要な時間、資源、文化的投資を惜しまない投資家にとって、日本のヘルスケアは先進国最後の大きなプライベート・エクイティの機会かもしれません。この窓はいつまでも開いているわけではありませんが、適切なアプローチで今動く方々にとっては、その努力に見合うだけの報酬が得られるでしょう。
-      </p>
-    </Fragment>
-  </Content>
+    eyebrow="§ 07 / 結論"
+    title="前例のないチャンスを生み出すコンバージェンス。"
+    intro="日本のヘルスケアPE市場は、人口動態の必要性、技術的変革、文化的進化が収束する変曲点に立っています。ヘルスケアPE投資の年平均成長率20%は、投機ではなく根本的な価値創造の機会を反映しています。"
+    items={[
+      {
+        title: '先進国最後の大きな機会',
+        description:
+          '必要な時間、資源、文化的投資を惜しまない投資家にとって、日本のヘルスケアは先進国最後の大きなプライベート・エクイティの機会かもしれません。この窓はいつまでも開いているわけではありませんが、適切なアプローチで今動く方々にとっては、その努力に見合うだけの報酬が得られるでしょう。',
+      },
+    ]}
+  />
+
+  <CTASumi
+    id="contact"
+    eyebrow="§ 08 / CONTACT"
+    titleJa="長期的なパートナーシップを始めましょう。"
+    titleEn="Begin a long-term partnership."
+    subtitle="ディアフィールド・グリーンのペイシェント・キャピタル・アプローチが、日本のヘルスケアの機会とどのように整合するかをご覧ください。"
+    actions={[{ text: 'お問い合わせ', href: '/ja/contact/', variant: 'primary' }]}
+    primaryLang="ja"
+  />
 </Layout>

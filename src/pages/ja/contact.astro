@@ -1,8 +1,10 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import ContactForm from '~/components/widgets/Contact.astro';
+import PaperGrain from '~/components/common/PaperGrain.astro';
+import SeamDivider from '~/components/common/SeamDivider.astro';
 
 const metadata = {
   title: '連絡先',
@@ -11,50 +13,77 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText tagline="連絡先" title="お問い合わせ" />
-
-  <ContactUs
-    id="form"
-    title="メッセージを残す"
-    subtitle="アイデアをお持ちですか？このフォームを使ってメッセージをお送りください。"
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'お名前',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'メールアドレス',
-      },
-    ]}
-    textarea={{
-      label: 'メッセージ',
-    }}
-    disclaimer={{
-      label:
-        'このお問い合わせフォームを送信することにより、お客様の個人情報の収集に同意したものとみなされます。',
-    }}
-    description="通常、24営業時間以内にご返信いたします。"
+  <!-- Hero ******************* -->
+  <HeroKintsugi
+    eyebrow="§ 01 / お問い合わせ"
+    titleEn="Get in Touch."
+    titleJa="お問い合わせ。"
+    subtitle="アイデアをお持ちですか？下記のフォームよりメッセージをお送りください。数日以内にご返信いたします。"
+    primaryLang="ja"
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- Contact Form (preserved widget, wrapped in Kintsugi aesthetic) -->
+  <section class="relative bg-[var(--aw-color-bg-page)] py-16 md:py-24">
+    <PaperGrain tone="light" opacity={0.03} />
+    <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
+      <SeamDivider variant="default" tone="light" class="mb-16" />
+      <ContactForm
+        id="form"
+        title="メッセージを残す"
+        subtitle="アイデアをお持ちですか？このフォームを使ってメッセージをお送りください。"
+        inputs={[
+          { type: 'text', name: 'name', label: 'お名前' },
+          { type: 'email', name: 'email', label: 'メールアドレス' },
+        ]}
+        textarea={{ label: 'メッセージ' }}
+        disclaimer={{
+          label: 'このお問い合わせフォームを送信することにより、お客様の個人情報の収集に同意したものとみなされます。',
+        }}
+        description="通常、24営業時間以内にご返信いたします。"
+      />
+    </div>
+  </section>
 
-  <Features2
-    title="お気軽にお問い合わせください"
+  <!-- Locations ******************* -->
+  <FeaturesSeam
+    id="locations"
+    eyebrow="§ 02 / 所在地"
+    title="拠点。"
+    defaultLinkText="詳細 →"
     items={[
       {
-        title: 'メール',
-        description: 'contact@deerfieldgreen.com',
-        icon: 'tabler:mail',
+        label: 'JAPAN / HQ',
+        title: '東京都港区',
+        description: '日本本社。',
       },
       {
-        title: '所在地',
-        description: '東京都港区 / ジョージア州ミルトン',
-        icon: 'tabler:map-pin',
+        label: 'USA / OFFICE',
+        title: 'ジョージア州ミルトン',
+        description: '米国オフィス（アトランタ郊外）。',
+      },
+    ]}
+  />
+
+  <!-- Online ******************* -->
+  <FeaturesSeam
+    id="online"
+    eyebrow="§ 03 / オンライン"
+    title="オンライン。"
+    defaultLinkText="詳細 →"
+    items={[
+      {
+        label: 'MAIL / DIRECT',
+        title: 'Email',
+        description: 'contact@deerfieldgreen.com',
+        href: 'mailto:contact@deerfieldgreen.com',
+        linkText: 'メールを送る →',
+      },
+      {
+        label: 'LINKEDIN / FOLLOW',
+        title: 'LinkedIn',
+        description: 'ディアフィールド・グリーンを LinkedIn でフォロー',
+        href: 'https://www.linkedin.com/company/deerfieldgreen/',
+        linkText: 'ディアフィールド・グリーンを LinkedIn でフォロー →',
       },
     ]}
   />

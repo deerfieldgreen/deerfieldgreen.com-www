@@ -1,9 +1,10 @@
 ---
-import Content from '~/components/widgets/Content.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
 import Layout from '~/layouts/PageLayout.astro';
+
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import ContentKintsugi from '~/components/widgets/v2/ContentKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
 
 const metadata = {
   title: 'インキュベーター',
@@ -12,156 +13,145 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText
-    tagline="インキュベーター"
-    title="日本のイノベーションと世界のヘルスケア市場の架け橋"
-    subtitle="環太平洋パートナーシップを通じた明日のヘルスケア・イノベーションのエンジニアリング"
+  <HeroKintsugi
+    eyebrow="§ 01 / INCUBATOR"
+    titleJa="日本のイノベーションと世界のヘルスケア市場の架け橋。"
+    titleEn="Bridging Japanese innovation with global healthcare markets."
+    subtitle="環太平洋パートナーシップを通じた明日のヘルスケア・イノベーションのエンジニアリング。日本の研究エコシステムからグローバル市場のリーダーへと、ヘルスケア、バイオテクノロジー、AIによる医療イノベーションを育成します。"
+    actions={[{ text: 'お問い合わせ', href: '/ja/contact/' }]}
+    primaryLang="ja"
   />
 
-  <!-- Introduction ******************* -->
-
-  <Content
+  <ContentKintsugi
     id="intro"
-    columns={1}
-  >
-    <Fragment slot="content">
-      <p class="text-lg text-muted mb-4">
-        ディアフィールド・グリーンは、ヘルスケア・イノベーションの未来は、日本の卓越した技術、深い文化的叡智、そしてグローバルな市場展開の交差点にあると信じています。私たちのインキュベーター・スタイルのベンチャー・キャピタル・モデルは、東洋と西洋のビジネス哲学のユニークな統合であり、日本の並外れた研究エコシステムから、ヘルスケア、バイオテクノロジー、AIを活用した医療イノベーションを世界市場のリーダーへと育成するために特別に設計されています。
-      </p>
-      <p class="text-lg text-muted">
-        私たちは、日米両市場においてSaaS型収益企業を立ち上げ、その規模を拡大してきた25年の経験をもとに、世界で最も洗練された2つのヘルスケア・エコシステムの架け橋となるインキュベーター・モデルを構築しました。
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Investment Philosophy ******************* -->
-
-  <Content
-    id="philosophy"
-    isReversed
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">私たちの投資哲学：日本の卓越性とグローバルな野心の調和</h3>
-      <h4 class="text-xl font-semibold mb-2">ポートフォリオ管理における「和」の力</h4>
-      <p class="text-lg text-muted mb-4">
-        ディアフィールド・グリーンは、アグレッシブな成長を最優先する伝統的な欧米のベンチャーキャピタルとは異なり、日本の「和」の原則をポートフォリオ・アプローチに取り入れています。私たちは、常に10社以下のヘルスケアベンチャーに集中したポートフォリオを維持し、グローバルな市場競争に必要な緊急性を維持しながら、各企業が日本のビジネス関係の特徴である忍耐強く、思慮深いサポートを受けられるようにしています。
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Philosophy Principles ******************* -->
-
-  <Features
-    id="principles"
-    title="投資哲学の原則"
+    eyebrow="§ 02 / 投資哲学"
+    title="環太平洋パートナーシップを通じた、明日のヘルスケア・イノベーション。"
+    image={{ src: '~/assets/images/incubator.jpg', alt: 'インキュベーター・プログラム' }}
+    intro="ディアフィールド・グリーンは、ヘルスケア・イノベーションの未来は、日本の卓越した技術、深い文化的叡智、そしてグローバルな市場展開の交差点にあると信じています。私たちのインキュベーター・スタイルのベンチャー・キャピタル・モデルは、東洋と西洋のビジネス哲学のユニークな統合であり、日本の並外れた研究エコシステムから、ヘルスケア、バイオテクノロジー、AIを活用した医療イノベーションを世界市場のリーダーへと育成するために特別に設計されています。"
     items={[
       {
-        title: '長期的な関係構築（根回し）',
-        description: '投資前に6〜18ヶ月間の関係構築に投資し、テクノロジーだけでなく、人々、彼らの価値観、社会的インパクトに対するビジョンを理解します。',
-        icon: 'tabler:heart-handshake',
+        title: '25年の日米市場経験',
+        description:
+          '私たちは、日米両市場においてSaaS型収益企業を立ち上げ、その規模を拡大してきた25年の経験をもとに、世界で最も洗練された2つのヘルスケア・エコシステムの架け橋となるインキュベーター・モデルを構築しました。',
       },
       {
+        title: 'ポートフォリオにおける「和」の力',
+        description:
+          'ディアフィールド・グリーンは、アグレッシブな成長を最優先する伝統的な欧米のベンチャーキャピタルとは異なり、日本の「和」の原則をポートフォリオ・アプローチに取り入れています。私たちは、常に10社以下のヘルスケアベンチャーに集中したポートフォリオを維持し、グローバルな市場競争に必要な緊急性を維持しながら、各企業が日本のビジネス関係の特徴である忍耐強く、思慮深いサポートを受けられるようにしています。',
+      },
+    ]}
+  />
+
+  <FeaturesSeam
+    id="principles"
+    eyebrow="§ 03 / 投資哲学の原則"
+    title="日本の卓越性とグローバルな野心の調和。"
+    subtitle="ファーストコンタクトからグローバル・スケールまで、創業者との関わり方を形作る4つの規律。"
+    defaultLinkText="詳細 →"
+    items={[
+      {
+        label: '根回し',
+        title: '長期的な関係構築',
+        description:
+          '投資前に6〜18ヶ月間の関係構築に投資し、テクノロジーだけでなく、人々、彼らの価値観、社会的インパクトに対するビジョンを理解します。',
+      },
+      {
+        label: '合意形成',
         title: 'コンセンサス主導の意思決定',
         description: '日本の伝統である集合知を尊重しつつ、起業家としての機敏性を維持する。',
-        icon: 'tabler:users-group',
       },
       {
+        label: '創業者ビジョン',
         title: '創業者のビジョンの維持',
-        description: '欧米の積極的なリストラとは異なり、創業者の当初の使命を尊重しながら、世界的な規模を達成するための運営サポートを提供する。',
-        icon: 'tabler:eye',
+        description:
+          '欧米の積極的なリストラとは異なり、創業者の当初の使命を尊重しながら、世界的な規模を達成するための運営サポートを提供する。',
       },
       {
+        label: 'ペイシェント・キャピタル',
         title: 'ペイシェント・キャピタル・アプローチ',
-        description: '日本の投資哲学に沿い、5〜7年の投資期間を維持し、イノベーションが適切に成熟するのを待つ。',
-        icon: 'tabler:clock',
+        description:
+          '日本の投資哲学に沿い、5〜7年の投資期間を維持し、イノベーションが適切に成熟するのを待つ。',
       },
     ]}
   />
 
-  <!-- Healthcare Focus Areas ******************* -->
-
-  <Features2
-    title="ヘルスケア重点分野"
-    tagline="日本のイノベーションと世界のニーズの融合"
-    columns={2}
+  <FeaturesSeam
+    id="focus"
+    eyebrow="§ 04 / ヘルスケア重点分野"
+    title="日本のイノベーションと世界のニーズの融合。"
+    subtitle="人口の30％が65歳以上、10％が80歳以上という日本は、高齢化社会ソリューションの世界の実験場です。"
+    defaultLinkText="詳細 →"
     items={[
       {
+        label: 'AI診断',
         title: 'AIを活用した診断と精密医療',
         description: '日本の優れた医用画像データセットと高齢化関連疾患に対応するアルゴリズムの開発。説明可能なAIの構築。',
-        icon: 'tabler:brain',
       },
       {
+        label: 'バイオテック',
         title: 'バイオテクノロジーと医薬品イノベーション',
         description: '再生医療リーダーシップ、フラグメント創薬、天然物ライブラリー、抗体工学、AI主導のドラッグデザイン。',
-        icon: 'tabler:dna',
       },
       {
+        label: 'デジタルヘルス',
         title: 'デジタルヘルスと遠隔医療プラットフォーム',
-        description: '2035年までに908.7億ドルに達すると予測されるデジタルヘルス市場。分断された医療提供体制に対応するプラットフォーム。',
-        icon: 'tabler:device-desktop-analytics',
+        description:
+          '2035年までに908.7億ドルに達すると予測されるデジタルヘルス市場。分断された医療提供体制に対応するプラットフォーム。',
       },
       {
+        label: '長寿',
         title: '長寿とアンチエイジング治療薬',
         description: '日本のブルーゾーン哲学と最先端バイオテクノロジーの融合。AIを活用した高齢者ケアソリューション。',
-        icon: 'tabler:heart-rate-monitor',
       },
     ]}
   />
 
-  <!-- Strategic Positioning ******************* -->
-
-  <Content
+  <ContentKintsugi
     id="positioning"
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">日米の架け橋：地域のイノベーションをグローバルなインパクトへ</h3>
-      <h4 class="text-xl font-semibold mb-2">戦略的地理的ポジショニング</h4>
-      <p class="text-lg text-muted mb-4">
-        東京都港区とジョージア州アトランタの2拠点体制は、医療イノベーションのための強力な回廊を形成しています。
-      </p>
-      <h4 class="text-xl font-semibold mb-2">東京オペレーション：イノベーション・ハブ</h4>
-      <ul class="list-disc pl-6 text-lg text-muted mb-4">
-        <li>医薬品ベンチャー企業に対する62億円の政府資金援助プログラムへの直接アクセス</li>
-        <li>東京大学、慶應義塾大学、理化学研究所などの主要機関とのパートナーシップ</li>
-        <li>日本のバイオベンチャー企業の50％が拠点を置く大東京バイオコミュニティに近い</li>
-        <li>イノベーション・パートナーシップを求める日本の製薬大手との関係</li>
-      </ul>
-      <h4 class="text-xl font-semibold mb-2">アトランタのオペレーション：商業化エンジン</h4>
-      <ul class="list-disc pl-6 text-lg text-muted">
-        <li>4.3兆ドル規模の米国医療市場へのゲートウェイ</li>
-        <li>CDC、エモリー大学、ジョージア工科大学の生物医学工学プログラムに近い</li>
-        <li>南東部の新興バイオテクノロジー回廊へのアクセス</li>
-        <li>米国のベンチャー・キャピタルや戦略的買収者との直接的なコネクション</li>
-      </ul>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Operational Framework ******************* -->
-
-  <Content
-    id="operations"
+    eyebrow="§ 05 / 日米の架け橋"
+    title="地域のイノベーションを、グローバルなインパクトへ。"
     isReversed
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">オペレーショナル・フレームワーク</h3>
-      <h4 class="text-xl font-semibold mb-2">事業開発：B2Bヘルスケアにおける「おもてなし」の極意</h4>
-      <p class="text-lg text-muted mb-4">
-        取引の前に信頼関係を築く日本の医療機関は広範な関係構築を必要とする。マルチステークホルダー・ナビゲーション：医師、行政官、政府関係者が関わる複雑な意思決定を理解する。長期的パートナーシップの考え方を重視し、すべての顧客対応にバイリンガルサポートと文化通訳を提供する。
-      </p>
-      <h4 class="text-xl font-semibold mb-2">卓越した研究開発</h4>
-      <p class="text-lg text-muted">
-        反復による完璧さ：絶え間ない改良という日本のアプローチを取り入れる。日本の完璧主義とマーケット・タイミング要件のバランスをとり、日本の大学や研究機関とのパートナーシップを促進。すべての技術文書は日本語と英語で作成し、時差を利用した24時間の開発サイクルを実現。
-      </p>
-    </Fragment>
-  </Content>
+    intro="東京都港区とジョージア州アトランタの2拠点体制は、医療イノベーションのための強力な回廊を形成しています。"
+    items={[
+      {
+        title: '東京オペレーション：イノベーション・ハブ',
+        description:
+          '医薬品ベンチャー企業に対する62億円の政府資金援助プログラムへの直接アクセス。東京大学、慶應義塾大学、理化学研究所などの主要機関とのパートナーシップ。日本のバイオベンチャー企業の50％が拠点を置く大東京バイオコミュニティに近接。イノベーション・パートナーシップを求める日本の製薬大手との関係。',
+      },
+      {
+        title: 'アトランタのオペレーション：商業化エンジン',
+        description:
+          '4.3兆ドル規模の米国医療市場へのゲートウェイ。CDC、エモリー大学、ジョージア工科大学の生物医学工学プログラムに近接。南東部の新興バイオテクノロジー回廊へのアクセス。米国のベンチャー・キャピタルや戦略的買収者との直接的なコネクション。',
+      },
+    ]}
+  />
+
+  <ContentKintsugi
+    id="operations"
+    eyebrow="§ 06 / オペレーション"
+    title="オペレーショナル・フレームワーク。"
+    intro="取引の前に信頼関係を築く日本の医療機関は広範な関係構築を必要とします。私たちは長期的パートナーシップの考え方を重視し、すべての顧客対応にバイリンガルサポートと文化通訳を提供します。"
+    items={[
+      {
+        title: '事業開発：B2Bヘルスケアにおける「おもてなし」の極意',
+        description:
+          '取引の前に信頼関係を築く日本の医療機関は広範な関係構築を必要とする。マルチステークホルダー・ナビゲーション：医師、行政官、政府関係者が関わる複雑な意思決定を理解する。長期的パートナーシップの考え方を重視し、すべての顧客対応にバイリンガルサポートと文化通訳を提供する。',
+      },
+      {
+        title: '卓越した研究開発',
+        description:
+          '反復による完璧さ：絶え間ない改良という日本のアプローチを取り入れる。日本の完璧主義とマーケット・タイミング要件のバランスをとり、日本の大学や研究機関とのパートナーシップを促進。すべての技術文書は日本語と英語で作成し、時差を利用した24時間の開発サイクルを実現。',
+      },
+    ]}
+  />
+
+  <CTASumi
+    id="contact"
+    eyebrow="§ 07 / CONTACT"
+    titleJa="一緒に取り組みませんか。"
+    titleEn="Partner with us."
+    subtitle="私たちのインキュベーター・モデルがいかに日本のイノベーションとグローバルなヘルスケア市場を結びつけるかをご覧ください。"
+    actions={[{ text: 'お問い合わせ', href: '/ja/contact/', variant: 'primary' }]}
+    primaryLang="ja"
+  />
 </Layout>

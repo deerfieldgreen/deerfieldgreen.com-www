@@ -1,204 +1,218 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import HeroText from '~/components/widgets/HeroText.astro';
-import Content from '~/components/widgets/Content.astro';
-import Features from '~/components/widgets/Features.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import ContentKintsugi from '~/components/widgets/v2/ContentKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
 
 const metadata = {
   title: 'Private Equity',
-  description: 'Japan\'s healthcare private equity market delivering compelling returns through patient capital and buy-and-hold investment strategies.',
+  description:
+    "Japan's healthcare private equity market delivering compelling returns through patient capital and buy-and-hold investment strategies.",
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText
-    tagline="Private Equity"
-    title="Japan's Healthcare Revolution Through Patient Capital"
+  <HeroKintsugi
+    eyebrow="§ 01 / PRIVATE EQUITY"
+    titleEn="Japan's healthcare revolution through patient capital."
+    titleJa="日本のヘルスケア変革を、忍耐強い資本で。"
     subtitle="Japan's private equity healthcare market has emerged as one of the world's most compelling investment destinations, delivering 3x returns on invested capital — the highest among major regions from 2010-2024."
+    actions={[{ text: 'Begin a conversation', href: '/contact/' }]}
+    primaryLang="en"
   />
 
-  <!-- Content Widget: Market Overview **************** -->
+  <ContentKintsugi
+    id="overview"
+    eyebrow="§ 02 / MARKET"
+    title="A market at inflection."
+    image={{ src: '~/assets/images/handshake.jpg', alt: 'Private Equity Partnership' }}
+    intro="Japan's private equity healthcare market has emerged as one of the world's most compelling investment destinations, delivering 3x returns on invested capital — the highest among major regions from 2010-2024. With healthcare PE investments growing at 20% CAGR since 2019 and annual deal values reaching $12-15 billion, the market presents exceptional opportunities for patient capital approaches."
+    items={[
+      {
+        title: 'Convergence of forces',
+        description:
+          'The convergence of demographic imperatives, digital transformation needs, and cultural shifts toward professional management creates an unprecedented environment for long-term value creation.',
+      },
+      {
+        title: 'A buy-and-hold market',
+        description:
+          "Unlike the rest of Asia-Pacific where only 30% of deals are buyouts, 75% of Japanese PE transactions are full acquisitions, reflecting the market's maturity and sellers' need for complete liquidity solutions.",
+      },
+      {
+        title: 'Patient capital in practice',
+        description:
+          "Extended holding periods, now averaging 5-7 years for successful partnerships, demonstrate that patient capital approaches align naturally with Japanese business culture's emphasis on long-term value creation over quarterly returns.",
+      },
+    ]}
+  />
 
-  <Content
-    image={{
-      src: '~/assets/images/handshake.jpg',
-      alt: 'Private Equity Partnership',
-    }}
-  >
-    <Fragment slot="content">
-      <p class="mb-4">
-        Japan's private equity healthcare market has emerged as one of the world's most compelling investment destinations, delivering <strong>3x returns on invested capital</strong> — the highest among major regions from 2010-2024. With healthcare PE investments growing at <strong>20% CAGR since 2019</strong> and annual deal values reaching <strong>$12-15 billion</strong>, the market presents exceptional opportunities for patient capital approaches. The convergence of demographic imperatives, digital transformation needs, and cultural shifts toward professional management creates an unprecedented environment for long-term value creation.
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget: Demographic Imperative **************** -->
-
-  <Content
+  <ContentKintsugi
+    id="demographics"
+    eyebrow="§ 03 / DEMOGRAPHICS"
+    title="The demographic imperative driving sustained growth."
     isReversed
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">The Demographic Imperative Driving Sustained Growth</h3>
-      <p class="mb-4">
-        Japan faces a healthcare crisis that paradoxically creates extraordinary investment opportunities. With <strong>30% of the population aged 65 or older</strong> and <strong>10% over 80</strong>, the country represents the world's most aged society. This demographic reality drives inexorable demand growth across healthcare services, with the hospital market projected to reach <strong>$316.4 billion by 2029</strong> and home healthcare expected to double from $27.2 billion to <strong>$54.6 billion by 2033</strong>.
-      </p>
-      <p class="mb-4">
-        The succession crisis amplifies these opportunities. Over <strong>2.45 million Japanese SME owners are over 70</strong>, with <strong>52% of healthcare companies reporting no identified successor</strong>. Japan's punishing <strong>55% inheritance tax rate</strong> makes family succession increasingly untenable, creating a pipeline of acquisition targets seeking professional management and capital partners. This isn't a temporary arbitrage — it's a structural shift that will define the market for the next decade.
-      </p>
-      <p class="mb-4">
-        Unlike the rest of Asia-Pacific where only 30% of deals are buyouts, <strong>75% of Japanese PE transactions are full acquisitions</strong>, reflecting the market's maturity and sellers' need for complete liquidity solutions. Extended holding periods, now averaging <strong>5-7 years for successful partnerships</strong>, demonstrate that patient capital approaches align naturally with Japanese business culture's emphasis on long-term value creation over quarterly returns.
-      </p>
-    </Fragment>
-  </Content>
+    intro="Japan faces a healthcare crisis that paradoxically creates extraordinary investment opportunities. With 30% of the population aged 65 or older and 10% over 80, the country represents the world's most aged society."
+    items={[
+      {
+        title: 'Inexorable demand growth',
+        description:
+          'The hospital market is projected to reach $316.4 billion by 2029, and home healthcare is expected to double from $27.2 billion to $54.6 billion by 2033.',
+      },
+      {
+        title: 'A succession crisis at scale',
+        description:
+          'Over 2.45 million Japanese SME owners are over 70, with 52% of healthcare companies reporting no identified successor. A punishing 55% inheritance tax rate makes family succession increasingly untenable, creating a pipeline of acquisition targets seeking professional management and capital partners.',
+      },
+      {
+        title: 'Structural, not cyclical',
+        description:
+          "This isn't a temporary arbitrage — it's a structural shift that will define the market for the next decade.",
+      },
+    ]}
+  />
 
-  <!-- Features Widget: Sector Dynamics *************** -->
-
-  <Features
-    title="Sector Dynamics: Distinct Investment Opportunities"
+  <FeaturesSeam
+    id="sectors"
+    eyebrow="§ 04 / SECTOR DYNAMICS"
+    title="Distinct investment opportunities across sectors."
     subtitle="The healthcare landscape presents markedly different opportunities across sectors, each with unique characteristics and growth profiles."
     items={[
       {
+        label: 'BIOTECH',
         title: 'Biotech',
         description:
           "Extraordinary government support including 6.2 billion in direct funding. Companies like PeptiDream demonstrate the sector's potential with 120+ active drug discovery programs.",
-        icon: 'tabler:dna',
       },
       {
-        title: 'Aesthetic Medicine',
+        label: 'AESTHETIC',
+        title: 'Aesthetic medicine',
         description:
           'Growing from $18.9B in 2024 toward $30B by 2030 at 17.9% CAGR. The number of aesthetic clinics increased 43.6% from 2020-2023.',
-        icon: 'tabler:sparkles',
       },
       {
+        label: 'OPHTHALMOLOGY',
         title: 'Ophthalmology',
         description:
           'Combines stable reimbursable procedures with technology-driven growth potential. High capital requirements create natural barriers to entry.',
-        icon: 'tabler:eye',
       },
       {
+        label: 'DENTAL',
         title: 'Dental',
         description:
           'Proven consolidation models adapted from successful U.S. dental service organizations, navigating regulatory constraints through partnership structures.',
-        icon: 'tabler:dental',
       },
     ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features>
+  />
 
-  <!-- Content Widget: Operational Transformation **************** -->
-
-  <Content
-    title="Operational Transformation as the Cornerstone of Value Creation"
+  <ContentKintsugi
+    id="transformation"
+    eyebrow="§ 05 / TRANSFORMATION"
+    title="Operational transformation as the cornerstone of value creation."
+    intro="Japanese healthcare PE success stories reveal a consistent pattern: operational excellence trumps financial engineering. Management development proves equally critical, as PE firms introduce professional managers and performance-based compensation while respecting clinical leadership."
     items={[
       {
-        title: "KKR's Kokusai Electric Transformation",
+        title: "KKR's Kokusai Electric transformation",
         description:
           'Doubled R&D investment, increased technical headcount by 30%, recruited global talent — revenue nearly doubled and market share grew by one-third. The $2.7 billion IPO saw shares surge 32% on the first trading day.',
       },
       {
-        title: 'Digital Transformation Gap',
+        title: 'Digital transformation gap',
         description:
           'Japan ranks 29th globally in digital competitiveness with only 42% of primary care providers using EHRs versus the 93% OECD average. The digital health market is projected to reach $90.87 billion by 2035.',
       },
       {
-        title: "Unison Capital's CHCP Platform",
+        title: "Unison Capital's CHCP platform",
         description:
           "Now Japan's largest private healthcare owner, demonstrating the power of technology-enabled consolidation across hospitals, pharmacies, home nursing stations, and dental clinics.",
       },
     ]}
-  >
-    <Fragment slot="content">
-      <p class="mb-4">
-        Japanese healthcare PE success stories reveal a consistent pattern: operational excellence trumps financial engineering. Management development proves equally critical, as PE firms introduce professional managers and performance-based compensation while respecting clinical leadership.
-      </p>
-    </Fragment>
-  </Content>
+  />
 
-  <!-- Content Widget: Cultural Mastery **************** -->
-
-  <Content
+  <ContentKintsugi
+    id="culture"
+    eyebrow="§ 06 / CULTURE"
+    title="Cultural mastery determines partnership success."
     isReversed
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">Cultural Mastery Determines Partnership Success</h3>
-      <p class="mb-4">
-        The cultural dimension separates successful Japanese healthcare PE investments from expensive failures. Japanese business culture's emphasis on <strong>"wa" (harmony)</strong> and consensus-building requires fundamentally different approaches than Western markets. Successful firms invest <strong>6-18 months in relationship building</strong> before discussing transactions.
-      </p>
-      <p class="mb-4">
-        Japanese healthcare owners prioritize <strong>business continuity and employee welfare</strong> over maximizing sale prices. They seek partners who will preserve their company's mission, protect their employees, and maintain care quality. <strong>Bain Capital's approach</strong> to the Mitsubishi Tanabe Pharma acquisition — emphasizing enhancement rather than restructuring and retaining the company's 346-year heritage — exemplifies successful positioning.
-      </p>
-      <p class="mb-4">
-        The negotiation process itself requires cultural adaptation. <strong>"Nemawashi"</strong> — behind-the-scenes consensus building — means key decisions occur before formal meetings. Direct refusals rarely occur; instead, subtle cues communicate reservations. Pressure tactics destroy trust irreparably.
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget: Success Stories **************** -->
-
-  <Content
-    title="Success Stories Illuminate Winning Strategies"
+    intro={`The cultural dimension separates successful Japanese healthcare PE investments from expensive failures. Japanese business culture's emphasis on "wa" (harmony) and consensus-building requires fundamentally different approaches than Western markets. Successful firms invest 6-18 months in relationship building before discussing transactions.`}
     items={[
       {
+        title: 'Stewardship over extraction',
+        description:
+          "Japanese healthcare owners prioritize business continuity and employee welfare over maximizing sale prices. They seek partners who will preserve their company's mission, protect their employees, and maintain care quality.",
+      },
+      {
+        title: 'The Bain Capital model',
+        description:
+          "Bain Capital's approach to the Mitsubishi Tanabe Pharma acquisition — emphasizing enhancement rather than restructuring and retaining the company's 346-year heritage — exemplifies successful positioning.",
+      },
+      {
+        title: 'Nemawashi as negotiation',
+        description:
+          'The negotiation process itself requires cultural adaptation. "Nemawashi" — behind-the-scenes consensus building — means key decisions occur before formal meetings. Direct refusals rarely occur; instead, subtle cues communicate reservations. Pressure tactics destroy trust irreparably.',
+      },
+    ]}
+  />
+
+  <FeaturesSeam
+    id="success"
+    eyebrow="§ 07 / SUCCESS STORIES"
+    title="Winning strategies in practice."
+    subtitle="These successes share common elements: patient capital approaches with 5-7 year holds, significant reinvestment in R&D and technology, respect for Japanese business culture while introducing global best practices, and multiple exit options. The market's ability to generate $10+ billion in combined exit value from major healthcare transactions validates the buy-and-hold thesis."
+    items={[
+      {
+        label: 'KKR',
         title: 'KKR and PHC Holdings',
         description:
           'Seven-year journey from 2014 acquisition to 2021 IPO. Grew revenue to $2.8 billion while preserving Japanese management culture. Retained 45.77% ownership post-IPO.',
       },
       {
+        label: 'ADVANTAGE',
         title: 'Advantage Partners and Nihon Chouzai',
         description:
           "94.8 billion acquisition of Japan's largest pharmaceutical chain with 760+ pharmacies. The 163.6% premium reflects confidence in long-term value creation.",
       },
       {
+        label: 'J-STAR',
         title: 'J-STAR and Caregiver Japan',
         description:
           'Proprietary "Good Job!" app for integrated facility management with aggressive expansion plans across Tokyo. The "nurse\'s office in town" concept resonates with Japanese preferences for community-based care.',
       },
     ]}
-  >
-    <Fragment slot="content">
-      <p class="mb-4">
-        These successes share common elements: patient capital approaches with 5-7 year holds, significant reinvestment in R&D and technology, respect for Japanese business culture while introducing global best practices, and multiple exit options. The market's ability to generate <strong>$10+ billion in combined exit value</strong> from major healthcare transactions validates the buy-and-hold thesis.
-      </p>
-    </Fragment>
-  </Content>
+  />
 
-  <!-- Content Widget: Path Forward **************** -->
+  <ContentKintsugi
+    id="path-forward"
+    eyebrow="§ 08 / PATH FORWARD"
+    title="Navigating the path forward."
+    intro="For PE firms targeting Japanese healthcare, success demands more than capital — it requires cultural fluency, operational expertise, and genuine long-term commitment. The messaging must emphasize stewardship over extraction, growth over cost-cutting, and partnership over control."
+    items={[
+      {
+        title: 'An inflection point',
+        description:
+          'The Japanese healthcare PE market stands at an inflection point where demographic necessity, technological transformation, and cultural evolution converge. The 20% CAGR growth in healthcare PE investments reflects not speculation but fundamental value creation opportunities. With the government targeting 100 trillion yen in foreign direct investment by 2030, policy support aligns with market dynamics.',
+      },
+      {
+        title: 'Operational excellence drives returns',
+        description:
+          "The firms generating 3x returns — the world's highest — aren't those applying maximum leverage or executing rapid flips. They're patient investors who understand that in Japan, the path to exceptional returns runs through operational excellence, cultural respect, and genuine long-term partnership.",
+      },
+      {
+        title: "The developed world's last great PE opportunity",
+        description:
+          "For investors willing to commit the time, resources, and cultural investment necessary, Japanese healthcare offers what may be the developed world's last great PE opportunity — a massive, sophisticated market with structural growth drivers, clear value creation pathways, and an increasing openness to professional investment partners.",
+      },
+    ]}
+  />
 
-  <Content
-    isReversed
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">Navigating the Path Forward</h3>
-      <p class="mb-4">
-        For PE firms targeting Japanese healthcare, success demands more than capital — it requires cultural fluency, operational expertise, and genuine long-term commitment. The messaging must emphasize stewardship over extraction, growth over cost-cutting, and partnership over control.
-      </p>
-      <p class="mb-4">
-        The Japanese healthcare PE market stands at an inflection point where demographic necessity, technological transformation, and cultural evolution converge. The <strong>20% CAGR growth</strong> in healthcare PE investments reflects not speculation but fundamental value creation opportunities. With the government targeting <strong>100 trillion yen in foreign direct investment by 2030</strong>, policy support aligns with market dynamics.
-      </p>
-      <p class="mb-4">
-        The firms generating <strong>3x returns</strong> — the world's highest — aren't those applying maximum leverage or executing rapid flips. They're patient investors who understand that in Japan, the path to exceptional returns runs through operational excellence, cultural respect, and genuine long-term partnership.
-      </p>
-      <p class="mb-4">
-        For investors willing to commit the time, resources, and cultural investment necessary, Japanese healthcare offers what may be the developed world's last great PE opportunity — a massive, sophisticated market with structural growth drivers, clear value creation pathways, and an increasing openness to professional investment partners.
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+  <CTASumi
+    id="contact"
+    eyebrow="§ 09 / CONTACT"
+    titleEn="Begin a long-term partnership."
+    titleJa="長期的なパートナーシップを始めましょう。"
+    subtitle="Discover how Deerfield Green's patient-capital approach aligns with Japanese healthcare opportunities."
+    actions={[{ text: 'Begin a conversation', href: '/contact/', variant: 'primary' }]}
+    primaryLang="en"
+  />
 </Layout>

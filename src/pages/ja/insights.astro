@@ -1,7 +1,8 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import HeroKintsugi from '~/components/widgets/v2/HeroKintsugi.astro';
+import FeaturesSeam from '~/components/widgets/v2/FeaturesSeam.astro';
+import CTASumi from '~/components/widgets/v2/CTASumi.astro';
 
 const metadata = {
   title: 'インサイト',
@@ -10,80 +11,77 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText
-    tagline="インサイト"
-    title="厳選インサイト"
-    subtitle="Deerfield Greenチームが厳選したインサイト"
+  <!-- Hero ******************* -->
+  <HeroKintsugi
+    eyebrow="§ 01 / インサイト"
+    titleEn="Curated Insights."
+    titleJa="厳選されたインサイト。"
+    subtitle="ディアフィールド・グリーンの現役ライブラリ——書籍、ホワイトペーパー、記事、フレームワーク、ニュースレター、プロトタイプ。私たちの思考を形作る資料です。"
+    primaryLang="ja"
   />
 
-  <!-- Insights Grid ******************* -->
-
-  <Features2
-    title="インサイト"
-    columns={2}
+  <!-- Catalog ******************* -->
+  <FeaturesSeam
+    id="catalog"
+    eyebrow="§ 02 / カタログ"
+    title="私たちの現役ライブラリ。"
+    subtitle="各チャネルはそれぞれのサブドメインにて公開しています。"
+    defaultLinkText="詳細 →"
     items={[
       {
+        label: 'BOOKS',
         title: '書籍',
-        description:
-          '投資、戦略、イノベーションに関する私たちの考え方を形作ってきた推薦図書。',
-        icon: 'tabler:book',
-        callToAction: {
-          text: '書籍を見る',
-          href: 'https://books.deerfieldgreen.com/',
-        },
+        description: '投資、戦略、イノベーションに関する私たちの考え方を形作ってきた推薦図書。',
+        href: 'https://books.deerfieldgreen.com/',
+        linkText: '書籍を見る →',
       },
       {
+        label: 'WHITEPAPERS',
         title: 'ホワイトペーパー',
-        description:
-          '投資、テクノロジー、戦略に関する詳細な調査と分析。',
-        icon: 'tabler:file-text',
-        callToAction: {
-          text: 'ホワイトペーパーを見る',
-          href: 'https://whitepapers.deerfieldgreen.com/',
-        },
+        description: '投資、テクノロジー、戦略に関する詳細な調査と分析。',
+        href: 'https://whitepapers.deerfieldgreen.com/',
+        linkText: 'ホワイトペーパーを見る →',
       },
       {
+        label: 'ARTICLES',
         title: '記事',
-        description:
-          'チームおよびパートナーによる厳選された記事・出版物。',
-        icon: 'tabler:article',
-        callToAction: {
-          text: '記事一覧を見る',
-          href: '/ja/articles/',
-        },
+        description: 'チームおよびパートナーによる厳選された記事・出版物。',
+        href: '/ja/articles/',
+        linkText: '記事一覧を見る →',
       },
       {
+        label: 'FRAMEWORKS',
         title: 'フレームワーク',
-        description:
-          '意思決定、戦略、分析を導くために使用する独自およびオープンなフレームワーク。',
-        icon: 'tabler:sitemap',
-        callToAction: {
-          text: 'フレームワークを見る',
-          href: 'https://frameworks.deerfieldgreen.com/',
-        },
+        description: '意思決定、戦略、分析を導くために使用する独自およびオープンなフレームワーク。',
+        href: 'https://frameworks.deerfieldgreen.com/',
+        linkText: 'フレームワークを見る →',
       },
       {
+        label: 'NEWSLETTER',
         title: 'ニュースレター',
-        description:
-          '最新の考察、市場インサイト、ファームニュースの定期的な配信。',
-        icon: 'tabler:mail',
-        callToAction: {
-          text: 'ニュースレターを見る',
-          href: 'https://newsletter.deerfieldgreen.com/',
-        },
+        description: '最新の考察、市場インサイト、ファームニュースの定期的な配信。',
+        href: 'https://newsletter.deerfieldgreen.com/',
+        linkText: 'ニュースレターを見る →',
       },
       {
+        label: 'PROTOTYPES',
         title: 'プロトタイプ',
         description:
           'インキュベーターおよびリサーチチームによる実験的プロジェクトとプルーフオブコンセプト。',
-        icon: 'tabler:flask',
-        callToAction: {
-          text: 'プロトタイプを見る',
-          href: 'https://prototypes.deerfieldgreen.com/',
-        },
+        href: 'https://prototypes.deerfieldgreen.com/',
+        linkText: 'プロトタイプを見る →',
       },
     ]}
+  />
+
+  <!-- CTA ******************* -->
+  <CTASumi
+    id="contact"
+    eyebrow="§ 03 / お問い合わせ"
+    titleEn="Want to go deeper?"
+    titleJa="さらに深く知りたい方へ。"
+    subtitle="ご関心のテーマに合わせて、ぜひお声がけください。"
+    actions={[{ variant: 'primary', text: 'お問い合わせ', href: '/ja/contact/' }]}
+    primaryLang="ja"
   />
 </Layout>
