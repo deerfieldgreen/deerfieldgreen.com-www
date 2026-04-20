@@ -2,10 +2,31 @@
 import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
-const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
+const { inputs, textarea, disclaimer, button = 'Contact us', description = '', action, method } = Astro.props;
+
+// Language hint travels with the POST so the handler can redirect to the
+// correct locale's thank-you / error page.
+const lang = Astro.url.pathname.startsWith('/ja') ? 'ja' : 'en';
 ---
 
-<form>
+<form {...action ? { action } : {}} {...method ? { method } : action ? { method: 'POST' } : {}}>
+  {
+    action && (
+      <>
+        {/* Honeypot — real users leave this empty. */}
+        <input
+          type="text"
+          name="_hp"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+          class="hidden"
+          style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;"
+        />
+        <input type="hidden" name="_lang" value={lang} />
+      </>
+    )
+  }
   {
     inputs &&
       inputs.map(
